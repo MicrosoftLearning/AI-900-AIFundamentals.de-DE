@@ -2,15 +2,20 @@
 title: Online gehostete Anweisungen
 permalink: index.html
 layout: home
+ms.openlocfilehash: b85af520a10e63a2f9a5696db03bfd946aff968f
+ms.sourcegitcommit: 1ef64e3008a439d0d0bb3d93a27d3df68d3d64a9
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "140688691"
 ---
+# <a name="azure-ai-fundamentals-exercises"></a>Labs zu den Azure KI-Grundlagen
 
-# Labs zu den Azure KI-Grundlagen
-
-Dieses Repository enthält die Übungen für das Praxislab zum Microsoft-Kurs [AI-900 *Microsoft Azure Artificial Intelligence*](https://docs.microsoft.com/de-de/learn/certifications/courses/ai-900t00) und den zugehörigen Selbstlernkursen in Microsoft Learn: [Einstieg in künstliche Intelligenz in Azure](https://docs.microsoft.com/learn/paths/get-started-with-artificial-intelligence-on-azure/), [Erstellen von Vorhersagemodellen ohne Code mit Azure Machine Learning](https://docs.microsoft.com/de-de/learn/paths/create-no-code-predictive-models-azure-machine-learning/), [Mehr über maschinelles Sehen in Microsoft Azure](https://docs.microsoft.com/learn/paths/explore-computer-vision-microsoft-azure/), [Verarbeitung natürlicher Sprache](https://docs.microsoft.com/learn/paths/explore-natural-language-processing/), und [Erkunden der Gesprächs-KI](https://docs.microsoft.com/learn/paths/explore-conversational-ai/). Diese Übungen begleiten die Lernmaterialen und erleichtern die praktische Anwendung der beschriebenen Technologien. 
+Verwenden Sie die nachstehenden Links, um die Übungen für das Praxislab zum Microsoft-Kurs [AI-900 *Microsoft Azure – KI-Grundlagen*](https://docs.microsoft.com/learn/certifications/courses/ai-900t00) durchzuführen.
 
 Sie benötigen ein Microsoft Azure-Abonnement für diese Übungen. Falls Sie kein Abonnement von Ihrem Kursleiter erhalten haben, können Sie sich unter [https://azure.microsoft.com](https://azure.microsoft.com) für eine kostenlose Testversion registrieren.
 
-{% assign labs = site.pages | where_exp:"page", "page.url contains '/instructions'" %}
+{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions'" %}
 | Übungen |
 | ------- | 
 {% for activity in labs  %}| [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) |
