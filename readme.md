@@ -1,18 +1,16 @@
 ---
-ms.openlocfilehash: 5e30b50971446e2da8383a94557380ede431b7c9
-ms.sourcegitcommit: a01e0cfb657c6628e71e3e2d981b6f19bde0ed89
+ms.openlocfilehash: 4e00e832d02871de3fa4511273434b6e8db58df3
+ms.sourcegitcommit: 71edd7d093464547be5a87725ef67dad082aafbf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/31/2022
-ms.locfileid: "138099897"
+ms.lasthandoff: 08/23/2022
+ms.locfileid: "147629849"
 ---
-# <a name="microsoft-azure-ai-fundamentals-exercises"></a>Übungen zu den Azure KI-Grundlagen
+# <a name="ai-900-microsoft-azure-ai-fundamentals"></a>AI-900: Microsoft Azure AI Fundamentals
 
 Dieses Repository enthält die Übungen für das Praxislab zum Microsoft-Kurs [AI-900 *Microsoft Azure – KI-Grundlagen*](https://docs.microsoft.com/en-us/learn/certifications/courses/ai-900t00) und den [Selbstlernkursen in Microsoft Learn](https://docs.microsoft.com/learn/certifications/azure-ai-fundamentals). Diese Labs begleiten die Lernmaterialen und erleichtern die praktische Anwendung der beschriebenen Technologien. 
 
-- **[Laden Sie das aktuelle Kursteilnehmerhandbuch und alle Dateiinhalte herunter.](../../releases/latest)**
 - **Sind Sie ein MCT?** – Lesen Sie unser [GitHub-Benutzerhandbuch für MCTs](https://microsoftlearning.github.io/MCT-User-Guide/).
-- **Müssen Sie die Lab-Anweisungen manuell erstellen?** – Anweisungen sind im Repository [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) verfügbar
 
 ## <a name="what-are-we-doing"></a>Was tun wir?
 
@@ -34,12 +32,6 @@ Dieses Repository enthält die Übungen für das Praxislab zum Microsoft-Kurs [A
 
 ## <a name="how-do-i-contribute"></a>Wie kann ich beitragen?
 
-- MCTs können Pull-Requests für den Code oder die Inhalte im GitHub-Repository stellen. Microsoft und die Kursautoren werden das Feedback sichten und die Änderungen am Labcode und den Inhalten bei Bedarf einfügen.
+- Jeder MCT kann eine Pull Request an den Code oder Inhalte im GitHub-Repository senden. Microsoft und der Kursautor prüfen den Inhalt und den Lab-Code und nehmen nach Bedarf Änderungen vor.
 
-- Falls Sie Vorschläge haben oder Fehler entdecken, können Sie sie jederzeit [melden](https://docs.microsoft.com/learn/support/troubleshooting#report-feedback).
-
-## <a name="notes"></a>Hinweise 
-
-### <a name="classroom-materials"></a>Unterrichtsmaterialien
-
-Wir empfehlen MCTs und Partnern dringend, diese Materialien zu nutzen und sie den Kursteilnehmern separat zur Verfügung zu stellen.  Wenn Sie die Kursteilnehmer direkt auf GitHub verweisen, um im Rahmen eines laufenden Kurses auf Lab-Schritte zuzugreifen, müssen sie auf eine weitere Benutzeroberfläche zugreifen, was zu Verwirrung führen kann. Mit einer Erklärung für die Kursteilnehmer, warum sie separate Labanweisungen erhalten, können Sie extrem dynamische Natur von cloudbasierten Schnittstellen und Plattformen hervorheben. Die Microsoft Learning-Unterstützung für den Zugriff auf Dateien auf GitHub und für die Navigation auf der GitHub-Website ist auf MCTs beschränkt, die diesen Kurs unterrichten.
+- Sie können Fehler, Änderungen, Verbesserungen und Vorschläge einreichen.  Sie haben vor uns eine neue Azure-Funktion gefunden?  Reichen Sie eine neue Demo ein!
