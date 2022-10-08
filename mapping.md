@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 69f8fd8920fccc0aecc4fb5d5a40e506935f8340
-ms.sourcegitcommit: 276908bd75615fb4d4712b912426129587e9c307
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "140788220"
----
 # <a name="ai-900-trainer-lab-mapping"></a>AI-900-Lab-Zuordnung für Kursleiter
 
 Dieser Kurs, AI-900: KI-Grundlagen, enthält verschiedene Labs für Präsenzschulungen, die für einen eintägigen Kurs entwickelt wurden.
