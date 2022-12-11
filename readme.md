@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 4e00e832d02871de3fa4511273434b6e8db58df3
-ms.sourcegitcommit: 71edd7d093464547be5a87725ef67dad082aafbf
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 08/23/2022
-ms.locfileid: "147629849"
----
 # <a name="ai-900-microsoft-azure-ai-fundamentals"></a>AI-900: Microsoft Azure AI Fundamentals
 
 Dieses Repository enthält die Übungen für das Praxislab zum Microsoft-Kurs [AI-900 *Microsoft Azure – KI-Grundlagen*](https://docs.microsoft.com/en-us/learn/certifications/courses/ai-900t00) und den [Selbstlernkursen in Microsoft Learn](https://docs.microsoft.com/learn/certifications/azure-ai-fundamentals). Diese Labs begleiten die Lernmaterialen und erleichtern die praktische Anwendung der beschriebenen Technologien. 
