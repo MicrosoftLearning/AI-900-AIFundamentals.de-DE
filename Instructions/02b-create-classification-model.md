@@ -126,9 +126,11 @@ Bevor Sie ein Modell trainieren können, müssen Sie in der Regel einige Vorvera
 
     ![Screenshot der Position der Ressourcenbibliothek für den Designer, die Suchleiste und das Komponentensymbol](media/create-classification-model/designer-asset-library-components.png)
 
-1. Suchen Sie nach dem Modul **Daten normalisieren**, und platzieren Sie es in das Canvas-Panel unterhalb des Datasets **diabetes-data**. Verbinden Sie anschließend den Ausgang vom unteren Rand des Datasets **diabetes-data** mit dem Eingang am oberen Rand des Moduls **Daten normalisieren**, wie im Folgenden gezeigt:
+1. Suchen Sie nach dem Modul **Spalten im Dataset auswählen**, und platzieren Sie es auf der Canvas unterhalb des Datasets **diabetes-data**. Verbinden Sie anschließend den Ausgang vom unteren Rand des Datasets **diabetes-data** mit dem Eingang am oberen Rand des Moduls **Spalten im Dataset auswählen**.
 
-    ![Screenshot: Pipeline mit Verbindung zwischen dem Dataset und dem Modul „Normalize Data“ (Daten normalisieren)](media/create-classification-model/dataset-normalize.png)
+1. Suchen Sie nach dem Modul **Daten normalisieren**, und platzieren Sie es auf der Canvas unterhalb des Moduls **Spalten im Dataset auswählen**. Verbinden Sie anschließend den Ausgang vom unteren Rand des Moduls **Spalten im Dataset auswählen** mit dem Eingang am oberen Rand des Moduls **Daten normalisieren**, wie im Folgenden gezeigt:
+
+    ![Screenshot einer Pipeline mit Verbindung zwischen dem Dataset und den Modulen „Spalten im Dataset auswählen“ und „Daten normalisieren“](media/create-classification-model/dataset-normalize.png)
 
 1. Doppelklicken Sie auf das Modul **Daten normalisieren**, um dessen Einstellungen anzuzeigen. Beachten Sie, dass Sie die Transformationsmethode und die zu transformierenden Spalten angeben müssen. 
 
@@ -277,6 +279,7 @@ Die Leistung dieses Modells ist nicht besonders gut, da Sie nur eine minimale Fe
     
     - Fügen Sie eine **Webdiensteingabekomponente** für neue Daten hinzu, die übermittelt werden sollen.
     - Ersetzen Sie das Dataset **diabetes-data** durch ein Modul **Daten manuell eingeben**, das die Bezeichnungsspalte (**Diabetic**) nicht enthält.
+    - Bearbeiten Sie die ausgewählten Spalten im Modul **Spalten im Dataset auswählen**.
     - Entfernen Sie das Modul **Modell auswerten**.
     - Fügen Sie vor dem Webdienstausgang ein Modul **Python-Skript ausführen** ein, damit nur die Patienten-ID, der vorhergesagte Bezeichnungswert und die Wahrscheinlichkeit zurückgegeben werden.
 
@@ -293,6 +296,8 @@ Die Leistung dieses Modells ist nicht besonders gut, da Sie nur eine minimale Fe
 
 1. Verbinden Sie das neue Modul **Daten manuell eingeben** mit demselben Eingang des **Datasets** des Moduls **Transformation anwenden** wie beim **Webdiensteingang**.
 
+1. Bearbeiten Sie das Modul **Spalten im Dataset auswählen**. Entfernen Sie **Diabetic** aus *Ausgewählte Spalten*. 
+
 1. Die Rückschlusspipeline umfasst das Modell **Modul auswerten**, das bei der Vorhersage aus neuen Daten nicht nützlich ist. Löschen Sie daher dieses Modul.
 
 1. Die Ausgabe des Moduls **Modell bewerten** umfasst alle Eingabefeatures sowie die vorhergesagte Bezeichnung und den Wahrscheinlichkeitsscore. So beschränken Sie die Ausgabe nur auf die Vorhersage und die Wahrscheinlichkeit
@@ -304,7 +309,7 @@ import pandas as pd
 
 def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['PatientID', 'Scored Labels', 'Scored Probabilities']]
+    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
     scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
                                 'Scored Probabilities':'Probability'},
                         inplace=True)
