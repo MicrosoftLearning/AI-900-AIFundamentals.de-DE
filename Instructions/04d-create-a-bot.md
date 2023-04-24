@@ -1,6 +1,7 @@
 ---
 lab:
   title: Erkunden der Beantwortung von Fragen
+  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-question-answering"></a>Erkunden der Beantwortung von Fragen

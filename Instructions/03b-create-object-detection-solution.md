@@ -1,6 +1,7 @@
 ---
 lab:
   title: Erkunden der Objekterkennung
+  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-object-detection"></a>Erkunden der Objekterkennung

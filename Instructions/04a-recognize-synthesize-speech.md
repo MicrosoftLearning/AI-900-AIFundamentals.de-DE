@@ -1,6 +1,7 @@
 ---
 lab:
   title: Erkunden von Sprache
+  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-speech"></a>Erkunden von Sprache

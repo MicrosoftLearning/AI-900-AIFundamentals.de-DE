@@ -1,6 +1,7 @@
 ---
 lab:
   title: Erkunden des Clusterings mit dem Azure Machine Learning-Designer
+  module: Module 2 - Machine Learning
 ---
 
 # <a name="explore-clustering-with-azure-machine-learning-designer"></a>Erkunden des Clusterings mit dem Azure Machine Learning-Designer

@@ -1,6 +1,7 @@
 ---
 lab:
   title: Einstieg in das maschinelle Sehen
+  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-computer-vision"></a>Einstieg in das maschinelle Sehen

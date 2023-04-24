@@ -1,6 +1,7 @@
 ---
 lab:
   title: Erkunden von Cognitive Services
+  module: Module 1 - Introduction to AI
 ---
 
 # <a name="explore-cognitive-services"></a>Erkunden von Cognitive Services

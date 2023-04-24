@@ -1,6 +1,7 @@
 ---
 lab:
   title: Erkunden von Knowledge Mining
+  module: Module 5 - Conversational AI
 ---
 
 # <a name="explore-knowledge-mining"></a>Erkunden von Knowledge Mining
