@@ -1,7 +1,6 @@
 ---
 lab:
   title: Untersuchen der Regression mit dem Azure Machine Learning-Designer
-  module: Module 2 - Machine Learning
 ---
 
 # <a name="explore-regression-with-azure-machine-learning-designer"></a>Untersuchen der Regression mit dem Azure Machine Learning-Designer

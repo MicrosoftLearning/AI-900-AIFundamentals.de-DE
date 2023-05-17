@@ -1,7 +1,6 @@
 ---
 lab:
   title: Untersuchen der Klassifizierung mit dem Azure Machine Learning-Designer
-  module: Module 2 - Machine Learning
 ---
 
 # <a name="explore-classification-with-azure-machine-learning-designer"></a>Untersuchen der Klassifizierung mit dem Azure Machine Learning-Designer

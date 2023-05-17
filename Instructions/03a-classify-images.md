@@ -1,7 +1,6 @@
 ---
 lab:
   title: Erkunden der Bildklassifizierung
-  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-image-classification"></a>Erkunden der Bildklassifizierung

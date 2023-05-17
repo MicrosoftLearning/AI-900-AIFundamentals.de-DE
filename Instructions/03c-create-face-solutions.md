@@ -1,7 +1,6 @@
 ---
 lab:
   title: Erkunden der Gesichtserkennung
-  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-face-recognition"></a>Erkunden der Gesichtserkennung
