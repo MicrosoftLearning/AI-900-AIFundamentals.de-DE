@@ -3,7 +3,7 @@ lab:
   title: Einstieg in das maschinelle Sehen
 ---
 
-# <a name="explore-computer-vision"></a>Einstieg in das maschinelle Sehen
+# Einstieg in das maschinelle Sehen
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -13,7 +13,7 @@ Nehmen wir beispielsweise an, dass das fiktive Einzelhandelsunternehmen *Northwi
 
 In diesem Lab verwenden Sie eine einfache Befehlszeilenanwendung, um den Dienst für maschinelles Sehen in Aktion zu sehen. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## <a name="create-a-cognitive-services-resource"></a>Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Cognitive Services*-Ressource
 
 Sie können den Dienst für maschinelles Sehen verwenden, indem Sie entweder eine Ressource für **maschinelles Sehen** oder eine **Cognitive Services**-Ressource erstellen.
 
@@ -33,7 +33,7 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
 
-## <a name="run-cloud-shell"></a>Ausführen von Cloud Shell
+## Ausführen von Cloud Shell
 
 Um die Fähigkeiten des Diensts für maschinelles Sehen zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell in Azure ausgeführt wird.
 
@@ -55,7 +55,7 @@ Um die Fähigkeiten des Diensts für maschinelles Sehen zu testen, verwenden wir
 
     ![Warten Sie, bis PowerShell gestartet wurde.](media/analyze-images-computer-vision-service/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurieren und Ausführen einer Clientanwendung
+## Konfigurieren und Ausführen einer Clientanwendung
 
 Da Sie nun über eine Cloud Shell-Umgebung verfügen, können Sie eine einfache Anwendung ausführen, die den Dienst für maschinelles Sehen zur Bildanalyse verwendet.
 
@@ -134,6 +134,6 @@ Da Sie nun über eine Cloud Shell-Umgebung verfügen, können Sie eine einfache 
 
 1. Überprüfen Sie die Ergebnisse der Bildanalyse für das dritte Bild.
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Diese einfache App veranschaulicht nur einige der Funktionen des Diensts für maschinelles Sehen. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der [Seite für maschinelles Sehen](https://azure.microsoft.com/services/cognitive-services/computer-vision/).

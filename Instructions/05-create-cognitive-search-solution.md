@@ -3,7 +3,7 @@ lab:
   title: Erkunden von Knowledge Mining
 ---
 
-# <a name="explore-knowledge-mining"></a>Erkunden von Knowledge Mining
+# Erkunden von Knowledge Mining
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -18,7 +18,7 @@ In diesem Lab werden Sie Folgendes tun:
 - Abfragen des Suchindex
 - Überprüfen der in einer Wissensdatenbank gespeicherten Ergebnisse
 
-## <a name="azure-resources-needed"></a>Erforderliche Azure-Ressourcen
+## Erforderliche Azure-Ressourcen
 
 Die Lösung, die Sie für Fourth Coffee erstellen, erfordert die folgenden Ressourcen in Ihrem Azure-Abonnement:
 
@@ -29,7 +29,7 @@ Die Lösung, die Sie für Fourth Coffee erstellen, erfordert die folgenden Resso
 
 - Ein **Speicherkonto** mit Blobcontainern, in dem unformatierte Dokumente und andere Sammlungen von Tabellen, Objekten oder Dateien gespeichert werden.
 
-### <a name="create-an-azure-cognitive-search-resource"></a>Erstellen einer Ressource vom Typ *Azure Cognitive Search*
+### Erstellen einer Ressource vom Typ *Azure Cognitive Search*
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) an.
 
@@ -45,7 +45,7 @@ Die Lösung, die Sie für Fourth Coffee erstellen, erfordert die folgenden Resso
 
 1. Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**. Auf der Azure Cognitive Search-Übersichtsseite können Sie Indizes hinzufügen, Daten importieren und erstellte Indizes durchsuchen.
 
-### <a name="create-a-cognitive-services-resource"></a>Erstellen einer Cognitive Services-Ressource
+### Erstellen einer Cognitive Services-Ressource
 
 Sie müssen eine **Cognitive Services**-Ressource bereitstellen, die sich am gleichen Standort wie Ihre Azure Cognitive Search-Ressource befindet. Ihre Suchlösung verwendet diese Ressource, um die Daten im Datenspeicher mit KI-generierten Erkenntnissen anzureichern.
 
@@ -61,7 +61,7 @@ Sie müssen eine **Cognitive Services**-Ressource bereitstellen, die sich am gle
 
 1. Warten Sie, bis die Bereitstellung abgeschlossen ist, und zeigen Sie dann die Bereitstellungsdetails an.
 
-### <a name="create-a-storage-account"></a>Speicherkonto erstellen
+### Speicherkonto erstellen
 
 1. Kehren Sie zur Startseite des Azure-Portal zurück, und wählen Sie dann die Schaltfläche **+ Ressource erstellen** aus.
 
@@ -75,7 +75,7 @@ Sie müssen eine **Cognitive Services**-Ressource bereitstellen, die sich am gle
 
 1. Klicken Sie auf **Überprüfen**, und klicken Sie dann auf **Erstellen**. Warten Sie, bis die Bereitstellung abgeschlossen ist, und wechseln Sie dann zur bereitgestellten Ressource.
 
-## <a name="upload-documents-to-azure-storage"></a>Hochladen von Dokumenten in Azure Storage
+## Hochladen von Dokumenten in Azure Storage
 
 1. Wählen Sie im von Ihnen erstellten Azure Storage-Konto im linken Menübereich **Container** aus.
 
@@ -102,7 +102,7 @@ Sie müssen eine **Cognitive Services**-Ressource bereitstellen, die sich am gle
 
 1. Nach Abschluss des Uploads können Sie den Bereich **Blob hochladen** schließen. Ihre Dokumente befinden sich jetzt in Ihrem Speichercontainer *coffee-reviews*.
 
-## <a name="index-the-documents"></a>Indizieren der Dokumente
+## Indizieren der Dokumente
 
 Sobald die Dokumente im Speicher vorhanden sind, können Sie Azure Cognitive Search verwenden, um Erkenntnisse aus den Dokumenten zu extrahieren. Im Azure-Portal wird ein *Datenimport-Assistent* angezeigt. Mit diesem Assistenten können Sie automatisch einen Index und Indexer für unterstützte Datenquellen erstellen. Der Assistent wird verwendet, um einen Index zu erstellen und Ihre Suchdokumente aus dem Speicher in den Azure Cognitive Search-Index zu importieren.
 
@@ -190,7 +190,7 @@ Sobald die Dokumente im Speicher vorhanden sind, können Sie Azure Cognitive Sea
 
     ![Screenshot des erfolgreich erstellten Indexers „coffee-indexer“.](media/create-cognitive-search-solution/6a-search-indexer-success.png)
 
-## <a name="query-the-index"></a>Indexabfragen
+## Indexabfragen
 
 Verwenden Sie den Suchexplorer zum Schreiben und Testen von Abfragen. Der Suchexplorer ist ein Tool, das in das Azure-Portal integriert ist und Ihnen eine einfache Möglichkeit bietet, die Qualität Ihres Suchindexes zu überprüfen. Sie können den Such-Explorer verwenden, um Abfragen zu schreiben und Ergebnisse im JSON-Format zu überprüfen.
 
@@ -206,15 +206,15 @@ Verwenden Sie den Suchexplorer zum Schreiben und Testen von Abfragen. Der Suchex
 
     > **Hinweis**: Wenn eine Meldung **Um im Portal zu suchen, lassen Sie den Portalursprung in Ihren Index-CORS-Einstellungen zu** angezeigt wird, wählen Sie **Portal zulassen** und dann **Suchen** aus.
 
-1. Filtern Sie nun nach Standort. Geben Sie im Feld **Abfragezeichenfolge**`search=$filter=locations eq 'Chicago'` ein, und wählen Sie dann **Suchen** aus. Die Abfrage durchsucht alle Dokumente im Index und filtert nach Bewertungen mit dem Standort „Chicago“.
+1. Filtern Sie nun nach Standort. Geben Sie im Feld **Abfragezeichenfolge**`search=locations:'Chicago'` ein, und wählen Sie dann **Suchen** aus. Die Abfrage durchsucht alle Dokumente im Index und filtert nach Bewertungen mit dem Standort „Chicago“.
 
-1. Nun filtern Sie nach Stimmung. Geben Sie im Feld **Abfragezeichenfolge**`search=$filter=sentiment eq 'negative'` ein, und wählen Sie dann **Suchen** aus. Die Abfrage durchsucht alle Dokumente im Index und filtert nach Bewertungen mit einer negativen Stimmung.
+1. Nun filtern Sie nach Stimmung. Geben Sie im Feld **Abfragezeichenfolge**`search=sentiment:'negative'` ein, und wählen Sie dann **Suchen** aus. Die Abfrage durchsucht alle Dokumente im Index und filtert nach Bewertungen mit einer negativen Stimmung.
 
    > **Hinweis**: Schauen Sie sich an, wie die Ergebnisse nach `@search.score` sortiert werden. Dies ist die von der Suchmaschine zugewiesene Bewertung, die zeigt, wie genau die Ergebnisse mit der angegebenen Abfrage übereinstimmen.
 
 1. Eines der Probleme, das wir lösen müssen, ist die Frage, warum es bestimmte Bewertungen geben kann. Sehen wir uns die Schlüsselbegriffe an, die mit den negativen Bewertungen zusammenhängen. Was kann Ihrer Meinung nach der Grund für diese Bewertung sein?
 
-## <a name="review-the-knowledge-store"></a>Überprüfen des Wissensspeichers
+## Überprüfen des Wissensspeichers
 
 Sehen wir uns die Möglichkeiten des Wissensspeichers in der Praxis an. Beim Ausführen des *Datenimport-Assistenten* haben Sie auch einen Wissensspeicher erstellt. Im Wissensspeicher befinden sich die angereicherten Daten, die durch KI-Skills extrahiert und in Form von Projektionen und Tabellen gespeichert wurden.
 
@@ -250,6 +250,6 @@ Sehen wir uns die Möglichkeiten des Wissensspeichers in der Praxis an. Beim Aus
 
     Sehen Sie sich die Schlüsselbegriffe an, die der Wissensspeicher aus dem Inhalt der Bewertungen erfassen konnte. Viele der Felder sind Schlüssel, sodass Sie die Tabellen wie eine relationale Datenbank verknüpfen können. Im letzten Feld werden die Schlüsselbegriffe angezeigt, die vom Skillset extrahiert wurden.
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Dieser einfache Suchindex bietet nur einige der Funktionen des Azure Cognitive Search-Diensts. Weitere Informationen zu den Möglichkeiten dieses Diensts finden Sie auf der Seite [Azure Cognitive Search-Dienst](/azure/search/search-what-is-azure-search).

@@ -3,7 +3,7 @@ lab:
   title: Erkunden der optischen Zeichenerkennung
 ---
 
-# <a name="explore-optical-character-recognition"></a>Erkunden der optischen Zeichenerkennung
+# Erkunden der optischen Zeichenerkennung
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -11,13 +11,13 @@ Eine häufige Herausforderung beim maschinellen Sehen ist die Erkennung und Inte
 
 Um die Fähigkeiten der Lese-API zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## <a name="use-the-computer-vision-service-to-read-text-in-an-image"></a>Verwenden des Diensts „Maschinelles Sehen“ zum Lesen von Text in einem Bild
+## Verwenden des Diensts „Maschinelles Sehen“ zum Lesen von Text in einem Bild
 
 Der kognitive Dienst für **maschinelles Sehen** bietet Unterstützung für OCR-Aufgaben, einschließlich:
 
 - Einer **Lese**-API, die für größere Dokumente optimiert ist. Diese API wird asynchron verwendet und kann sowohl für gedruckten als auch für handschriftlichen Text verwendet werden.
 
-## <a name="create-a-cognitive-services-resource"></a>Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Cognitive Services*-Ressource
 
 Sie können den Dienst für maschinelles Sehen verwenden, indem Sie entweder eine Ressource für **maschinelles Sehen** oder eine **Cognitive Services**-Ressource erstellen.
 
@@ -37,7 +37,7 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
 
-## <a name="run-cloud-shell"></a>Ausführen von Cloud Shell
+## Ausführen von Cloud Shell
 
 Um die Fähigkeiten des Custom Vision-Diensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell in Azure ausgeführt wird.
 
@@ -59,7 +59,7 @@ Um die Fähigkeiten des Custom Vision-Diensts zu testen, verwenden wir eine einf
 
     ![Warten Sie, bis PowerShell gestartet wurde.](media/read-text-computer-vision/powershell-prompt.png) 
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurieren und Ausführen einer Clientanwendung
+## Konfigurieren und Ausführen einer Clientanwendung
 
 Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine einfache Clientanwendung ausführen, die den OCR-Dienst nutzt.
 
@@ -129,6 +129,6 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
 1. Überprüfen Sie die Ergebnisse der Analyse für das zweite Bild. Außerdem sollten der Text und die Begrenzungsrahmen des Texts zurückgegeben werden.
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Diese einfache App veranschaulicht nur einige der OCR-Funktionen des Diensts für maschinelles Sehen. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der Seite für die [OCR](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-ocr).
