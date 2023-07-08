@@ -3,7 +3,7 @@ lab:
   title: Erkunden von Language Understanding
 ---
 
-# <a name="explore-language-understanding"></a>Erkunden von Language Understanding
+# Erkunden von Language Understanding
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -11,7 +11,7 @@ Wir erwarten in zunehmendem Maße, dass Computer in der Lage sind, KI zu nutzen,
 
 Verwenden Sie zum Testen der Funktionen des Diensts Conversational Language Understanding eine Befehlszeilenanwendung, die in Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## <a name="create-a-language-service-resource"></a>Erstellen einer Ressource vom Typ *Sprachdienst*
+## Erstellen einer Ressource vom Typ *Sprachdienst*
 
 Wenn Sie den Dienst Conversational Language Understanding nutzen möchten, müssen Sie eine Ressource vom Typ **Sprachdienst** erstellen.
 
@@ -30,7 +30,7 @@ Falls noch nicht vorhanden, erstellen Sie in Ihrem Azure-Abonnement eine Ressour
 
 1. Überprüfen und erstellen Sie die Ressource und warten Sie, bis die Bereitstellung abgeschlossen ist.
 
-### <a name="create-a-conversational-language-understanding-app"></a>Erstellen einer Conversational Language Understanding-App
+### Erstellen einer Conversational Language Understanding-App
 
 Um das Verstehen natürlicher Sprache mit Conversational Language Understanding zu implementieren, erstellen Sie eine App und fügen dann Entitäten, Absichten und Äußerungen hinzu, um die Befehle zu definieren, die die Anwendung ausführen soll.
 
@@ -61,7 +61,7 @@ Um das Verstehen natürlicher Sprache mit Conversational Language Understanding 
 
 1. Klicken Sie auf der Seite *Review and finish* (Überprüfen und Fertigstellen) auf **Create** (Erstellen).
 
-### <a name="create-intents-utterances-and-entities"></a>Erstellen von Absichten, Äußerungen und Entitäten
+### Erstellen von Absichten, Äußerungen und Entitäten
 
 Eine *Absicht* ist eine Aktion, die Sie ausführen möchten. Angenommen, Sie möchten ein Licht einschalten und einen Ventilator ausschalten. In diesem Fall definieren Sie zwei Absichten: eine zum Einschalten und eine zum Ausschalten eines Geräts. Für jede Absicht geben Sie Beispiele für *Äußerungen* an, die die Art der Sprache angeben, mit der die Absicht ausgedrückt wird.
 
@@ -127,7 +127,7 @@ Eine *Absicht* ist eine Aktion, die Sie ausführen möchten. Angenommen, Sie mö
     | switch_off   | Switch off the fan („Stell den Ventilator aus.“) | Gerät: *Ventilator auswählen* |
     | switch_off   | Turn the light off („Schalte das Licht aus.“) | Gerät: *Licht auswählen* |
 
-### <a name="train-the-model"></a>Trainieren des Modells
+### Trainieren des Modells
 
 Jetzt können Sie die von Ihnen definierten Absichten und Entitäten verwenden, um das Conversational Language Understanding-Modells für Ihre App zu trainieren.
 
@@ -139,7 +139,7 @@ Jetzt können Sie die von Ihnen definierten Absichten und Entitäten verwenden, 
 
 1. Warten Sie, bis das Training abgeschlossen ist. 
 
-### <a name="deploy-and-test-the-model"></a>Bereitstellen und Testen des Modells
+### Bereitstellen und Testen des Modells
 
 Wenn Sie Ihr trainiertes Modell in einer Clientanwendung verwenden möchten, müssen Sie es als Endpunkt bereitstellen, an den die Clientanwendungen neue Äußerungen senden können. Aus diesen werden Absichten und Entitäten vorhergesagt.
 
@@ -167,7 +167,7 @@ Wenn Sie Ihr trainiertes Modell in einer Clientanwendung verwenden möchten, mü
     - *put the light on* (Licht an)
     - *put the fan off* (Lüfter aus)
 
-## <a name="run-cloud-shell"></a>Ausführen von Cloud Shell
+## Ausführen von Cloud Shell
 
 Testen Sie nun Ihr bereitgestelltes Modell. Verwenden Sie hierfür eine Befehlszeilenanwendung, die in Cloud Shell in Azure ausgeführt wird. 
 
@@ -191,7 +191,7 @@ Testen Sie nun Ihr bereitgestelltes Modell. Verwenden Sie hierfür eine Befehlsz
 
     ![Warten Sie, bis PowerShell gestartet wurde.](media/conversational-language-understanding/powershell-prompt.png) 
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurieren und Ausführen einer Clientanwendung
+## Konfigurieren und Ausführen einer Clientanwendung
 
 Öffnen und bearbeiten Sie nun ein vordefiniertes Skript, das die Clientanwendung ausführen soll.
 
@@ -257,6 +257,6 @@ Testen Sie nun Ihr bereitgestelltes Modell. Verwenden Sie hierfür eine Befehlsz
 
 >**Hinweis**: Sie müssen jedes Mal mit **./understand.ps1** beginnen, gefolgt vom Ausdruck. Schließen Sie Ihren Ausdruck in Anführungszeichen ein.
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Diese App veranschaulicht nur einen Teil der Funktionen des Features Conversational Language Understanding des Sprachdiensts. Weitere Informationen über die Möglichkeiten dieses Diensts erfahren Sie auf der Seite [Conversational Language Understanding](https://docs.microsoft.com/azure/cognitive-services/language-service/conversational-language-understanding/overview). 

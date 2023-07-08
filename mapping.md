@@ -1,4 +1,4 @@
-# <a name="ai-900-trainer-lab-mapping"></a>AI-900-Lab-Zuordnung für Kursleiter
+# AI-900-Lab-Zuordnung für Kursleiter
 
 Dieser Kurs, AI-900: KI-Grundlagen, enthält verschiedene Labs für Präsenzschulungen, die für einen eintägigen Kurs entwickelt wurden.
 
@@ -6,7 +6,7 @@ Die AI-900-Labs für Kursleiter sind eine Teilmenge der AI-900-Labs, die Sie auf
 
 > Hinweis: Kursleiter können bei Bedarf zusätzliche Labs aus den AI-900-Labs zu ihren Modulen hinzufügen.
 
-## <a name="ai-900-module-mapping-to-labs"></a>Zuordnung von AI-900-Modulen zu Labs
+## Zuordnung von AI-900-Modulen zu Labs
 
 Die in diesem Kurs verwendeten AI-900-Labs gehören zu den folgenden Modulen: 
 

@@ -3,7 +3,7 @@ lab:
   title: Erkunden der Übersetzung
 ---
 
-# <a name="explore-translation"></a>Erkunden der Übersetzung
+# Erkunden der Übersetzung
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -13,7 +13,7 @@ Künstliche Intelligenz (KI) kann dazu beitragen, die Kommunikation zu vereinfac
 
 Um die Fähigkeiten des Textübersetzungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## <a name="create-a-cognitive-services-resource"></a>Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Cognitive Services*-Ressource
 
 Sie können den Textübersetzungsdienst nutzen, indem Sie entweder eine Ressource für die **Textübersetzung** oder eine **Cognitive Services**-Ressource erstellen.
 
@@ -33,7 +33,7 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen die Schlüssel und den Standort, um von Clientanwendungen aus eine Verbindung herzustellen.
 
-### <a name="get-the-key-and-location-for-your-cognitive-services-resource"></a>Rufen Sie den Schlüssel und den Standort für Ihre Cognitive Services-Ressource ab.
+### Rufen Sie den Schlüssel und den Standort für Ihre Cognitive Services-Ressource ab.
 
 1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Cognitive Services-Ressource, und wählen Sie auf der Seite **Übersicht** den Link zur Verwaltung der Schlüssel für den Dienst aus. Sie benötigen die Schlüssel und den Speicherort, um von Clientanwendungen aus eine Verbindung mit Ihrer Cognitive Services-Ressource herzustellen.
 
@@ -41,7 +41,7 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 > **Hinweis**: Um den Textübersetzungsdienst zu nutzen, müssen Sie nicht den Cognitive Services-Endpunkt verwenden. Es wird ein globaler Endpunkt nur für den Textübersetzungsdienst bereitgestellt. 
 
-## <a name="run-cloud-shell"></a>Ausführen von Cloud Shell
+## Ausführen von Cloud Shell
 
 Um die Fähigkeiten des Übersetzungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell in Azure ausgeführt wird. 
 
@@ -63,7 +63,7 @@ Um die Fähigkeiten des Übersetzungsdiensts zu testen, verwenden wir eine einfa
 
     ![Warten Sie, bis PowerShell gestartet wurde.](media/translate-text-and-speech/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurieren und Ausführen einer Clientanwendung
+## Konfigurieren und Ausführen einer Clientanwendung
 
 Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine einfache Clientanwendung ausführen, die den Übersetzungsdienst nutzt.
 
@@ -120,6 +120,6 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
 1. Überprüfen Sie die Ausgabe. Haben Sie die Übersetzung des englischen Texts ins Französische, Italienische und Chinesische gesehen?  Haben Sie die Übersetzung der englischen „Hello“-Audiodaten in französischen Text gesehen?
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Diese einfache App zeigt nur einen Teil der Möglichkeiten des Textübersetzungsdiensts. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der Seite für die [Textübersetzung](https://docs.microsoft.com/azure/cognitive-services/translator/translator-overview).

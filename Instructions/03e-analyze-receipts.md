@@ -3,7 +3,7 @@ lab:
   title: Erkunden der Formularerkennung
 ---
 
-# <a name="explore-form-recognition"></a>Erkunden der Formularerkennung
+# Erkunden der Formularerkennung
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -15,7 +15,7 @@ Die Formularerkennung verwendet Machine Learning-Modelle, die darauf trainiert s
 
 Um die Fähigkeiten des Formularerkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## <a name="create-a-cognitive-services-resource"></a>Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Cognitive Services*-Ressource
 
 Sie können den Formularerkennungsdienst verwenden, indem Sie entweder eine Ressource für die **Formularerkennung** oder eine **Cognitive Services**-Ressource erstellen.
 
@@ -35,7 +35,7 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
 
-## <a name="run-cloud-shell"></a>Ausführen von Cloud Shell
+## Ausführen von Cloud Shell
 
 Um die Fähigkeiten des Formularerkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell in Azure ausgeführt wird. 
 
@@ -57,7 +57,7 @@ Um die Fähigkeiten des Formularerkennungsdiensts zu testen, verwenden wir eine 
 
     ![Warten Sie, bis PowerShell gestartet wurde.](media/analyze-receipts/powershell-prompt.png) 
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurieren und Ausführen einer Clientanwendung
+## Konfigurieren und Ausführen einer Clientanwendung
 
 Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine einfache Clientanwendung ausführen, die den Formularerkennungsdienst nutzt.
 
@@ -109,6 +109,6 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
 1. Überprüfen Sie die zurückgegebenen Ergebnisse. Vergewissern Sie sich, dass die Formularerkennung in der Lage ist, die Daten im Formular zu interpretieren und die Adresse und Telefonnummer des Händlers, das Datum und die Uhrzeit der Transaktion sowie die Einzelposten, die Zwischensumme, die Steuer und die Gesamtbeträge ordnungsgemäß zu identifizieren.
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Diese einfache App veranschaulicht nur einige der Funktionen der Formularerkennung des Diensts für maschinelles Sehen. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der Seite für die [Formularerkennung](https://docs.microsoft.com/azure/applied-ai-services/form-recognizer/overview).

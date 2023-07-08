@@ -3,7 +3,7 @@ lab:
   title: Erkunden der Textanalyse
 ---
 
-# <a name="explore-text-analytics"></a>Erkunden der Textanalyse
+# Erkunden der Textanalyse
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -15,7 +15,7 @@ Nehmen wir z. B. an, das fiktive Unternehmen *Margie's Travel* ermutigt Kunden,
 
 Um die Fähigkeiten des Sprachdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## <a name="create-a-cognitive-services-resource"></a>Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Cognitive Services*-Ressource
 
 Sie können den Sprachdienst nutzen, indem Sie entweder eine Ressource für die **Sprache** oder eine **Cognitive Services**-Ressource erstellen.
 
@@ -33,13 +33,13 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Überprüfen und erstellen Sie die Ressource.
 
-### <a name="get-the-key-and-endpoint-for-your-cognitive-services-resource"></a>Abrufen von Schlüssel und Endpunkt für Ihre Cognitive Services-Ressource
+### Abrufen von Schlüssel und Endpunkt für Ihre Cognitive Services-Ressource
 
 1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Cognitive Services-Ressource, und wählen Sie auf der Seite **Übersicht** den Link zur Verwaltung der Schlüssel für den Dienst aus. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung mit Ihrer Cognitive Services-Ressource herzustellen.
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Ressource an. Sie benötigen den **Schlüssel** und den **Endpunkt**, um von Clientanwendungen aus eine Verbindung herzustellen.
 
-## <a name="run-cloud-shell"></a>Ausführen von Cloud Shell
+## Ausführen von Cloud Shell
 
 Um die Fähigkeiten der Textanalysefunktionen des Sprachdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell in Azure ausgeführt wird.
 
@@ -61,7 +61,7 @@ Um die Fähigkeiten der Textanalysefunktionen des Sprachdiensts zu testen, verwe
 
     ![Warten Sie, bis PowerShell gestartet wurde.](media/analyze-text-language-service/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurieren und Ausführen einer Clientanwendung
+## Konfigurieren und Ausführen einer Clientanwendung
 
 Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine einfache Clientanwendung ausführen, die den Sprachdienst nutzt.
 
@@ -154,6 +154,6 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
 1. Überprüfen Sie die Ausgabe.
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Diese einfache App zeigt nur einen Teil der Möglichkeiten des Sprachdiensts. Weitere Informationen über die Möglichkeiten dieses Diensts erfahren Sie auf der [Sprachdienst-Seite](https://azure.microsoft.com/services/cognitive-services/language-service/).

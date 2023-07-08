@@ -3,7 +3,7 @@ lab:
   title: Erkunden der Gesichtserkennung
 ---
 
-# <a name="explore-face-recognition"></a>Erkunden der Gesichtserkennung
+# Erkunden der Gesichtserkennung
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -11,7 +11,7 @@ Lösungen für maschinelles Sehen erfordern oft eine Lösung mit künstlicher In
 
 Um die Fähigkeiten des Gesichtserkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## <a name="create-a-cognitive-services-resource"></a>Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Cognitive Services*-Ressource
 
 Sie können den Gesichtserkennungsdienst nutzen, indem Sie entweder eine Ressource für die **Gesichtserkennung** oder eine **Cognitive Services**-Ressource erstellen.
 
@@ -31,7 +31,7 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
 
-## <a name="run-cloud-shell"></a>Ausführen von Cloud Shell
+## Ausführen von Cloud Shell
 
 Um die Fähigkeiten des Gesichtserkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell in Azure ausgeführt wird. 
 
@@ -53,7 +53,7 @@ Um die Fähigkeiten des Gesichtserkennungsdiensts zu testen, verwenden wir eine 
 
     ![Warten Sie, bis PowerShell gestartet wurde.](media/create-face-solutions/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurieren und Ausführen einer Clientanwendung
+## Konfigurieren und Ausführen einer Clientanwendung
 
 Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine einfache Clientanwendung ausführen, die den Gesichtserkennungsdienst nutzt.
 
@@ -133,6 +133,6 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
 1. Überprüfen Sie die Ergebnisse der Gesichtsanalyse für das dritte Bild.
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Diese einfache App zeigt nur einen Teil der Möglichkeiten des Gesichtserkennungsdiensts. Weitere Informationen zu den Möglichkeiten dieses Diensts finden Sie auf der Seite für die [Gesichtserkennungs-API](https://azure.microsoft.com/services/cognitive-services/face/).

@@ -3,7 +3,7 @@ lab:
   title: Erkunden von Cognitive Services
 ---
 
-# <a name="explore-cognitive-services"></a>Erkunden von Cognitive Services
+# Erkunden von Cognitive Services
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
@@ -15,7 +15,7 @@ Um die Möglichkeiten des Anomalieerkennungsdiensts zu testen, verwenden wir ein
 
 > **Hinweis**: Das Ziel dieser Übung besteht darin, ein allgemeines Verständnis dafür zu gewinnen, wie Cognitive Services bereitgestellt und verwendet werden. Anomalieerkennung wird als Beispiel verwendet, aber es wird nicht erwartet, dass Sie in dieser Übung umfassendes Wissen über Anomalieerkennung erwerben!
 
-## <a name="create-an-anomaly-detector-resource"></a>Erstellen einer Ressource vom Typ *Anomalieerkennung*
+## Erstellen einer Ressource vom Typ *Anomalieerkennung*
 
 Erstellen Sie zunächst eine Ressource vom Typ **Anomalieerkennung** in Ihrem Azure-Abonnement:
 
@@ -32,7 +32,7 @@ Erstellen Sie zunächst eine Ressource vom Typ **Anomalieerkennung** in Ihrem Az
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Anomalieerkennungsressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
 
-## <a name="run-cloud-shell"></a>Ausführen von Cloud Shell
+## Ausführen von Cloud Shell
 
 Um die Möglichkeiten des Anomalieerkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in Azure Cloud Shell ausgeführt wird.
 
@@ -54,7 +54,7 @@ Um die Möglichkeiten des Anomalieerkennungsdiensts zu testen, verwenden wir ein
 
     ![Warten Sie, bis PowerShell gestartet wurde.](media/anomaly-detector/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurieren und Ausführen einer Clientanwendung
+## Konfigurieren und Ausführen einer Clientanwendung
 
 Nachdem Sie nun über eine Cloud Shell-Umgebung verfügen, können Sie eine einfache Anwendung ausführen, die den Dienst Anomalieerkennung verwendet, um Daten zu analysieren.
 
@@ -104,11 +104,11 @@ Nachdem Sie nun über eine Cloud Shell-Umgebung verfügen, können Sie eine ein
 
 1. Überprüfen Sie die Ergebnisse, und beachten Sie, dass die letzte Spalte in den Ergebnissen **True** oder **False** ist, um anzugeben, ob der zum jeweiligen Zeitpunkt (Datum/Uhrzeit) erfasste Wert als Anomalie betrachtet wird. Überlegen Sie, wie wir diese Informationen in der Praxis verwenden können. Welche Aktion könnte von der Anwendung ausgelöst werden, wenn bei den Werten von Kühlschranktemperatur oder Bluddruck Anomalien erkannt wurden?  
 
-## <a name="learn-more"></a>Weitere Informationen
+## Weitere Informationen
 
 Diese einfache App zeigt nur einen Teil der Möglichkeiten des Anomalieerkennungsdiensts. Weitere Informationen zu den Möglichkeiten dieses Diensts finden Sie auf der [Seite für die Anomalieerkennung](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
 
-## <a name="clean-up"></a>Bereinigung
+## Bereinigung
 
 Sie sollten am Ende eines Projekts prüfen, ob Sie die Ressourcen, die Sie erstellt haben, noch benötigen. Ressourcen, die weiterhin ausgeführt werden, können Sie Geld kosten. 
 
