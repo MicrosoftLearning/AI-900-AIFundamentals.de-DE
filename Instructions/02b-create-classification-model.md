@@ -3,11 +3,11 @@ lab:
   title: Untersuchen der Klassifizierung mit dem Azure Machine Learning-Designer
 ---
 
-# <a name="explore-classification-with-azure-machine-learning-designer"></a>Untersuchen der Klassifizierung mit dem Azure Machine Learning-Designer
+# Untersuchen der Klassifizierung mit dem Azure Machine Learning-Designer
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Erstellen eines Azure Machine Learning-Arbeitsbereichs  
+## Erstellen eines Azure Machine Learning-Arbeitsbereichs  
 
 1. Melden Sie sich mit Ihren Microsoft-Anmeldeinformationen beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
@@ -25,13 +25,13 @@ lab:
 
 1. Wählen Sie **Studio starten** aus (oder öffnen Sie eine neue Browserregisterkarte. Navigieren Sie dann zu [https://ml.azure.com](https://ml.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto bei Azure Machine Learning Studio an).
 
-1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Wenn dies nicht der Fall ist, klicken Sie im linken Menü auf **Microsoft**. Wählen Sie dann im neuen Menü auf der linken Seite, in dem alle Arbeitsbereiche aufgeführt werden, die Ihrem Abonnement zugeordnet sind, **Arbeitsbereiche** aus. Wählen Sie den für diese Übung erstellten Arbeitsbereich aus. 
+1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Wenn dies nicht der Fall ist, wählen Sie im linken Menü Ihr Azure-Verzeichnis aus. Wählen Sie dann im neuen Menü auf der linken Seite **Arbeitsbereiche** aus, wo alle Arbeitsbereiche aufgeführt sind, die Ihrem Verzeichnis zugeordnet sind, und wählen Sie den Arbeitsbereich aus, den Sie für diese Übung erstellt haben.
 
 > **Hinweis**: Dieses Modul ist eines von vielen, in denen ein Azure Machine Learning-Arbeitsbereich verwendet wird (einschließlich der anderen Module im Lernpfad [Microsoft Azure KI-Grundlagen: Erkunden visueller Tools für maschinelles Lernen](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/)). Wenn Sie Ihr eigenes Azure-Abonnement verwenden, sollten Sie den Arbeitsbereich einmal erstellen und in anderen Modulen wiederverwenden. Ihrem Azure-Abonnement wird eine kleine Menge an Datenspeicher in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement vorhanden ist. Daher wird empfohlen, den Azure Machine Learning-Arbeitsbereich zu löschen, wenn er nicht mehr benötigt wird.
 
-## <a name="create-compute"></a>Erstellen von Computeressourcen
+## Erstellen von Computeressourcen
 
-1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) die drei Zeilen oben links aus, um die verschiedenen Seiten in der Benutzeroberfläche anzuzeigen (möglicherweise müssen Sie die Größe des Bildschirms maximieren). Sie können diese Seiten im linken Bereich verwenden, um die Ressourcen in Ihrem Arbeitsbereich zu verwalten. Wählen die Seite **Compute** (unter **Verwalten**) aus.
+1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) das Symbol **&#8801;** aus (ein Menüsymbol, dass wie drei übereinander angeordnete Linien aussieht), um die verschiedenen Seiten auf der Benutzeroberfläche anzuzeigen (möglicherweise müssen Sie die Größe des Bildschirms maximieren). Sie können diese Seiten im linken Bereich verwenden, um die Ressourcen in Ihrem Arbeitsbereich zu verwalten. Wählen die Seite **Compute** (unter **Verwalten**) aus.
 
 1. Wählen Sie auf der Seite **Compute** die Registerkarte **Computecluster** aus, und fügen Sie einen neuen Computecluster mit den folgenden Einstellungen hinzu. Sie verwenden diesen zum Trainieren eines Machine Learning-Modells:
     - **Standort**: *Wählen Sie denselben Standort wie für Ihren Arbeitsbereich aus. Wenn dieser Standort nicht aufgeführt wird, wählen Sie den nächstgelegenen Standort aus*.
@@ -52,11 +52,11 @@ lab:
 
 Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mit dem nächsten Schritt fortfahren, während Sie warten.
 
-## <a name="create-a-pipeline-in-designer"></a>Erstellen einer Pipeline im Designer
+## Erstellen einer Pipeline im Designer
 
 Für den Einstieg in den Azure Machine Learning-Designer müssen Sie zunächst eine Pipeline erstellen und das Dataset hinzufügen, mit dem Sie arbeiten möchten.
 
-1. Erweitern Sie im [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie die drei Zeilen oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Designer** (unter **Autor**) an, und wählen Sie **+** aus, um eine neue Pipeline zu erstellen.
+1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Designer** (unter **Autor**) an, und wählen Sie **+** aus, um eine neue Pipeline zu erstellen.
 
 1. Wählen Sie oben rechts auf dem Bildschirm **Einstellungen** aus. Wenn der Bereich **Einstellungen** nicht sichtbar ist, wählen Sie das Radsymbol neben dem Pipelinenamen oben.
 
@@ -68,9 +68,9 @@ Für den Einstieg in den Azure Machine Learning-Designer müssen Sie zunächst e
 
     ![Screenshot des Einstellungsbereichs in Machine Learning Studio](media/create-classification-model/create-pipeline-help.png)
 
-## <a name="create-a-dataset"></a>Erstellen eines Datasets
+## Erstellen eines Datasets
 
-1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie die drei Zeilen oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Daten** an (unter **Ressourcen**). Die Seite „Daten“ enthält bestimmte Datendateien oder Tabellen, mit denen Sie in Azure Machine Learning arbeiten möchten. Sie können auch auf dieser Seite Datasets erstellen.
+1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Daten** an (unter **Ressourcen**). Die Seite „Daten“ enthält bestimmte Datendateien oder Tabellen, mit denen Sie in Azure Machine Learning arbeiten möchten. Sie können auch auf dieser Seite Datasets erstellen.
 
 1. Wählen Sie auf der Seite **Daten** auf der Registerkarte **Datenressourcen** die Option **Erstellen** aus. Konfigurieren Sie dann eine Datenressource mit den folgenden Einstellungen:
     * **Datentyp**:
@@ -96,7 +96,7 @@ Für den Einstieg in den Azure Machine Learning-Designer müssen Sie zunächst e
 
 1. Nachdem das Dataset erstellt wurde, öffnen Sie es, und zeigen Sie die Seite **Erkunden** an, um eine Stichprobe der Daten anzuzeigen. Diese Daten stellen Details von Patienten dar, die auf Diabetes getestet wurden.
 
-### <a name="load-data-to-canvas"></a>Laden Sie Daten im Canvas-Panel,
+### Laden Sie Daten im Canvas-Panel,
 
 1. Navigieren Sie zurück zu Ihrer Pipeline, indem Sie im Menü auf der linken Seite auf **Designer** klicken. Wählen Sie auf der Seite **Designer** die Pipeline **Diabetes Training** aus.
 
@@ -118,7 +118,7 @@ Für den Einstieg in den Azure Machine Learning-Designer müssen Sie zunächst e
 
     ![Screenshot: Dataset „diabetes-data“ im dem Designer-Canvas](media/create-classification-model/diabetes-data.png)
 
-## <a name="add-transformations"></a>Transformationen hinzufügen
+## Transformationen hinzufügen
 
 Bevor Sie ein Modell trainieren können, müssen Sie in der Regel einige Vorverarbeitungstransformationen auf die Daten anwenden.
 
@@ -128,27 +128,26 @@ Bevor Sie ein Modell trainieren können, müssen Sie in der Regel einige Vorvera
 
 1. Suchen Sie nach dem Modul **Spalten im Dataset auswählen**, und platzieren Sie es auf der Canvas unterhalb des Datasets **diabetes-data**. Verbinden Sie anschließend den Ausgang vom unteren Rand des Datasets **diabetes-data** mit dem Eingang am oberen Rand des Moduls **Spalten im Dataset auswählen**.
 
+1. Doppelklicken Sie auf das Modul **Spalten im Dataset auswählen**, um rechts auf einen Bereich mit Einstellungen zuzugreifen. Wählen Sie **Spalte bearbeiten** aus. Wählen Sie dann im Fenster **Spalten auswählen** die Optionen **Nach Name** und **Alle hinzufügen** aus, um die Spalten hinzuzufügen. Entfernen Sie dann **PatientID**, und klicken Sie auf **Speichern**. 
+
 1. Suchen Sie nach dem Modul **Daten normalisieren**, und platzieren Sie es auf der Canvas unterhalb des Moduls **Spalten im Dataset auswählen**. Verbinden Sie anschließend den Ausgang vom unteren Rand des Moduls **Spalten im Dataset auswählen** mit dem Eingang am oberen Rand des Moduls **Daten normalisieren**, wie im Folgenden gezeigt:
 
     ![Screenshot einer Pipeline mit Verbindung zwischen dem Dataset und den Modulen „Spalten im Dataset auswählen“ und „Daten normalisieren“](media/create-classification-model/dataset-normalize.png)
 
 1. Doppelklicken Sie auf das Modul **Daten normalisieren**, um dessen Einstellungen anzuzeigen. Beachten Sie, dass Sie die Transformationsmethode und die zu transformierenden Spalten angeben müssen. 
 
-1. Legen Sie die *Transformationsmethode* auf **MinMax** und *Use 0 for constant columns when checked* (Bei der Überprüfung 0 für konstante Spalten verwenden) auf **TRUE** fest. Bearbeiten Sie die Spalten, um die folgenden Spalten wie in der Abbildung dargestellt nach Namen einzuschließen:
-    - **Pregnancies** (Schwangerschaften)
-    - **PlasmaGlucose**
-    - **DiastolicBloodPressure**
-    - **TricepsThickness**
-    - **SerumInsulin**
-    - **BMI**
-    - **DiabetesPedigree**
-    - **Age** (Alter)
+1. Legen Sie die *Transformationsmethode* auf **MinMax** und *Use 0 for constant columns when checked* (Bei der Überprüfung 0 für konstante Spalten verwenden) auf **TRUE** fest. Bearbeiten Sie die zu transformierenden Spalten mit **Spalten bearbeiten**. Wählen Sie Spalten **mit Regeln** aus, und kopieren Sie die folgende Liste unter „Spaltennamen einschließen“, und fügen Sie sie ein:  
 
-    ![Screenshot: Für die Normalisierung ausgewählte Spalten](media/create-classification-model/normalize-data.png)
+```
+Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
+```
+![Screenshot: Für die Normalisierung ausgewählte Spalten](media/create-classification-model/normalize-data.png)
+
+Klicken Sie auf **Speichern**, und schließen Sie das Auswahlfeld. 
 
 Bei der Datentransformation werden die numerischen Spalten normalisiert, um ihre Skalierung anzugleichen. Dadurch soll verhindert werden, dass Spalten mit großen Werten das Modelltraining dominieren. Sie würden normalerweise eine ganze Reihe von Transformationen wie diese zur Vorverarbeitung anwenden, um Ihre Daten für das Training vorzubereiten, aber wir halten diese Übung einfach.
 
-## <a name="run-the-pipeline"></a>Führen Sie die Pipeline aus.
+## Führen Sie die Pipeline aus.
 
 Zum Anwenden der Datentransformationen müssen Sie die Pipeline als Experiment ausführen.
 
@@ -160,7 +159,7 @@ Zum Anwenden der Datentransformationen müssen Sie die Pipeline als Experiment a
 
     Beachten Sie, dass sich der linke Bereich jetzt im Bereich **Übermittelte Aufträge** befindet. Sie werden wissen, wann die Ausführung abgeschlossen ist, da sich der Status des Auftrags zu **Abgeschlossen** ändert.
 
-## <a name="view-the-transformed-data"></a>Anzeigen der transformierten Daten
+## Anzeigen der transformierten Daten
 
 1. Wenn die Ausführung abgeschlossen ist, wird das Dataset nun für das Modelltraining vorbereitet. Klicken Sie auf **Auftragsdetails**. Eine neue Registerkarte wird angezeigt.
 
@@ -172,7 +171,7 @@ Zum Anwenden der Datentransformationen müssen Sie die Pipeline als Experiment a
 
 Nachdem Sie die Daten mithilfe von Datentransformationen vorbereitet haben, können Sie sie zum Trainieren eines Machine Learning-Modells verwenden.
 
-## <a name="add-training-modules"></a>Hinzufügen von Trainingsmodulen
+## Hinzufügen von Trainingsmodulen
 
 Es ist üblich, das Modell mit einer Teilmenge der Daten zu trainieren und einige Daten zurückzuhalten, mit denen das trainierte Modell anschließend getestet werden kann. Dadurch können Sie die vom Modell vorhergesagten Bezeichnungen mit den tatsächlichen bekannten Bezeichnungen im ursprünglichen Dataset vergleichen.
 
@@ -207,7 +206,7 @@ Führen Sie die folgenden Schritte aus, und verwenden Sie die obige Abbildung al
 
 1. Suchen Sie in der **Ressourcenbibliothek** nach einem Modul vom Typ **Modell bewerten**, und platzieren Sie es auf der Canvas unter dem Modul **Modell trainieren**. Verbinden Sie anschließend den Ausgang des Moduls **Modell trainieren** mit dem (linken) Eingang **Trainiertes Modell** des Moduls **Modell bewerten**. Verbinden Sie den (rechten) Ausgang **Ergebnisse Dataset2** des Moduls **Daten teilen** mit dem (rechten) Eingang **Dataset** des Moduls **Modell bewerten**.
 
-## <a name="run-the-training-pipeline"></a>Ausführen der Trainingspipeline
+## Ausführen der Trainingspipeline
 
 Nun können Sie die Trainingspipeline ausführen und das Modell trainieren.
 
@@ -227,7 +226,7 @@ Das Modell prognostiziert Werte für die Bezeichnung **Diabetic**, aber wie zuve
 
 Die Validierungsdaten, die Sie zurückgehalten und zum Bewerten des Modells verwendet haben, enthalten die bekannten Werte für die Bezeichnung. Um das Modell zu überprüfen, können Sie die tatsächlichen Werte für die Bezeichnung daher mit den Bezeichnungswerten vergleichen, die vorhergesagt wurden, als Sie das Validierungsdataset bewertet haben. Basierend auf diesem Vergleich können Sie verschiedene Metriken berechnen, die beschreiben, wie gut das Modell ist.
 
-## <a name="add-an-evaluate-model-module"></a>Hinzufügen eines Moduls „Modell auswerten“
+## Hinzufügen eines Moduls „Modell auswerten“
 
 1. Öffnen Sie die Pipeline **Diabetes Training**, die Sie erstellt haben.
 
@@ -261,9 +260,9 @@ Die Validierungsdaten, die Sie zurückgehalten und zum Bewerten des Modells verw
 
 Die Leistung dieses Modells ist nicht besonders gut, da Sie nur eine minimale Featurisierung und Vorverarbeitung durchgeführt haben. Sie könnten einen anderen Klassifizierungsalgorithmus verwenden, z. B. einen **zweiklassigen Entscheidungswald**, und die Ergebnisse vergleichen. Sie können die Ausgänge des Moduls **Daten teilen** mit mehreren Modulen der Typen **Modell trainieren** und **Modell bewerten** verbinden, und Sie können ein zweites Modul **Modell bewerten** mit dem Modul **Modell auswerten** verbinden, um einen direkten Vergleich zu erhalten. Bei dieser Übung geht es lediglich um eine Einführung in die Klassifizierung und die Benutzeroberfläche des Azure Machine Learning-Designers, nicht um das Trainieren eines perfekten Modells.
 
-## <a name="create-an-inference-pipeline"></a>Erstellen einer Rückschlusspipeline
+## Erstellen einer Rückschlusspipeline
 
-1. Klicken Sie links oben auf dem Bildschirm auf die drei Linien, um in Azure Machine Learning Studio den linken Bereich zu erweitern. Klicken Sie unter **Ressourcen** auf **Aufträge**, um alle von Ihnen ausgeführten Aufträge anzuzeigen. Wählen Sie das Experiment **mslearn-diabetes-training** und anschließend die Pipeline **Diabetes Training** aus.
+1. Erweitern Sie in Azure Machine Learning Studio den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Klicken Sie unter **Ressourcen** auf **Aufträge**, um alle von Ihnen ausgeführten Aufträge anzuzeigen. Wählen Sie das Experiment **mslearn-diabetes-training** und anschließend die Pipeline **Diabetes Training** aus.
 
 1. Klicken Sie im Menü oberhalb der Canvas auf **Rückschlusspipeline erstellen**. Möglicherweise müssen Sie hierfür in den Vollbildmodus wechseln und rechts oben auf das Symbol mit den drei Punkten **...** klicken, damit die Option **Rückschlusspipeline erstellen** im Menü angezeigt wird.  
 
@@ -283,7 +282,7 @@ Die Leistung dieses Modells ist nicht besonders gut, da Sie nur eine minimale Fe
     - Entfernen Sie das Modul **Modell auswerten**.
     - Fügen Sie vor dem Webdienstausgang ein Modul **Python-Skript ausführen** ein, damit nur die Patienten-ID, der vorhergesagte Bezeichnungswert und die Wahrscheinlichkeit zurückgegeben werden.
 
-1. Die Pipeline enthält nicht automatisch eine **Webdiensteingabekomponente** für Modelle, die aus benutzerdefinierten Datasets erstellt werden. Suchen Sie in der Ressourcenbibliothek nach einer **Webdiensteingabekomponente**, und platzieren Sie diese oben in der Pipeline. Verbinden Sie die Ausgabe der **Webdiensteingabekomponente** mit der Eingabe auf der rechten Seite der Komponente **Transformation anwenden**, die sich bereits auf der Canvas befindet.
+1. Die Pipeline enthält nicht automatisch eine **Webdiensteingabekomponente** für Modelle, die aus benutzerdefinierten Datasets erstellt werden. Suchen Sie in der Ressourcenbibliothek nach einer **Webdiensteingabekomponente**, und platzieren Sie diese oben in der Pipeline. Verbinden Sie die Ausgabe der **Webdiensteingabekomponente** mit der Komponente **Spalten im Dataset auswählen**, die sich bereits auf der Canvas befindet.
 
 1. Die Rückschlusspipeline geht davon aus, dass neue Daten dem Schema der ursprünglichen Trainingsdaten entsprechen, sodass das Dataset **diabetes-data** aus der Trainingspipeline eingeschlossen wird. Diese Eingabedaten enthalten jedoch die Bezeichnung **Diabetic**, die vom Modell vorhergesagt wird. Diese Bezeichnung ist in neuen Patientendaten, für die noch keine Vorhersage über den Diabetes ausgeführt wurde, nicht enthalten. Löschen Sie dieses Modul und ersetzen Sie es durch ein Modul **Daten manuell eingeben**, das die folgenden CSV-Daten enthält, die Merkmalswerte ohne Beschriftungen für drei neue Patientenbeobachtungen enthalten:
 
@@ -294,7 +293,7 @@ Die Leistung dieses Modells ist nicht besonders gut, da Sie nur eine minimale Fe
     1228510,4,115,50,29,243,34.69215364,0.741159926,59
     ```
 
-1. Verbinden Sie das neue Modul **Daten manuell eingeben** mit demselben Eingang des **Datasets** des Moduls **Transformation anwenden** wie beim **Webdiensteingang**.
+1. Verbinden Sie das neue Modul **Daten manuell eingeben** mit derselben Eingabe des **Datasets** des Moduls **Spalten im Dataset auswählen** wie bei der **Webdiensteingabe**.
 
 1. Bearbeiten Sie das Modul **Spalten im Dataset auswählen**. Entfernen Sie **Diabetic** aus *Ausgewählte Spalten*. 
 
@@ -332,7 +331,7 @@ Nachdem Sie eine Rückschlusspipeline für Echtzeitrückschlüsse erstellt und g
 
 > **Hinweis**: In dieser Übung stellen Sie den Webdienst in einer Azure-Containerinstanz bereit. Solche Computeressourcen werden dynamisch erstellt und sind für Entwicklungs- und Testzwecke nützlich. Für Produktionszwecke sollten Sie einen *Rückschlusscluster* erstellen, der einen AKS-Cluster (Azure Kubernetes Service) mit verbesserter Skalierbarkeit und Sicherheit bereitstellt.
 
-## <a name="deploy-a-service"></a>Bereitstellen eines Diensts
+## Bereitstellen eines Diensts
 
 1. Zeigen Sie die Rückschlusspipeline **Diabetes vorhersagen** an, die Sie in der vorherigen Einheit erstellt haben.
 
@@ -351,7 +350,7 @@ Nachdem Sie eine Rückschlusspipeline für Echtzeitrückschlüsse erstellt und g
 
 1. Warten Sie, bis der Webdienst bereitgestellt wurde. Dieser Vorgang kann einige Minuten in Anspruch nehmen. Der Bereitstellungsstatus wird links oben auf der Benutzeroberfläche des Designers angezeigt.
 
-## <a name="test-the-service"></a>Testen des Diensts
+## Testen des Diensts
 
 1. Öffnen Sie auf der Seite **Endpunkte** den Echtzeitendpunkt **predict-diabetes**.
 
@@ -387,15 +386,15 @@ Nachdem Sie eine Rückschlusspipeline für Echtzeitrückschlüsse erstellt und g
 
     Sie haben gerade einen Dienst getestet, der mit einer Clientanwendung eine Verbindung herstellen kann, indem die Anmeldeinformationen auf der Registerkarte **Consume** (Verbrauchen) verwendet werden. Das Lab endet hier. Sie können gern weiter mit dem Dienst experimentieren, den Sie gerade eingerichtet haben.
 
-## <a name="clean-up"></a>Bereinigung
+## Bereinigung
 
-Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden.
+Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden. Sie sollten auch den Computecluster löschen.
 
 1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) auf der Registerkarte **Endpunkte** den Endpunkt **predict-diabetes** aus. Klicken Sie dann auf **Löschen**, und bestätigen Sie, dass Sie den Endpunkt löschen möchten.
 
 1. Wählen Sie auf der Seite **Compute** auf der Registerkarte **Computecluster** Ihren Computecluster aus, und klicken Sie dann auf **Löschen**.
 
->**Hinweis**: Durch das Beenden Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen. Wenn Sie jedoch andere Labs in dieser Reihe abschließen möchten, müssen Sie ihn neu erstellen.
+>**Hinweis**: Durch das Löschen Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen. Wenn Sie jedoch andere Labs in dieser Reihe abschließen möchten, müssen Sie ihn neu erstellen.
 >
 > So löschen Sie Ihren Arbeitsbereich:
 >

@@ -3,13 +3,13 @@ lab:
   title: Untersuchen der Regression mit dem Azure Machine Learning-Designer
 ---
 
-# <a name="explore-regression-with-azure-machine-learning-designer"></a>Untersuchen der Regression mit dem Azure Machine Learning-Designer
+# Untersuchen der Regression mit dem Azure Machine Learning-Designer
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
 In dieser Übung werden Sie ein Regressionsmodell trainieren, das den Preis eines Autos anhand seiner Merkmale vorhersagt.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Erstellen eines Azure Machine Learning-Arbeitsbereichs  
+## Erstellen eines Azure Machine Learning-Arbeitsbereichs  
 
 1. Melden Sie sich mit Ihren Microsoft-Anmeldeinformationen beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
@@ -27,13 +27,13 @@ In dieser Übung werden Sie ein Regressionsmodell trainieren, das den Preis eine
 
 1. Wählen Sie **Studio starten** aus (oder öffnen Sie eine neue Browserregisterkarte. Navigieren Sie dann zu [https://ml.azure.com](https://ml.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto bei Azure Machine Learning Studio an).
 
-1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Wenn dies nicht der Fall ist, klicken Sie im linken Menü auf **Microsoft**. Wählen Sie dann im neuen Menü auf der linken Seite, in dem alle Arbeitsbereiche aufgeführt werden, die Ihrem Abonnement zugeordnet sind, **Arbeitsbereiche** aus. Wählen Sie den für diese Übung erstellten Arbeitsbereich aus. 
+1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Wenn dies nicht der Fall ist, wählen Sie im linken Menü Ihr Azure-Verzeichnis aus. Wählen Sie dann im neuen Menü auf der linken Seite **Arbeitsbereiche** aus, wo alle Arbeitsbereiche aufgeführt sind, die Ihrem Verzeichnis zugeordnet sind, und wählen Sie den Arbeitsbereich aus, den Sie für diese Übung erstellt haben.
 
 > **Hinweis**: Dieses Modul ist eines von vielen, in denen ein Azure Machine Learning-Arbeitsbereich verwendet wird (einschließlich der anderen Module im Lernpfad [Microsoft Azure KI-Grundlagen: Erkunden visueller Tools für maschinelles Lernen](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/)). Wenn Sie Ihr eigenes Azure-Abonnement verwenden, sollten Sie den Arbeitsbereich einmal erstellen und in anderen Modulen wiederverwenden. Ihrem Azure-Abonnement wird eine kleine Menge an Datenspeicher in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement vorhanden ist. Daher wird empfohlen, den Azure Machine Learning-Arbeitsbereich zu löschen, wenn er nicht mehr benötigt wird.
 
-## <a name="create-compute"></a>Erstellen von Computeressourcen
+## Erstellen von Computeressourcen
 
-1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) die drei Zeilen oben links aus, um die verschiedenen Seiten in der Benutzeroberfläche anzuzeigen (möglicherweise müssen Sie die Größe des Bildschirms maximieren). Sie können diese Seiten im linken Bereich verwenden, um die Ressourcen in Ihrem Arbeitsbereich zu verwalten. Wählen die Seite **Compute** (unter **Verwalten**) aus.
+1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) das Symbol **&#8801;** aus (ein Menüsymbol, dass wie drei übereinander angeordnete Linien aussieht), um die verschiedenen Seiten auf der Benutzeroberfläche anzuzeigen (möglicherweise müssen Sie die Größe des Bildschirms maximieren). Sie können diese Seiten im linken Bereich verwenden, um die Ressourcen in Ihrem Arbeitsbereich zu verwalten. Wählen die Seite **Compute** (unter **Verwalten**) aus.
 
 1. Klicken Sie auf der Seite **Compute** auf die Registerkarte **Computecluster**, und fügen Sie einen neuen Computecluster mit den folgenden Einstellungen hinzu, um ein Machine Learning-Modell zu trainieren:
     - **Standort**: *Wählen Sie denselben Standort wie für Ihren Arbeitsbereich aus. Wenn dieser Standort nicht aufgeführt wird, wählen Sie den nächstgelegenen Standort aus.*
@@ -54,9 +54,9 @@ In dieser Übung werden Sie ein Regressionsmodell trainieren, das den Preis eine
 
 Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mit dem nächsten Schritt fortfahren, während Sie warten.
 
-## <a name="create-a-pipeline-in-designer"></a>Erstellen einer Pipeline im Designer 
+## Erstellen einer Pipeline im Designer 
 
-1. Erweitern Sie im [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie links oben auf dem Bildschirm das Symbol mit den drei Zeilen auswählen. Zeigen Sie die Seite **Designer** (unter **Autor**) an, und wählen Sie **+** aus, um eine neue Pipeline zu erstellen.
+1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Designer** (unter **Autor**) an, und wählen Sie **+** aus, um eine neue Pipeline zu erstellen.
 
 1. Wählen Sie oben rechts auf dem Bildschirm **Einstellungen** aus. Wenn der Bereich **Einstellungen** nicht sichtbar ist, wählen Sie das Radsymbol neben dem Pipelinenamen oben.
 
@@ -68,7 +68,7 @@ Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mi
 
 ![Screenshot des Einstellungsbereichs in Machine Learning Studio](media/create-regression-model/create-pipeline-help.png)
 
-## <a name="add-and-explore-a-dataset"></a>Hinzufügen und Untersuchen eines Datasets
+## Hinzufügen und Untersuchen eines Datasets
 
 Azure Machine Learning enthält ein Beispieldataset, das Sie für Ihr Regressionsmodell verwenden können.
 
@@ -90,7 +90,7 @@ Azure Machine Learning enthält ein Beispieldataset, das Sie für Ihr Regression
 
     ![Screenshot: Dataset zu den Preisdaten von Autos auf der Designer-Canvas](media/create-regression-model/dataset.png)
 
-## <a name="add-data-transformations"></a>Hinzufügen von Datentransformationen
+## Hinzufügen von Datentransformationen
 
 In der Regel wenden Sie Datentransformationen an, um die Daten für die Modellierung vorzubereiten. Im Fall der Autopreisdaten fügen Sie Transformationen hinzu, um die Probleme zu beheben, die Sie beim Untersuchen der Daten festgestellt haben.
 
@@ -147,7 +147,7 @@ Führen Sie die restlichen Schritte aus, und verwenden Sie die Abbildung als Ref
 
     >**Tipp**: Wenn Sie sich die Spalten **stroke**, **peak-rpm** und **city-mpg** ansehen, werden Sie feststellen, dass alle in verschiedenen Größenordnungen gemessen werden, und es ist möglich, dass die größeren Werte für **peak-rpm** zu einer Verzerrung des Trainingsalgorithmus und einer übermäßigen Abhängigkeit von dieser Spalte im Vergleich zu Spalten mit niedrigeren Werten wie z. B. **stroke** führen. Data Scientists mindern diese mögliche Abweichung in der Regel, indem sie numerische Spalten *normalisieren*, damit sie eine ähnliche Skalierung aufweisen.
 
-## <a name="run-the-pipeline"></a>Führen Sie die Pipeline aus.
+## Führen Sie die Pipeline aus.
 
 Um Ihre Datentransformationen anzuwenden, müssen Sie die Pipeline ausführen.
 
@@ -169,7 +169,7 @@ Um Ihre Datentransformationen anzuwenden, müssen Sie die Pipeline ausführen.
 
 Das Dataset ist nun für das Modelltraining vorbereitet. Schließen Sie die Registerkarte „Auftragsdetails“, um zur Pipeline zurückzukehren.
 
-## <a name="create-training-pipeline"></a>Erstellen einer Trainingspipeline
+## Erstellen einer Trainingspipeline
 
 Nachdem Sie die Daten mithilfe von Datentransformationen vorbereitet haben, können Sie sie zum Trainieren eines Machine Learning-Modells verwenden. Führen Sie die folgenden Schritte aus, um die Pipeline **Auto Price Training** zu erweitern.
 
@@ -204,7 +204,7 @@ Nachdem Sie die Daten mithilfe von Datentransformationen vorbereitet haben, kön
 
     ![Screenshot: Aufteilen von Daten, anschließendes Trainieren der Daten mit linearer Regression und Bewerten](media/create-regression-model/train-score.png)
 
-## <a name="run-the-training-pipeline"></a>Ausführen der Trainingspipeline
+## Ausführen der Trainingspipeline
 
 Nun können Sie die Trainingspipeline ausführen und das Modell trainieren.
 
@@ -220,7 +220,7 @@ Nun können Sie die Trainingspipeline ausführen und das Modell trainieren.
 
 Das Modell prognostiziert nun Werte für die Bezeichnung **price** – aber wie zuverlässig sind diese Prognosen? Damit Sie dies bewerten können, müssen Sie zunächst das Modell auswerten.
 
-## <a name="evaluate-model"></a>Bewerten eines Modells
+## Bewerten eines Modells
 
 Eine Möglichkeit, ein Regressionsmodell zu bewerten, besteht darin, die vorhergesagten Bezeichnungen mit den tatsächlichen Bezeichnungen im Validierungsdataset zu vergleichen, das während des Trainings zurückgehalten wurde. Eine andere Möglichkeit besteht darin, die Leistung mehrerer Modelle zu vergleichen.
 
@@ -252,9 +252,9 @@ Eine Möglichkeit, ein Regressionsmodell zu bewerten, besteht darin, die vorherg
 
 Wenn Sie ein Modell mit Bewertungsmetriken ermitteln konnten, dass Ihre Anforderungen erfüllen kann, können Sie die Verwendung dieses Modells mit neuen Daten vorbereiten.
 
-## <a name="create-and-run-an-inference-pipeline"></a>Erstellen und Ausführen einer Rückschlusspipeline
+## Erstellen und Ausführen einer Rückschlusspipeline
 
-1. Klicken Sie links oben auf dem Bildschirm auf die drei Linien, um in Azure Machine Learning Studio den linken Bereich zu erweitern. Klicken Sie unter **Ressourcen** auf **Aufträge**, um alle von Ihnen ausgeführten Aufträge anzuzeigen. Wählen Sie das Experiment **mslearn-auto-training** und anschließend die Pipeline **mslearn-auto-training** aus. 
+1. Erweitern Sie im Azure Machine Learning Studio den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Klicken Sie unter **Ressourcen** auf **Aufträge**, um alle von Ihnen ausgeführten Aufträge anzuzeigen. Wählen Sie das Experiment **mslearn-auto-training** und anschließend die Pipeline **mslearn-auto-training** aus. 
 
     ![Screenshot: Aufträge im Menü auf der linken Seite. Wählen Sie Aufträge und dann den Namen Ihres Experiments aus.](media/create-regression-model/jobs-tab.png)
 
@@ -304,7 +304,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     return scored_results
 ```
 
-    - Verbinden Sie die Ausgabe des Moduls **Modell bewerten** mit der (ganz linken) Eingabe **Dataset1** von **Python-Skript ausführen**, und verbinden Sie die Ausgabe des Moduls **Python-Skript ausführen** mit der **Webdienstausgabe**.
+1. Verbinden Sie die Ausgabe des Moduls **Modell bewerten** mit der (ganz linken) Eingabe **Dataset1** von **Python-Skript ausführen**, und verbinden Sie die Ausgabe des Moduls **Python-Skript ausführen** mit der **Webdienstausgabe**.
 
 1. Ihre Pipeline sollte etwa wie die folgende aussehen:
 
@@ -318,13 +318,13 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 Ihre Rückschlusspipeline sagt Preise für Autos basierend auf ihren Merkmalen vorher. Sie können die Pipeline nun so veröffentlichen, dass sie von Clientanwendungen verwendet werden kann.
 
-## <a name="deploy-model"></a>Bereitstellen des Modells
+## Bereitstellen des Modells
 
 Nachdem Sie eine Rückschlusspipeline für Echtzeitrückschlüsse erstellt und getestet haben, können Sie sie als Dienst veröffentlichen, der von Clientanwendungen verwendet werden kann.
 
 > **Hinweis**: In dieser Übung stellen Sie den Webdienst in einer Azure-Containerinstanz bereit. Solche Computeressourcen werden dynamisch erstellt und sind für Entwicklungs- und Testzwecke nützlich. Für Produktionszwecke sollten Sie einen *Rückschlusscluster* erstellen, der einen AKS-Cluster (Azure Kubernetes Service) mit verbesserter Skalierbarkeit und Sicherheit bereitstellt.
 
-## <a name="deploy-a-service"></a>Bereitstellen eines Diensts
+## Bereitstellen eines Diensts
 
 1. Zeigen Sie die Rückschlusspipeline **Predict Auto Price** an, die Sie in der vorherigen Einheit erstellt haben.
 
@@ -343,7 +343,7 @@ Nachdem Sie eine Rückschlusspipeline für Echtzeitrückschlüsse erstellt und g
 
 1. Warten Sie einige Minuten, bis der Webdienst bereitgestellt wird. Der Bereitstellungsstatus wird links oben auf der Benutzeroberfläche des Designers angezeigt.
 
-## <a name="test-the-service"></a>Testen des Diensts
+## Testen des Diensts
 
 1. Öffnen Sie auf der Seite **Endpunkte** den Echtzeitendpunkt **predict-auto-price**.
 
@@ -397,15 +397,15 @@ Sehen wir uns an, was Sie getan haben. Sie haben ein Dataset von Automobildaten 
 
 Sie haben auch einen Dienst getestet, der mit einer Clientanwendung eine Verbindung herstellen kann, indem die Anmeldeinformationen auf der Registerkarte **Consume** (Verbrauchen) verwendet werden. Das Lab endet hier. Sie können gern weiter mit dem Dienst experimentieren, den Sie gerade eingerichtet haben.
 
-## <a name="clean-up"></a>Bereinigung
+## Bereinigung
 
-Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden. Sie sollten auch die Compute-Instanz beenden, bis Sie sie wieder benötigen.
+Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden. Sie sollten auch den Computecluster löschen.
 
 1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) auf der Registerkarte **Endpunkte** den Endpunkt **predict-auto-price** aus. Klicken Sie dann auf **Löschen**, und bestätigen Sie, dass Sie den Endpunkt löschen möchten.
 
 1. Wählen Sie auf der Seite **Compute** auf der Registerkarte **Computecluster** Ihren Computecluster aus, und klicken Sie dann auf **Löschen**.
 
->**Hinweis**: Durch das Beenden Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen. Wenn Sie jedoch andere Labs in dieser Reihe abschließen möchten, müssen Sie ihn neu erstellen.
+>**Hinweis**: Durch das Löschen Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen. Wenn Sie jedoch andere Labs in dieser Reihe abschließen möchten, müssen Sie ihn neu erstellen.
 >
 > So löschen Sie Ihren Arbeitsbereich:
 >

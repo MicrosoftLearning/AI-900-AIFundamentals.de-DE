@@ -3,11 +3,11 @@ lab:
   title: Erkunden des Clusterings mit dem Azure Machine Learning-Designer
 ---
 
-# <a name="explore-clustering-with-azure-machine-learning-designer"></a>Erkunden des Clusterings mit dem Azure Machine Learning-Designer
+# Erkunden des Clusterings mit dem Azure Machine Learning-Designer
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Erstellen eines Azure Machine Learning-Arbeitsbereichs  
+## Erstellen eines Azure Machine Learning-Arbeitsbereichs  
 
 1. Melden Sie sich mit Ihren Microsoft-Anmeldeinformationen beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
@@ -25,13 +25,13 @@ lab:
 
 1. Wählen Sie **Studio starten** aus (oder öffnen Sie eine neue Browserregisterkarte. Navigieren Sie dann zu [https://ml.azure.com](https://ml.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto bei Azure Machine Learning Studio an).
 
-1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Wenn dies nicht der Fall ist, klicken Sie im linken Menü auf **Microsoft**. Wählen Sie dann im neuen Menü auf der linken Seite, in dem alle Arbeitsbereiche aufgeführt werden, die Ihrem Abonnement zugeordnet sind, **Arbeitsbereiche** aus. Wählen Sie den für diese Übung erstellten Arbeitsbereich aus. 
+1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Wenn dies nicht der Fall ist, wählen Sie im linken Menü Ihr Azure-Verzeichnis aus. Wählen Sie dann im neuen Menü auf der linken Seite **Arbeitsbereiche** aus, wo alle Arbeitsbereiche aufgeführt sind, die Ihrem Verzeichnis zugeordnet sind, und wählen Sie den Arbeitsbereich aus, den Sie für diese Übung erstellt haben.
 
 > **Hinweis**: Dieses Modul ist eines von vielen, in denen ein Azure Machine Learning-Arbeitsbereich verwendet wird (einschließlich der anderen Module im Lernpfad [Microsoft Azure KI-Grundlagen: Erkunden visueller Tools für maschinelles Lernen](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/)). Wenn Sie Ihr eigenes Azure-Abonnement verwenden, sollten Sie den Arbeitsbereich einmal erstellen und in anderen Modulen wiederverwenden. Ihrem Azure-Abonnement wird eine kleine Menge an Datenspeicher in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement vorhanden ist. Daher wird empfohlen, den Azure Machine Learning-Arbeitsbereich zu löschen, wenn er nicht mehr benötigt wird.
 
-## <a name="create-compute"></a>Erstellen von Computeressourcen
+## Erstellen von Computeressourcen
 
-1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) die drei Zeilen oben links aus, um die verschiedenen Seiten in der Benutzeroberfläche anzuzeigen (möglicherweise müssen Sie die Größe des Bildschirms maximieren). Sie können diese Seiten im linken Bereich verwenden, um die Ressourcen in Ihrem Arbeitsbereich zu verwalten. Wählen die Seite **Compute** (unter **Verwalten**) aus.
+1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) das Symbol **&#8801;** aus (ein Menüsymbol, dass wie drei übereinander angeordnete Linien aussieht), um die verschiedenen Seiten auf der Benutzeroberfläche anzuzeigen (möglicherweise müssen Sie die Größe des Bildschirms maximieren). Sie können diese Seiten im linken Bereich verwenden, um die Ressourcen in Ihrem Arbeitsbereich zu verwalten. Wählen die Seite **Compute** (unter **Verwalten**) aus.
 
 2. Wählen Sie auf der Seite **Compute** die Registerkarte **Computecluster** aus, und fügen Sie einen neuen Computecluster mit den folgenden Einstellungen hinzu. Sie verwenden diesen zum Trainieren eines Machine Learning-Modells:
     - **Standort**: *Wählen Sie denselben Standort wie für Ihren Arbeitsbereich aus. Wenn dieser Standort nicht aufgeführt wird, wählen Sie den nächstgelegenen Standort aus*.
@@ -52,11 +52,11 @@ lab:
 
 Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mit dem nächsten Schritt fortfahren, während Sie warten.
 
-## <a name="create-a-pipeline-in-designer"></a>Erstellen einer Pipeline im Designer
+## Erstellen einer Pipeline im Designer
 
 Sie müssen zunächst eine Pipeline erstellen, um mit Azure Machine Learning Designer arbeiten zu können.
 
-1. Erweitern Sie im [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie links oben auf dem Bildschirm das Symbol mit den drei Zeilen auswählen. Zeigen Sie die Seite **Designer** (unter **Autor**) an, und wählen Sie das Pluszeichen aus, um eine neue Pipeline zu erstellen.
+1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Designer** (unter **Autor**) an, und wählen Sie das Pluszeichen aus, um eine neue Pipeline zu erstellen.
 
 1. Wählen Sie oben rechts auf dem Bildschirm **Einstellungen** aus. Wenn der Bereich **Einstellungen** nicht sichtbar ist, wählen Sie das Radsymbol neben dem Pipelinenamen oben.
 
@@ -68,11 +68,11 @@ Sie müssen zunächst eine Pipeline erstellen, um mit Azure Machine Learning Des
 
     ![Screenshot des Einstellungsbereichs in Machine Learning Studio](media/create-clustering-model/create-pipeline-help.png)
 
-## <a name="create-a-dataset"></a>Erstellen eines Datasets
+## Erstellen eines Datasets
 
 In Azure Machine Learning werden Daten für das Trainieren von Modellen und andere Vorgänge normalerweise in einem Objekt gekapselt, das als *Dataset* bezeichnet wird. In diesem Modul verwenden Sie ein Dataset, das Beobachtungen von drei Pinguinarten enthält.
 
-1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie die drei Zeilen oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Daten** an (unter **Ressourcen**). Die Seite „Daten“ enthält bestimmte Datendateien oder Tabellen, mit denen Sie in Azure Machine Learning arbeiten möchten. Sie können auch auf dieser Seite Datasets erstellen.
+1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Daten** an (unter **Ressourcen**). Die Seite „Daten“ enthält bestimmte Datendateien oder Tabellen, mit denen Sie in Azure Machine Learning arbeiten möchten. Sie können auch auf dieser Seite Datasets erstellen.
 
 1. Wählen Sie auf der Seite **Daten** auf der Registerkarte **Datenressourcen** die Option **Erstellen** aus. Konfigurieren Sie dann eine Datenressource mit den folgenden Einstellungen:
     * **Datentyp**:
@@ -100,7 +100,7 @@ In Azure Machine Learning werden Daten für das Trainieren von Modellen und ande
 
 > **Hinweis**: Das in dieser Übung verwendete Pinguin-Dataset ist eine Teilmenge der Daten, die von [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) und der [Palmer-Station, Antarctica LTER](https://pal.lternet.edu/) (Antarktis-Forschungsstation), einem Mitglied des [Long Term Ecological Research Network](https://lternet.edu/) (Netzwerk für ökologische und ökosystemare Langzeitforschung), gesammelt und zur Verfügung gestellt werden.
 
-### <a name="load-data-to-canvas"></a>Laden Sie Daten im Canvas-Panel,
+### Laden Sie Daten im Canvas-Panel,
 
 1. Navigieren Sie zurück zu Ihrer Pipeline, indem Sie im Menü auf der linken Seite auf **Designer** klicken. Wählen Sie auf der Seite **Designer** die Option **Train Penguin Clustering** aus.
 
@@ -129,7 +129,7 @@ In Azure Machine Learning werden Daten für das Trainieren von Modellen und ande
 
 1. Schließen Sie die Datasetvisualisierung, damit Sie das Dataset im Pipelinecanvas betrachten können.
 
-## <a name="apply-transformations"></a>Anwenden von Transformationen
+## Anwenden von Transformationen
 
 1. Klicken Sie links im Bereich **Ressourcenbibliothek** auf **Komponenten**. Diese enthalten verschiedenste Module, die Sie für Datentransformationen und Modelltrainings verwenden können. Für die schnelle Suche nach Modulen können Sie auch die Suchleiste verwenden.
 
@@ -168,7 +168,7 @@ In Azure Machine Learning werden Daten für das Trainieren von Modellen und ande
 
 1. Schließen Sie die Einstellungen des Moduls **Daten normalisieren**, um zur Canvas des Designers zurückzukehren.
 
-## <a name="run-the-pipeline"></a>Führen Sie die Pipeline aus.
+## Führen Sie die Pipeline aus.
 
 Zum Anwenden der Datentransformationen müssen Sie die Pipeline als Experiment ausführen.
 
@@ -180,7 +180,7 @@ Zum Anwenden der Datentransformationen müssen Sie die Pipeline als Experiment a
 
     Beachten Sie, dass sich der linke Bereich jetzt im Bereich **Übermittelte Aufträge** befindet. Sie werden wissen, wann die Ausführung abgeschlossen ist, da sich der Status des Auftrags zu **Abgeschlossen** ändert.
 
-## <a name="view-the-transformed-data"></a>Anzeigen der transformierten Daten
+## Anzeigen der transformierten Daten
 
 1. Wenn die Ausführung abgeschlossen ist, wird das Dataset nun für das Modelltraining vorbereitet. Klicken Sie auf **Auftragsdetails**. Sie werden zu einer anderen Registerkarte weitergeleitet, auf der die Module wie folgt angezeigt werden:
 
@@ -196,7 +196,7 @@ Da Sie nun die Merkmale ausgewählt und vorbereitet haben, die Sie aus dem Datas
 
 Nachdem Sie die Daten mithilfe von Datentransformationen vorbereitet haben, können Sie sie zum Trainieren eines Machine Learning-Modells verwenden.
 
-## <a name="add-training-modules"></a>Hinzufügen von Trainingsmodulen
+## Hinzufügen von Trainingsmodulen
 
 Führen Sie die folgenden Schritte aus, um die Pipeline **Train Pinguin Clustering** wie hier gezeigt zu erweitern:
 
@@ -238,7 +238,7 @@ Führen Sie die folgenden Schritte aus, und verwenden Sie die obige Abbildung al
 
 1. Suchen und platzieren Sie in der **Objektbibliothek** ein Modul **Daten zu Clustern zuweisen** im Canvas, unterhalb des Moduls **Clustering Model trainieren**. Verbinden Sie dann die linke Ausgabe **Trained model** (Trainiertes Modell) des Moduls **Clustermodell trainieren** mit der linken Eingabe **Trained model** (Trainiertes Modell) des Moduls **Daten Clustern zuweisen**. Verbinden Sie außerdem die rechte Ausgabe **Results dataset2** (Ergebnisse von Dataset2) des Moduls **Daten teilen** mit der rechten Eingabe **Dataset** des Moduls **Daten Clustern zuweisen**.
 
-## <a name="run-the-training-pipeline"></a>Ausführen der Trainingspipeline
+## Ausführen der Trainingspipeline
 
 Nun können Sie die Trainingspipeline ausführen und das Modell trainieren.
 
@@ -260,7 +260,7 @@ Das Modell prognostiziert Cluster für die Pinguinbeobachtungen, doch wie zuverl
 
 Die Auswertung von Clustermodellen wird dadurch erschwert, dass keine zuvor bekannten *TRUE*-Werte für die Clusterzuordnungen vorliegen. Ein erfolgreiches Clustermodell erzielt ein gutes Maß an Trennung zwischen den Elementen in allen Clustern, daher benötigen Sie Metriken, die Sie beim Messen dieser Trennung unterstützen.
 
-## <a name="add-an-evaluate-model-module"></a>Hinzufügen eines Moduls „Modell bewerten“
+## Hinzufügen eines Moduls „Modell bewerten“
 
 1. Öffnen Sie die Pipeline **Train Penguin Clustering**, die Sie in der vorherigen Lerneinheit erstellt haben, wenn sie nicht bereits geöffnet ist.
 
@@ -286,11 +286,11 @@ Da Sie nun über ein funktionierendes Clustermodell verfügen, können Sie diese
 
 Nachdem Sie eine Pipeline zum Trainieren des Clustermodells erstellt und ausgeführt haben, können Sie nun eine *Rückschlusspipeline* erstellen. Die Rückschlusspipeline verwendet das Modell, um Clustern neue Datenbeobachtungen zuzuweisen. Dieses Modell bildet die Grundlage für einen Vorhersagedienst, den Sie veröffentlichen können, damit er von Anwendungen genutzt werden kann.
 
-## <a name="create-an-inference-pipeline"></a>Erstellen einer Rückschlusspipeline
+## Erstellen einer Rückschlusspipeline
 
-1. Klicken Sie links oben auf dem Bildschirm auf die drei Linien, um in Azure Machine Learning Studio den linken Bereich zu erweitern. Klicken Sie unter **Ressourcen** auf **Aufträge**, um alle von Ihnen ausgeführten Aufträge anzuzeigen. Wählen Sie das Experiment **mslearn-penguin-training** und anschließend die Pipeline **Train Penguin Clustering** aus. 
+1. Erweitern Sie im Azure Machine Learning Studio den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Klicken Sie unter **Ressourcen** auf **Aufträge**, um alle von Ihnen ausgeführten Aufträge anzuzeigen. Wählen Sie das Experiment **mslearn-penguin-training** und anschließend die Pipeline **Train Penguin Clustering** aus. 
 
-1. Klicken Sie im Menü oberhalb der Canvas auf **Rückschlusspipeline erstellen**. Möglicherweise müssen Sie hierfür in den Vollbildmodus wechseln und rechts oben auf das Symbol mit den drei Punkten **...** klicken, damit die Option **Rückschlusspipeline erstellen** im Menü angezeigt wird.  
+1. Klicken Sie im Menü oberhalb der Canvas auf **Rückschlusspipeline erstellen**. Möglicherweise müssen Sie hierfür in den Vollbildmodus wechseln und rechts oben auf das Symbol **...** klicken, damit die Option **Rückschlusspipeline erstellen** im Menü angezeigt wird.  
 
     ![Screenshot: Position der Option „Rückschlusspipeline erstellen“](media/create-clustering-model/create-inference-pipeline.png) 
 
@@ -303,13 +303,13 @@ Nachdem Sie eine Pipeline zum Trainieren des Clustermodells erstellt und ausgef�
     ![Screenshot: An der Pipeline vorgenommene Änderungen, einschließlich der rot markierten Komponenten, die hinzugefügt oder entfernt wurden](media/create-clustering-model/inference-changes.png)
 
     - Fügen Sie eine **Webdiensteingabekomponente** für neue Daten hinzu, die übermittelt werden sollen.
-    - Ersetzen Sie das Dataset **penguin-data** durch das Modul **Daten manuell eingeben**, das die Spalte **Species** nicht enthält.
-    - Entfernen Sie das nun redundante Modul **Spalten im Dataset auswählen**.
-    - Verbinden Sie die Module **Webdiensteingabe** und **Daten manuell eingeben** (die Eingaben für zu gruppierende Daten darstellen) mit dem Modul **Transformation anwenden**.
+    - Ersetzen Sie das Dataset **penguin-data** durch die Komponente **Daten manuell eingeben**, die die Spalte **Species** nicht enthält.
+    - Entfernen Sie die nun redundante Komponente **Spalten im Dataset auswählen**.
+    - Verbinden Sie die Komponenten **Webdiensteingabe** und **Daten manuell eingeben** (die Eingaben für zu gruppierende Daten darstellen) mit der Komponente **Transformation anwenden**.
 
     Führen Sie die restlichen Schritte unten aus, und verwenden Sie dabei die Abbildung und die Informationen von oben als Referenz für das Ändern der Pipeline.
 
-1. Die Pipeline enthält nicht automatisch eine **Webdiensteingabekomponente** für Modelle, die aus benutzerdefinierten Datasets erstellt werden. Suchen Sie in der Ressourcenbibliothek nach einer **Webdiensteingabekomponente**, und platzieren Sie diese oben in der Pipeline. Verbinden Sie die Ausgabe der **Webdiensteingabekomponente** mit der Eingabe auf der rechten Seite der Komponente **Transformation anwenden**, die sich bereits auf der Canvas befindet.  
+1. Die Pipeline enthält nicht automatisch eine **Webdiensteingabekomponente** für Modelle, die aus benutzerdefinierten Datasets erstellt werden. Suchen Sie in der Ressourcenbibliothek nach einer **Webdiensteingabekomponente**, und platzieren Sie diese oben in der Pipeline.  Verbinden Sie die Ausgabe der **Webdiensteingabekomponente** mit der Eingabe der Komponente **Transformation anwenden**, die sich bereits auf der Canvas befindet.  
 
 1. Die Rückschlusspipeline geht davon aus, dass neue Daten dem Schema der ursprünglichen Trainingsdaten entsprechen, sodass das Dataset **penguin-data** aus der Trainingspipeline eingeschlossen wird. Allerdings enthalten diese Eingabedaten eine Spalte für die Pinguinspezies, die das Modell nicht verwendet. Löschen Sie sowohl das Dataset **penguin-data** und die Module unter **Spalten im Dataset auswählen**, und ersetzen Sie diese durch ein **Enter Data Manually**-Modul (Daten manuell eingeben) aus der **Objektbibliothek**. Ändern Sie dann die Einstellungen des Moduls **Daten manuell eingeben**, sodass die folgende CSV-Eingabe verwendet wird, die Merkmalwerte für drei neue Pinguinbeobachtungen (einschließlich Spaltenüberschriften) enthält:
 
@@ -336,7 +336,7 @@ Ihre Rückschlusspipeline weist Pinguinbeobachtungen anhand ihrer Merkmale zu Cl
 
 >**Hinweis**: In dieser Übung stellen Sie den Webdienst in Azure Container Instances (ACI) bereit. Solche Computeressourcen werden dynamisch erstellt und sind für Entwicklungs- und Testzwecke nützlich. Für Produktionszwecke sollten Sie einen *Rückschlusscluster* erstellen, der einen AKS-Cluster (Azure Kubernetes Service) mit verbesserter Skalierbarkeit und Sicherheit bereitstellt.
 
-## <a name="deploy-a-service"></a>Bereitstellen eines Diensts
+## Bereitstellen eines Diensts
 
 1. Zeigen Sie die Rückschlusspipeline **Predict Penguin Clusters** an, die Sie in der vorherigen Einheit erstellt haben.
 
@@ -355,9 +355,9 @@ Ihre Rückschlusspipeline weist Pinguinbeobachtungen anhand ihrer Merkmale zu Cl
 
 1. Warten Sie, bis der Webdienst bereitgestellt wurde. Dieser Vorgang kann einige Minuten in Anspruch nehmen. 
 
-1. Um den Bereitstellungsstatus anzuzeigen, erweitern Sie den linken Bereich, indem Sie die drei Linien oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Endpunkte** (unter **Ressourcen**) an, und wählen Sie **predict-penguin-clusters** aus. Wenn die Bereitstellung abgeschlossen ist, ändert sich der **Bereitstellungsstatus** in **Fehlerfrei**.
+1. Um den Bereitstellungsstatus anzuzeigen, erweitern Sie den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Endpunkte** (unter **Ressourcen**) an, und wählen Sie **predict-penguin-clusters** aus. Wenn die Bereitstellung abgeschlossen ist, ändert sich der **Bereitstellungsstatus** in **Fehlerfrei**.
 
-## <a name="test-the-service"></a>Testen des Diensts
+## Testen des Diensts
 
 1. Öffnen Sie auf der Seite **Endpunkte** den Echtzeitendpunkt **predict-penguin-clusters**, und wählen Sie die Registerkarte **Test** aus.
 
@@ -389,15 +389,15 @@ Ihre Rückschlusspipeline weist Pinguinbeobachtungen anhand ihrer Merkmale zu Cl
 
 Sie haben gerade einen Dienst getestet, der mit einer Clientanwendung eine Verbindung herstellen kann, indem die Anmeldeinformationen auf der Registerkarte **Consume** (Verbrauchen) verwendet werden. Das Lab endet hier. Sie können gern weiter mit dem Dienst experimentieren, den Sie gerade eingerichtet haben.
 
-## <a name="clean-up"></a>Bereinigung
+## Bereinigung
 
-Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden. Sie sollten auch die Compute-Instanz beenden, bis Sie sie wieder benötigen.
+Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden. Sie sollten auch den Computecluster löschen.
 
 1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) auf der Registerkarte **Endpunkte** den Endpunkt **predict-penguin-clusters** aus. Klicken Sie dann auf **Löschen** (&#128465;), und bestätigen Sie, dass Sie den Endpunkt löschen möchten.
 
 1. Wählen Sie auf der Seite **Compute** auf der Registerkarte **Computecluster** Ihren Computecluster aus, und klicken Sie dann auf **Löschen**.
 
->**Hinweis**: Durch das Beenden Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen. Wenn Sie jedoch andere Labs in dieser Reihe abschließen möchten, müssen Sie ihn neu erstellen.
+>**Hinweis**: Durch das Löschen Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen. Wenn Sie jedoch andere Labs in dieser Reihe abschließen möchten, müssen Sie ihn neu erstellen.
 >
 > So löschen Sie Ihren Arbeitsbereich:
 >
