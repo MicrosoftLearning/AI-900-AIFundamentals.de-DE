@@ -11,25 +11,24 @@ Lösungen für maschinelles Sehen erfordern oft eine Lösung mit künstlicher In
 
 Um die Fähigkeiten des Gesichtserkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Gesichtserkennung-API*-Ressource
 
-Sie können den Gesichtserkennungsdienst nutzen, indem Sie entweder eine Ressource für die **Gesichtserkennung** oder eine **Cognitive Services**-Ressource erstellen.
+Sie können den Gesichtserkennungsdienst verwenden, indem Sie zunächst eine **Gesichtserkennung**-Ressource erstellen. (Die Gesichtserkennung-API ist in Cognitive Services nicht mehr verfügbar)
 
-Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ressource in Ihrem Azure-Abonnement.
+Falls noch nicht erfolgt, erstellen Sie in Ihrem Azure-Abonnement eine **Gesichtserkennung-API**-Ressource
 
 1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen**, suchen Sie nach *Cognitive Services*, und erstellen Sie eine **Cognitive Services**-Ressource mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen**. Suchen Sie nach *Gesichtserkennung*, und erstellen Sie eine **Gesichtserkennung**-Ressource mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
     - **Name**: *Geben Sie einen eindeutigen Namen ein*.
-    - **Tarif**: Standard S0.
-    - **Durch Aktivieren dieses Kontrollkästchens bestätige ich, dass ich die folgenden Bedingungen gelesen und verstanden habe**: Aktiviert.
+    - **Tarif**: Free F0
 
 1. Überprüfen und erstellen Sie die Ressource und warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zur bereitgestellten Ressource.
 
-1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
+1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Gesichtserkennung-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
 
 ## Ausführen von Cloud Shell
 
@@ -79,7 +78,7 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
     ![Der Editor enthält Code zur Erkennung von Gesichtern in einem Bild.](media/create-face-solutions/find-faces-code.png)
 
-1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes, wichtig ist, dass er die Endpunkt-URL und einen der Schlüssel für Ihre Cognitive Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein, wobei Sie die Platzhalterwerte **YOUR_KEY** und **YOUR_ENDPOINT** ersetzen.
+1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes. Wichtig ist, dass er die Endpunkt-URL und einen der Schlüssel für Ihre Gesichtserkennung-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein, wobei Sie die Platzhalterwerte **YOUR_KEY** und **YOUR_ENDPOINT** ersetzen.
 
     > **Tipp**: Möglicherweise müssen Sie die Trennlinie verwenden, um den Bildschirmbereich anzupassen, während Sie mit den Bereichen **Schlüssel und Endpunkt** und **Editor** arbeiten.
 
@@ -135,4 +134,4 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
 ## Weitere Informationen
 
-Diese einfache App zeigt nur einen Teil der Möglichkeiten des Gesichtserkennungsdiensts. Weitere Informationen zu den Möglichkeiten dieses Diensts finden Sie auf der Seite für die [Gesichtserkennungs-API](https://azure.microsoft.com/services/cognitive-services/face/).
+Diese einfache App zeigt nur einen Teil der Möglichkeiten des Gesichtserkennungsdiensts. Weitere Informationen zu den Möglichkeiten dieses Diensts finden Sie auf der Seite für die [Gesichtserkennungs-API](https://azure.microsoft.com/en-us/products/cognitive-services/vision-services).
