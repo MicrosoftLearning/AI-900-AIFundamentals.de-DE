@@ -136,4 +136,4 @@ Da Sie nun über eine Cloud Shell-Umgebung verfügen, können Sie eine einfache 
 
 ## Weitere Informationen
 
-Diese einfache App veranschaulicht nur einige der Funktionen des Diensts für maschinelles Sehen. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der [Seite für maschinelles Sehen](https://azure.microsoft.com/services/cognitive-services/computer-vision/).
+Diese einfache App veranschaulicht nur einige der Funktionen des Diensts für maschinelles Sehen. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der [Seite für maschinelles Sehen](https://azure.microsoft.com/products/ai-services?activetab=pivot:visiontab).
