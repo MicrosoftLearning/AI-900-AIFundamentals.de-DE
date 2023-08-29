@@ -54,31 +54,21 @@ In dieser Übung werden Sie ein Regressionsmodell trainieren, das den Preis eine
 
 Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mit dem nächsten Schritt fortfahren, während Sie warten.
 
-## Erstellen einer Pipeline im Designer 
-
-1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Designer** (unter **Autor**) an, und wählen Sie **+** aus, um eine neue Pipeline zu erstellen.
-
-1. Wählen Sie oben rechts auf dem Bildschirm **Einstellungen** aus. Wenn der Bereich **Einstellungen** nicht sichtbar ist, wählen Sie das Radsymbol neben dem Pipelinenamen oben.
-
-1. Unter **Einstellungen** müssen Sie ein Computeziel angeben, auf dem die Pipeline ausgeführt werden soll. Wählen Sie unter **Computetyp auswählen** die Option **Computecluster** aus. Wählen Sie dann unter **Azure ML-Computecluster auswählen** den zuvor erstellten Computecluster aus.
-
-1. Ändern Sie in **Einstellungen** unter **Draft Details** (Entwurfsdetails) den Entwurfsnamen (**Pipeline-Created-on-* date***) in **Auto Price Training** (Autopreistraining).
-
-1. Wählen Sie oben rechts im **Einstellungsbereich** das *Symbol zum Schließen* aus, um den Bereich zu schließen. 
-
-![Screenshot des Einstellungsbereichs in Machine Learning Studio](media/create-regression-model/create-pipeline-help.png)
-
-## Hinzufügen und Untersuchen eines Datasets
+## Erstellen einer Pipeline in Designer und Hinzufügen eines Datasets
 
 Azure Machine Learning enthält ein Beispieldataset, das Sie für Ihr Regressionsmodell verwenden können.
+
+1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Designer** (unter **Erstellung**) an, und wählen Sie **+** aus, um eine neue Pipeline zu erstellen.
+
+1. Ändern Sie den Entwurfsnamen (**Pipeline-Created-on-* Datum***) in **Auto Price Training**.
 
 1. Wählen Sie neben dem Pipelinenamen auf der linken Seite das Pfeilsymbol, um das Panel zu erweitern, wenn es nicht bereits erweitert ist. Der Bereich sollte standardmäßig im Bereich **Ressourcenbibliothek** geöffnet werden. Dies wird durch das Büchersymbol am oberen Rand des Bereichs gekennzeichnet. Es gibt eine Suchleiste zum Suchen von Objekten im Bereich und zwei Schaltflächen: **Daten** und **Komponente**.
 
     ![Screenshot: Position der Ressourcenbibliothek für den Designer, der Suchleiste und des Komponentensymbols.](media/create-regression-model/designer-asset-library-components.png)
 
-1. Klicken Sie auf **Komponente**. Suchen Sie nach dem Dataset **Automobile price data (Raw)**, und platzieren Sie es auf der Canvas.
+1. Wählen Sie **Komponente** aus. Suchen Sie nach dem Dataset **Automobile price data (Raw)**, und platzieren Sie es auf der Canvas.
 
-1. Klicken Sie mit der rechten Maustaste (auf einem Mac drücken Sie die CTRL-Taste und klicken) auf das Dataset **Automobile price data (Raw)** auf der Canvas, und klicken Sie dann auf **Datenvorschau anzeigen**.
+1. Klicken Sie mit der rechten Maustaste (Ctrl + Klick auf dem Mac) auf das Dataset **Automobile price data (Raw)** im Canvas-Panel, und wählen Sie **Datenvorschau** aus.
 
 1. Sehen Sie sich das Schema *Datasetausgabe* an. Beachten Sie, dass die Verteilungen der verschiedenen Spalten als Histogramme angezeigt werden.
 
@@ -86,7 +76,7 @@ Azure Machine Learning enthält ein Beispieldataset, das Sie für Ihr Regression
 
 1. Scrollen Sie zurück nach links, und wählen Sie die Spaltenüberschrift **normalized-losses** aus. Überprüfen Sie dann die Statistiken für diese Spalte. Beachten Sie, dass in dieser Spalte einige Werte fehlen. Fehlende Werte schränken die Zweckmäßigkeit der Spalte für die Vorhersage der **Preisbezeichnung** ein, deshalb sollten Sie sie aus dem Training ausschließen.
 
-1. Schließen Sie das Fenster mit der **Visualisierung der Ergebnisse von Automobile price data (Raw)**, damit das Dataset wie folgt im Canvas angezeigt wird:
+1. Schließen Sie das Fenster **DataOutput**, damit das Dataset wie folgt im Canvas-Panel angezeigt wird:
 
     ![Screenshot: Dataset zu den Preisdaten von Autos auf der Designer-Canvas](media/create-regression-model/dataset.png)
 
@@ -94,7 +84,7 @@ Azure Machine Learning enthält ein Beispieldataset, das Sie für Ihr Regression
 
 In der Regel wenden Sie Datentransformationen an, um die Daten für die Modellierung vorzubereiten. Im Fall der Autopreisdaten fügen Sie Transformationen hinzu, um die Probleme zu beheben, die Sie beim Untersuchen der Daten festgestellt haben.
 
-1. Klicken Sie links im Bereich **Ressourcenbibliothek** auf **Komponenten**. Diese enthalten verschiedenste Module, die Sie für Datentransformationen und Modelltrainings verwenden können. Für die schnelle Suche nach Modulen können Sie auch die Suchleiste verwenden.
+1. Wählen Sie links im Bereich **Ressourcenbibliothek** die Option **Komponente** aus. Diese enthält verschiedenste Module, die Sie für Datentransformationen und Modelltrainings verwenden können. Für die schnelle Suche nach Modulen können Sie auch die Suchleiste verwenden.
 
 1. Suchen Sie nach einem Modul vom Typ **Spalten im Dataset auswählen**, und platzieren Sie es auf der Canvas unterhalb des Moduls **Fahrzeugpreisdaten (Rohdaten)**. Verbinden Sie dann wie folgt die Ausgabe unten des Moduls **Automobile price data (Raw)** mit der Eingabe oben des Moduls **Spalten im Dataset auswählen**:
 
@@ -104,9 +94,9 @@ In der Regel wenden Sie Datentransformationen an, um die Daten für die Modellie
 
     ![Screenshot: Alle Spalten außer „normalized_losses“](media/create-regression-model/select-columns.png)
 
-1. Klicken Sie auf die Schaltfläche **Speichern**.
+1. Wählen Sie **Speichern** aus, und schließen Sie das Eigenschaftenfenster.
 
-Im restlichen Teil dieser Übung führen Sie die Schritte zum Erstellen einer Pipeline aus, die wie folgt aussieht:
+Im weiteren Verlauf dieser Übung erstellen Sie eine Pipeline, die wie folgt aussehen sollte:
 
 ![Screenshot: Dataset zu den Preisdaten von Autos mit dem Modul „Daten normalisieren“](media/create-regression-model/data-transforms.png)
 
@@ -114,7 +104,7 @@ Führen Sie die restlichen Schritte aus, und verwenden Sie die Abbildung als Ref
 
 1. Suchen Sie in der **Ressourcenbibliothek** nach einem Modul vom Typ **Fehlende Daten bereinigen**, und platzieren Sie es auf der Canvas unterhalb des Moduls **Spalten im Dataset auswählen**. Verbinden Sie dann die Ausgabe des Moduls **Spalten in Dataset auswählen** mit der Eingabe des Moduls **Fehlende Daten bereinigen**.
 
-1. Wählen Sie das Modul **Fehlende Daten bereinigen** aus, und klicken Sie im Bereich rechts auf **Spalte bearbeiten**. Klicken Sie im Fenster **Zu bereinigende Spalten** auf **Mit Regeln**, wählen Sie in der Liste **Einschließen** die Option **Spaltennamen** aus, und geben Sie folgendermaßen **bore**, **stroke** und **horsepower** in das Feld für Spaltennamen ein:
+1. Doppelklicken Sie auf das Modul **Fehlende Daten bereinigen**, und wählen Sie im Bereich rechts **Spalte bearbeiten** aus. Klicken Sie im Fenster **Zu bereinigende Spalten** auf **Mit Regeln**, wählen Sie in der Liste **Einschließen** die Option **Spaltennamen** aus, und geben Sie folgendermaßen **bore**, **stroke** und **horsepower** in das Feld für Spaltennamen ein:
 
     ![Screenshot: Auswahl der Spalten für Bohrung, Hub und PS](media/create-regression-model/clean-missing-values.png)
 
@@ -155,17 +145,17 @@ Um Ihre Datentransformationen anzuwenden, müssen Sie die Pipeline ausführen.
 
     ![Screenshot: Dataset mit Modulen zur Datentransformation](media/create-regression-model/data-transforms.png)
 
-1. Wählen Sie **Übermitteln** aus. Erstellen Sie dann in Ihrem Computecluster ein neues Experiment mit dem Namen **mslearn-auto-training**.
+1. Wählen Sie oben auf der Seite **Konfigurieren und Übermitteln** aus, um das Dialogfeld **Pipelineauftrag einrichten** zu öffnen.
 
-1. Warten Sie, bis die Ausführung abgeschlossen ist. Dies kann fünf Minuten oder länger dauern.
+1. Wählen Sie auf der Seite **Grundlagen** die Option **Neu erstellen** aus, und legen Sie den Namen des Experiments auf **mslearn-auto-training** fest. Wählen Sie dann **Weiter** aus.
 
-    ![Screenshot der Ressourcenbibliothek des Designers mit dem abgeschlossenen Auftrag sowie der Schaltfläche für die Auftragsdetails darunter](media/create-regression-model/completed-job.png)
+1. Wählen Sie auf der Seite **Eingaben und Ausgaben** die Option **Weiter** aus, ohne Änderungen vorzunehmen.
 
-    Beachten Sie, dass sich der linke Bereich jetzt im Bereich **Übermittelte Aufträge** befindet. Sie werden wissen, wann die Ausführung abgeschlossen ist, da sich der Status des Auftrags zu **Abgeschlossen** ändert. 
+1. Auf der Seite **Laufzeiteinstellungen** wird ein Fehler angezeigt, da Sie nicht über eine Standardcomputeressource für die Ausführung der Pipeline verfügen. Wählen Sie in der Dropdownliste **Computetyp auswählen** die Option *Computecluster* und in der Dropdownliste **Azure ML Computecluster auswählen** Ihren kürzlich erstellten Computecluster aus.
 
-1. Wenn die Ausführung abgeschlossen ist, klicken Sie auf **Auftragsdetails**. Eine neue Registerkarte wird geöffnet, und Sie sehen wie folgt ein Häkchen für die Komponenten, die abgeschlossen wurden:
+1. Wählen Sie **Weiter** aus, um den Pipelineauftrag zu überprüfen, und wählen Sie dann **Übermitteln** aus, um die Trainingspipeline auszuführen.
 
-    ![Screenshot: Dataset mit Modulen im Auftragszustand „Abgeschlossen“](media/create-regression-model/normalize-complete.png)
+1. Warten Sie einige Minuten, bis die Ausführung abgeschlossen ist. Sie können den Status des Auftrags überprüfen, indem Sie unter **Ressourcen** die Option **Aufträge** auswählen. Wählen Sie dort den Auftrag **Auto Price Training** aus.
 
 Das Dataset ist nun für das Modelltraining vorbereitet. Schließen Sie die Registerkarte „Auftragsdetails“, um zur Pipeline zurückzukehren.
 
@@ -180,11 +170,11 @@ Nachdem Sie die Daten mithilfe von Datentransformationen vorbereitet haben, kön
     >**Tipp**: Für die schnelle Suche nach Modulen verwenden Sie die Suchleiste. 
 
 1. Doppelklicken Sie auf das Modul **Daten teilen**, und konfigurieren Sie seine Einstellungen wie folgt:
-    * **Aufteilungsmodus:** Zeilen aufteilen
-    * **Bruchteil von Zeilen im ersten Ausgabedataset:** 0,7
-    * **Zufällige Aufteilung**: True
-    * **Zufälliger Ausgangswert:** 123
-    * **Geschichtete Aufteilung:** FALSE
+    - **Aufteilungsmodus:** Zeilen aufteilen
+    - **Bruchteil von Zeilen im ersten Ausgabedataset:** 0,7
+    - **Zufällige Aufteilung**: True
+    - **Zufälliger Ausgangswert:** 123
+    - **Geschichtete Aufteilung:** FALSE
 
 1. Suchen Sie in der **Ressourcenbibliothek** nach einem Modul vom Typ **Modell trainieren**, und platzieren Sie es auf der Canvas unter dem Modul **Daten teilen**. Verbinden Sie dann die (linke) Ausgabe *Ergebnisse Dataset1* des Moduls **Daten teilen** mit der (rechten) Eingabe *Dataset* des Moduls **Modell trainieren**.
 
@@ -208,15 +198,15 @@ Nachdem Sie die Daten mithilfe von Datentransformationen vorbereitet haben, kön
 
 Nun können Sie die Trainingspipeline ausführen und das Modell trainieren.
 
-1. Wählen Sie **Übermitteln** aus, und führen Sie die Pipeline mithilfe des vorhandenen Experiments **mslearn-auto-training** aus.
+1. Wählen Sie **Konfigurieren und Übermitteln** aus, und führen Sie die Pipeline mithilfe des vorhandenen Experiments **mslearn-auto-training** aus.
 
-1. Das Ausführen des Experiments wird fünf Minuten oder mehr dauern. Klicken Sie nach Abschluss der Experimentausführung auf **Auftragsdetails**. Eine neue Registerkarte wird angezeigt.
+1. Das Ausführen des Experiments wird fünf Minuten oder mehr dauern. Kehren Sie zur Seite **Aufträge** zurück, und wählen Sie die neueste Ausführung des Auftrags **Auto Price Training** aus.
 
-1. Klicken Sie in dem neuen Fenster mit der rechten Maustaste auf das Modul **Modell bewerten**, und wählen Sie **Datenvorschau anzeigen** und anschließend **Bewertetes Dataset** aus, um die Ergebnisse anzuzeigen.
+1. Wenn die Ausführung des Experiments abgeschlossen wurde, klicken Sie mit der rechten Maustaste auf das Modul **Modell auswerten**, und wählen Sie **Datenvorschau anzeigen** und anschließend **Bewertetes Dataset** aus, um die Ergebnisse anzuzeigen.
 
 1. Wenn Sie nach rechts scrollen, sollte neben der Spalte **price** (die die bekannten TRUE-Werte der Bezeichnung enthält) eine neue Spalte mit dem Namen **Bewertete Bezeichnungen** angezeigt werden, die die vorhergesagten Bezeichnungswerte enthält.
 
-1. Schließen Sie die Registerkarte **Visualisierung der Modellbewertungsergebnisse**.
+1. Schließen Sie die Registerkarte **scored_dataset**.
 
 Das Modell prognostiziert nun Werte für die Bezeichnung **price** – aber wie zuverlässig sind diese Prognosen? Damit Sie dies bewerten können, müssen Sie zunächst das Modell auswerten.
 
@@ -232,11 +222,11 @@ Eine Möglichkeit, ein Regressionsmodell zu bewerten, besteht darin, die vorherg
 
     ![Screenshot: Hinzufügen des Moduls „Evaluate Model“ (Modell auswerten) zum Modul „Score Model“ (Modell bewerten)](media/create-regression-model/evaluate.png)
 
-1. Wählen Sie **Übermitteln** aus, und führen Sie die Pipeline mithilfe des vorhandenen Experiments **mslearn-auto-training** aus.
+1. Wählen Sie **Konfigurieren und Übermitteln** aus, und führen Sie die Pipeline mithilfe des vorhandenen Experiments **mslearn-auto-training** aus.
 
-1. Warten Sie, bis die Experimentausführung abgeschlossen ist.
+1. Dieser Vorgang dauert einige Minuten. Kehren Sie zur Seite **Aufträge** zurück, und wählen Sie die neueste Ausführung des Auftrags **Auto Price Training** aus.
 
-    ![Screenshot: Vollständige Experimentausführung](media/create-regression-model/completed-job.png)
+1. Wenn die Experimentausführung abgeschlossen ist, klicken Sie mit der rechten Maustaste auf das Modul **Modell auswerten**, und wählen Sie **Datenvorschau** und dann **Auswertungsergebnisse** aus.
 
 1. Wenn die Experimentausführung abgeschlossen wurde, wählen Sie **Auftragsdetails** aus, wodurch eine weitere Registerkarte geöffnet wird. Suchen Sie nach dem Modul **Evaluate Model**, und klicken Sie mit der rechten Maustaste darauf. Wählen Sie **Datenvorschau anzeigen** und anschließend **Auswertungsergebnisse** aus.
 
@@ -254,27 +244,22 @@ Wenn Sie ein Modell mit Bewertungsmetriken ermitteln konnten, dass Ihre Anforder
 
 ## Erstellen und Ausführen einer Rückschlusspipeline
 
-1. Erweitern Sie im Azure Machine Learning Studio den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Klicken Sie unter **Ressourcen** auf **Aufträge**, um alle von Ihnen ausgeführten Aufträge anzuzeigen. Wählen Sie das Experiment **mslearn-auto-training** und anschließend die Pipeline **mslearn-auto-training** aus. 
-
-    ![Screenshot: Aufträge im Menü auf der linken Seite. Wählen Sie Aufträge und dann den Namen Ihres Experiments aus.](media/create-regression-model/jobs-tab.png)
-
-1. Klicken Sie im Menü oberhalb der Canvas auf **Rückschlusspipeline erstellen**. Möglicherweise müssen Sie hierfür in den Vollbildmodus wechseln und rechts oben auf das Symbol mit den drei Punkten **...** klicken, damit die Option **Rückschlusspipeline erstellen** im Menü angezeigt wird.  
+1. Wählen Sie im Menü oberhalb des Canvas-Panels **Rückschlusspipeline erstellen** aus. Möglicherweise müssen Sie hierfür in den Vollbildmodus wechseln und rechts oben auf das Symbol mit den drei Punkten **...** klicken, damit die Option **Rückschlusspipeline erstellen** im Menü angezeigt wird.  
 
     ![Screenshot: Position der Option „Rückschlusspipeline erstellen“](media/create-regression-model/create-inference-pipeline.png)
 
-1. Klicken Sie in der Dropdownliste **Create inference pipeline** (Rückschlusspipeline erstellen) auf **Real-time inference pipeline** (Echtzeitrückschlusspipeline). Nach einigen Sekunden wird eine neue Version Ihrer Pipeline mit dem Namen **Auto Price Training-real time inference** geöffnet.
-
-    *Wenn die Pipeline keine Module für **Webdiensteingabe** und **Webdienstausgabe** enthält, wechseln Sie zurück zur Seite des **Designers** und öffnen die Pipeline **Auto Price Training-real time inference** noch mal.*
+1. Klicken Sie in der Dropdownliste **Rückschlusspipeline erstellen** auf **Echtzeit-Rückschlusspipeline**. Nach einigen Sekunden wird eine neue Version Ihrer Pipeline mit dem Namen **Auto Price Training-real time inference** geöffnet.
 
 1. Benennen Sie die neue Pipeline in **Predict Auto Price** um, und überprüfen Sie dann die neue Pipeline. Sie enthält eine Webdiensteingabe für neue Daten, die übermittelt werden sollen, sowie eine Webdienstausgabe für die Rückgabe von Ergebnissen. Einige der Transformationen und Trainingsschritte sind Teil dieser Pipeline. Das trainierte Modell wird zur Bewertung der neuen Daten verwendet.
 
-    Nehmen Sie die folgenden Änderungen an der Rückschlusspipeline in den Schritten 5–9 vor:
+    Nehmen Sie in den nächsten Schritten die folgenden Änderungen an der Rückschlusspipeline vor:
 
     ![Screenshot: Rückschlusspipeline mit hervorgehobenen Änderungen](media/create-regression-model/inference-changes.png)
 
    Verwenden Sie diese Abbildung als Referenz, wenn Sie die Pipeline in den nächsten Schritten ändern.
 
-1. Die Rückschlusspipeline geht davon aus, dass neue Daten dem Schema der ursprünglichen Trainingsdaten entsprechen, sodass das Dataset **Automobile price data (Raw)** aus der Trainingspipeline eingeschlossen wird. Diese Eingabedaten enthalten jedoch die Bezeichnung **Price**, die vom Modell vorhergesagt wird. Diese Bezeichnung in neue Autodaten einzubeziehen, ist nicht intuitiv, da noch keine Preisvorhersage gemacht wurde. Löschen Sie dieses Modul, und ersetzen Sie es durch ein Modul **Daten manuell eingeben** aus dem Abschnitt **Dateneingabe und -ausgabe**, der die folgenden CSV-Daten enthält. Diese umfassen Merkmalwerte ohne Bezeichnungen für drei Autos. Kopieren Sie einfach den gesamten Textblock, und fügen Sie ihn ein:
+1. Die Rückschlusspipeline geht davon aus, dass neue Daten dem Schema der ursprünglichen Trainingsdaten entsprechen, sodass das Dataset **Automobile price data (Raw)** aus der Trainingspipeline eingeschlossen wird. Diese Eingabedaten enthalten jedoch die Bezeichnung **Price**, die vom Modell vorhergesagt wird. Diese Bezeichnung in neue Autodaten einzubeziehen, ist nicht intuitiv, da noch keine Preisvorhersage gemacht wurde. Löschen Sie dieses Modul, und ersetzen Sie es durch ein **Manuelle Eingabe von Daten**-Modul aus dem Bereich **Dateneingabe und -ausgabe**.
+1. Bearbeiten Sie das Modul **Manuelle Eingabe von Daten**, und geben Sie die folgenden CSV-Daten ein. Diese umfassen Merkmalwerte ohne Bezeichnungen für drei Autos. Kopieren Sie einfach den gesamten Textblock, und fügen Sie ihn ein:
 
     ```CSV
     symboling,normalized-losses,make,fuel-type,aspiration,num-of-doors,body-style,drive-wheels,engine-location,wheel-base,length,width,height,curb-weight,engine-type,num-of-cylinders,engine-size,fuel-system,bore,stroke,compression-ratio,horsepower,peak-rpm,city-mpg,highway-mpg
@@ -293,18 +278,20 @@ Wenn Sie ein Modell mit Bewertungsmetriken ermitteln konnten, dass Ihre Anforder
     - Löschen Sie die Verbindung zwischen dem Modul **Modell bewerten** und dem **Webdienstausgang**.
     - Fügen Sie das Modul **Python-Skript ausführen** aus dem Abschnitt **Python-Sprache** hinzu. Ersetzen Sie dabei das gesamte Python-Standardskript durch den folgenden Code. Dabei wird nur die Spalte **Scored Labels** ausgewählt, und sie wird in **predicted_price** umbenannt:
 
-```Python
-import pandas as pd
+    ```Python
+    import pandas as pd
 
-def azureml_main(dataframe1 = None, dataframe2 = None):
+    def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['Scored Labels']]
-    scored_results.rename(columns={'Scored Labels':'predicted_price'},
+        scored_results = dataframe1[['Scored Labels']]
+        scored_results.rename(columns={'Scored Labels':'predicted_price'},
                         inplace=True)
-    return scored_results
-```
+     return scored_results
+    ```
 
-1. Verbinden Sie die Ausgabe des Moduls **Modell bewerten** mit der (ganz linken) Eingabe **Dataset1** von **Python-Skript ausführen**, und verbinden Sie die Ausgabe des Moduls **Python-Skript ausführen** mit der **Webdienstausgabe**.
+1. Verbinden Sie die Ausgabe aus dem Modul **Modell auswerten** mit der Eingabe **Dataset1** (ganz links) von **Python-Skript ausführen**.
+
+1. Verbinden Sie die Ausgabe **Ergebnisdataset** (links) des Moduls **Python-Skript ausführen** mit dem Modul **Webdienstausgabe**.
 
 1. Ihre Pipeline sollte etwa wie die folgende aussehen:
 
@@ -312,9 +299,11 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 1. Übermitteln Sie die Pipeline als neues Experiment mit dem Namen **mslearn-auto-inference** an Ihren Computecluster. Die Ausführung des Experiments kann einige Minuten dauern.
 
-1. Wenn die Pipeline abgeschlossen ist, wählen Sie **Auftragsdetails** aus. Klicken Sie auf der neuen Registerkarte mit der rechten Maustaste auf das Modul **Python-Skript ausführen**. Wählen Sie **Datenvorschau anzeigen** und anschließend **Ergebnisdataset** aus, um die vorhergesagten Preise für die drei Fahrzeuge aus den Eingabedaten anzuzeigen.
+1. Kehren Sie zur Seite **Aufträge** zurück, und wählen Sie die neueste Ausführung des Auftrags **Auto Price Training** aus (die Ausführung, die sich auf das Experiment *mslearn-auto-inference* bezieht).
 
-1. Schließen Sie die Visualisierungsregisterkarte.
+1. Wenn die Pipeline abgeschlossen ist, klicken Sie mit der rechten Maustaste auf das Modul **Python-Skript ausführen**. Wählen Sie **Datenvorschau anzeigen** und anschließend **Ergebnisdataset** aus, um die vorhergesagten Preise für die drei Fahrzeuge aus den Eingabedaten anzuzeigen.
+
+1. Schließen Sie die Registerkarte **Result_Dataset**.
 
 Ihre Rückschlusspipeline sagt Preise für Autos basierend auf ihren Merkmalen vorher. Sie können die Pipeline nun so veröffentlichen, dass sie von Clientanwendungen verwendet werden kann.
 
@@ -326,22 +315,16 @@ Nachdem Sie eine Rückschlusspipeline für Echtzeitrückschlüsse erstellt und g
 
 ## Bereitstellen eines Diensts
 
-1. Zeigen Sie die Rückschlusspipeline **Predict Auto Price** an, die Sie in der vorherigen Einheit erstellt haben.
-
-1. Wählen Sie **Auftragsdetails** im linken Bereich aus, wodurch eine neue Registerkarte geöffnet wird.
-
-    ![Screenshot: Auftragsdetails neben dem abgeschlossenen Auftrag ](media/create-regression-model/completed-job-inference.png)
-
-1. Wählen Sie auf der neuen Registerkarte die Option **Bereitstellen** aus.
+1. Wählen Sie auf der Ausführungsseite des Auftrags **Predict Auto Price** in der oberen Menüleiste **Bereitstellen** aus.
 
     ![Screenshot: Schaltfläche „Bereitstellen“ für die Rückschlusspipeline „Predict Auto Price“](media/create-regression-model/deploy-screenshot.png)
 
-1. Wählen Sie auf dem Konfigurationsbildschirm die Option **Neuen Echtzeitendpunkt bereitstellen** aus, und legen Sie die folgenden Einstellungen fest:
-    -  **Name**: predict-auto-price
-    -  **Beschreibung**: Automatische Preisregression
+1. Wählen Sie auf dem Konfigurationsbildschirm die Option **Neuen Echtzeitendpunkt bereitstellen** aus, und verwenden Sie die folgenden Einstellungen:
+    - **Name**: predict-auto-price
+    - **Beschreibung**: Automatische Preisregression
     - **Computetyp:** Azure Container Instances
 
-1. Warten Sie einige Minuten, bis der Webdienst bereitgestellt wird. Der Bereitstellungsstatus wird links oben auf der Benutzeroberfläche des Designers angezeigt.
+1. Wählen Sie **Bereitstellen** aus, und warten Sie einige Minuten, bis der Webdienst bereitgestellt wird.
 
 ## Testen des Diensts
 
@@ -349,7 +332,7 @@ Nachdem Sie eine Rückschlusspipeline für Echtzeitrückschlüsse erstellt und g
 
     ![Screenshot: Position der Option „Endpunkte“ im linken Bereich](media/create-regression-model/endpoints-lab.png)
 
-1. Wenn der Endpunkt **predict-auto-price** geöffnet wird, wählen Sie die Registerkarte **Test** aus. Hier testen wir unser Modell mit neuen Daten. Löschen Sie die vorhandenen Daten unter **Eingabedaten zum Testen des Echtzeitendpunkts**. Kopieren Sie die folgenden Daten, und fügen Sie sie in den Abschnitt „Daten“ ein:  
+1. Wenn der Endpunkt **predict-auto-price** geöffnet wird, wählen Sie die Registerkarte **Test** aus. Hier testen wir unser Modell mit neuen Daten. Löschen Sie die vorhandenen Daten unter **Input data to test endpoint** (Eingabedaten zum Testen des Endpunkts). Kopieren Sie die folgenden Daten, und fügen Sie sie in den Abschnitt „Daten“ ein:  
 
     ```json
     {
@@ -389,7 +372,7 @@ Nachdem Sie eine Rückschlusspipeline für Echtzeitrückschlüsse erstellt und g
     }
     ```
 
-1. Klicken Sie auf **Test**. Auf der rechten Seite des Bildschirms sollte die Ausgabe **predicted_price** angezeigt werden. Die Ausgabe ist der vorhergesagte Preis für ein Fahrzeug mit den in den Daten angegebenen Eingabefeatures. 
+1. Klicken Sie auf **Test**. Auf der rechten Seite des Bildschirms sollte die Ausgabe **predicted_price** angezeigt werden. Die Ausgabe ist der vorhergesagte Preis für ein Fahrzeug mit den in den Daten angegebenen Eingabefeatures.
 
     ![Screenshot: Bereich „Testen“](media/create-regression-model/test-interface.png)
 

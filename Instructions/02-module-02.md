@@ -62,7 +62,7 @@ Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mi
 
 1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Daten** an (unter **Ressourcen**). Die Seite „Daten“ enthält bestimmte Datendateien oder Tabellen, mit denen Sie in Azure Machine Learning arbeiten möchten. Sie können auch auf dieser Seite Datasets erstellen.
 
-1. Wählen Sie auf der Seite **Daten** auf der Registerkarte **Datenressourcen** die Option **Erstellen** aus. Konfigurieren Sie dann eine Datenressource mit den folgenden Einstellungen:
+1. Wählen Sie auf der Seite **Daten** auf der Registerkarte **Datenressourcen** die Option **+Erstellen** aus. Konfigurieren Sie dann eine Datenressource mit den folgenden Einstellungen:
     * **Datentyp**:
         * **Name:** bike-rentals
         * **Beschreibung:** Fahrradverleihdaten
@@ -128,9 +128,7 @@ Führen Sie die nächsten Schritte aus, um einen Auftrag auszuführen, der das a
         - **Validierungstyp**: Automatisch
         - **Testdatenressource (Vorschau)** : Keine Testdatenressource erforderlich
 
-1. Wenn Sie die Übermittlung der Details zum automatisierten ML-Auftrag abgeschlossen haben, wird dieser automatisch gestartet. Warten Sie, bis sich der Status von *Wird vorbereitet* in *Wird ausgeführt* ändert.
-
-1. Wenn der Status in *Wird ausgeführt* geändert wird, zeigen Sie die Registerkarte **Modelle** an, und achten Sie darauf, dass jede mögliche Kombination aus Trainingsalgorithmen und Vorverarbeitungsschritten ausprobiert und die Leistung des sich ergebenden Modells ausgewertet wird. Die Seite wird automatisch regelmäßig aktualisiert, aber Sie können auch auf **Aktualisieren** klicken. Es kann etwa zehn Minuten dauern, bis die Modelle angezeigt werden, da die Clusterknoten initialisiert werden müssen, bevor das Training beginnen kann.
+1. Wenn Sie die Übermittlung der Details zum automatisierten ML-Auftrag abgeschlossen haben, wird dieser automatisch gestartet.
 
 1. Warten Sie auf den Abschluss des Auftrags. Dies kann einige Zeit in Anspruch nehmen und ist möglicherweise ein guter Zeitpunkt für eine Kaffeepause.
 
@@ -163,26 +161,24 @@ Führen Sie die nächsten Schritte aus, um einen Auftrag auszuführen, der das a
 
     ![Screenshot: Zusammenfassung des besten Modells mit einem Rahmen um den Algorithmusnamen auf der Registerkarte „Details“.](media/use-automated-machine-learning/deploy-detail-tab.png)
 
-1. Wählen Sie auf der Registerkarte **Modell** die Schaltfläche **Bereitstellen** aus, und verwenden Sie die Option **In Webdienst bereitstellen**, um das Modell mit den folgenden Einstellungen bereitzustellen:
+1. Wählen Sie auf der Registerkarte **Modelle** die Schaltfläche **Bereitstellen** aus, und verwenden Sie die Option **Webdienst**, um das Modell mit den folgenden Einstellungen bereitzustellen:
     - **Name:** predict-rentals
     - **Beschreibung:** Vorhersage Fahrradvermietung
     - **Computetyp:** Azure Container Instances
     - **Authentifizierung aktivieren:** ausgewählt
 
-1. Warten Sie, bis die Bereitstellung gestartet wurde. Dieser Vorgang kann einige Sekunden in Anspruch nehmen. Beachten Sie dann im Abschnitt **Modellzusammenfassung** den **Bereitstellungsstatus** für den Dienst **predict-rentals**, der **Wird ausgeführt** lauten sollte. Warten Sie, bis sich dieser Status in **Erfolgreich** ändert. Dies kann einige Zeit in Anspruch nehmen. Möglicherweise müssen Sie in regelmäßigen Abständen auf **Aktualisieren** klicken.
+1. Warten Sie, bis die Bereitstellung gestartet wurde. Dieser Vorgang kann einige Sekunden in Anspruch nehmen.
 
-1. Wählen Sie im Azure Machine Learning Studio im linken Menü die Option **Endpunkte**.
-    ![Screenshot: Position der Endpunkte im Menü auf der linken Seite.](media/use-automated-machine-learning/find-endpoints.png)
+1. Wählen Sie in Azure Machine Learning Studio im Menü auf der linken Seite **Endpunkte** aus, und öffnen Sie den Echtzeitendpunkt **predict-rentals**.
+1. Warten Sie, bis **Bereitstellungsstatus** in **Fehlerfrei** geändert wird. Dies kann einige Minuten dauern.
 
 ## Testen des bereitgestellten Diensts
 
 Jetzt können Sie den bereitgestellten Dienst testen.
 
-1. Öffnen Sie auf der Seite **Endpunkte** den Echtzeitendpunkt **predict-rentals**.
+1. Zeigen Sie auf der Seite des Echtzeitendpunkts **predict-rentals** die Registerkarte **Test** an.
 
-1. Wenn der Endpunkt **predict-rentals** geöffnet wird, zeigen Sie die Registerkarte **Test** an.
-
-1. Ersetzen Sie im Bereich **Eingabedaten zum Testen des Echtzeitendpunkts** den JSON-Code der Vorlage durch die folgenden Eingabedaten:
+1. Ersetzen Sie im Bereich **Input data to test endpoint** (Eingabedaten zum Testen des Endpunkts) den JSON-Code der Vorlage durch die folgenden Eingabedaten:
 
     ```JSON
     {
