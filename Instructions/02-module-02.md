@@ -33,29 +33,6 @@ In dieser Übung verwenden Sie ein Dataset mit Verlaufsdetails zu Fahrradvermiet
 
 > **Hinweis**: Dieses Modul ist eines von vielen, in denen ein Azure Machine Learning-Arbeitsbereich verwendet wird (einschließlich der anderen Module im Lernpfad [Microsoft Azure KI-Grundlagen: Erkunden visueller Tools für maschinelles Lernen](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/)). Wenn Sie Ihr eigenes Azure-Abonnement verwenden, sollten Sie den Arbeitsbereich einmal erstellen und in anderen Modulen wiederverwenden. Ihrem Azure-Abonnement wird eine kleine Menge an Datenspeicher in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement vorhanden ist. Daher wird empfohlen, den Azure Machine Learning-Arbeitsbereich zu löschen, wenn er nicht mehr benötigt wird.
 
-## Erstellen von Computeressourcen
-
-1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) das Symbol **&#8801;** aus (ein Menüsymbol, dass wie drei übereinander angeordnete Linien aussieht), um die verschiedenen Seiten auf der Benutzeroberfläche anzuzeigen (möglicherweise müssen Sie die Größe des Bildschirms maximieren). Sie können diese Seiten im linken Bereich verwenden, um die Ressourcen in Ihrem Arbeitsbereich zu verwalten. Wählen die Seite **Compute** (unter **Verwalten**) aus.
-
-1. Wählen Sie auf der Seite **Compute** die Registerkarte **Computecluster** aus, und fügen Sie einen neuen Computecluster mit den folgenden Einstellungen hinzu. Sie verwenden diesen zum Trainieren eines Machine Learning-Modells:
-    - **Standort**: *Wählen Sie denselben Standort wie für Ihren Arbeitsbereich aus. Wenn dieser Standort nicht aufgeführt wird, wählen Sie den nächstgelegenen Standort aus*.
-    - **VM-Dienstebene**: Dediziert.
-    - **VM-Typ:** CPU
-    - **VM-Größe:**
-        - Klicken Sie auf **Aus allen Optionen auswählen**.
-        - Suchen Sie **Standard_DS11_v2**, und wählen Sie den Eintrag aus.
-    - Wählen Sie **Weiter** aus.
-    - **Computename**: *Geben Sie einen eindeutigen Namen ein*.
-    - **Mindestanzahl von Knoten:** 0
-    - **Maximale Knotenanzahl:** 2
-    - **Leerlauf in Sekunden vor dem Herunterskalieren:** 120
-    - **Aktivieren des SSH-Zugriffs**: Nicht aktivieren
-    - Klicken Sie auf **Erstellen**.
-
-> **Hinweis**: Compute-Instanzen und -cluster basieren auf Azure VM-Standardimages. Für dieses Modul wird das Image *Standard_DS11_v2* empfohlen, um ein optimales Gleichgewicht zwischen Kosten und Leistung zu erzielen. Wenn Ihr Abonnement über ein Kontingent verfügt, das dieses Image nicht enthält, wählen Sie ein alternatives Image aus. Beachten Sie jedoch, dass ein größeres Image höhere Kosten verursachen kann und ein kleineres Image möglicherweise nicht ausreicht, um die Aufgaben auszuführen. Bitten Sie alternativ Ihren Azure-Administrator, Ihr Kontingent zu erhöhen.
-
-Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mit dem nächsten Schritt fortfahren, während Sie warten.
-
 ## Erstellen einer Datenressource
 
 1. Zeigen Sie die durch Trennzeichen getrennten Daten unter [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true) in Ihrem Webbrowser an.
@@ -88,6 +65,16 @@ Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mi
 
 > **Quellenangaben**: *Diese Daten werden von [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) abgeleitet und in Übereinstimmung mit dem [Lizenzvertrag](https://www.capitalbikeshare.com/data-license-agreement) für veröffentlichte Daten verwendet.*
 
+## Aktivieren des serverlosen Computings
+
+1. Klicken Sie in Azure Machine Learning Studio auf **Previewfunktionen verwalten** (Lautsprechersymbol).
+
+![Screenshot: Schaltfläche „Previewfunktionen verwalten“ im Menü.](../instructions/media/use-automated-machine-learning/severless-compute-1.png)
+
+1. Aktivieren Sie die Funktion „Geführte Benutzeroberfläche zum Übermitteln von Trainingsaufträgen mit serverlosem Computing“.
+
+![Screenshot: Aktivieren der Funktion für serverloses Computing.](../instructions/media/use-automated-machine-learning/enable-serverless-compute.png)
+
 ## Ausführen eines Auftrags für automatisiertes maschinelles Lernen
 
 Führen Sie die nächsten Schritte aus, um einen Auftrag auszuführen, der das automatisierte maschinelle Lernen zum Trainieren eines Regressionsmodells verwendet, das Fahrradvermietungen vorhersagt.
@@ -115,19 +102,12 @@ Führen Sie die nächsten Schritte aus, um einen Auftrag auszuführen, der das a
         - **Zulässige Modelle**: *Wählen Sie nur **RandomForest** und **LightGBM** aus. Normalerweise sollten Sie so viele Modelle wie möglich ausprobieren, aber jedes hinzugefügte Modell verlängert die Zeitspanne, die zum Ausführen des Auftrags benötigt wird*.
 
         ![Screenshot: Weitere Konfigurationen mit einem Rahmen um die zulässigen Modelle.](media/use-automated-machine-learning/allowed-models.png)
-        - **Exit criterion** (Beendigungskriterien):
-            - **Trainingsauftragszeit (Stunden)** : 0,5. *Bewirkt, dass das Experiment nach maximal 30 Minuten beendet wird*.
-            - **Metrischer Bewertungsschwellenwert**: 0,085. *Wenn ein Modell eine normalisierte Wurzel der mittleren Fehlerquadratsumme von 0,085 oder weniger erreicht, wird der Auftrag beendet*.
-        - **Parallelität**: *Nicht ändern*
-    - **Featurisierungseinstellungen:**
-        - **Enable featurization** (Featurisierung aktivieren): Ausgewählt – *Die Features werden vor dem Training automatisch vorverarbeitet.*
-
-    Klicken Sie auf **Weiter**, um zum nächsten Auswahlbereich zu wechseln.
-
-    - **Auswählen des Validierungs- und Testtyps**
-        - **Validierungstyp**: Automatisch
-        - **Testdatenressource (Vorschau)** : Keine Testdatenressource erforderlich
-
+Unter *Zusätzliche Konfigurationseinstellungen anzeigen* befindet sich der Abschnitt *Grenzwerte*. Erweitern Sie den Abschnitt, um die Einstellungen zu konfigurieren:
+        - **Timeout (Minuten)** : 30 – *Beendet den Auftrag nach maximal 30 Minuten.* .
+        - **Metrischer Bewertungsschwellenwert**: 0,085. *Wenn ein Modell eine normalisierte Wurzel der mittleren Fehlerquadratsumme von 0,085 oder weniger erreicht, wird der Auftrag beendet*.
+        - Klicken Sie auf **Weiter**.
+        - **Compute**: Hier sind keine Änderungen erforderlich
+        - Klicken Sie auf **Weiter**.
 1. Wenn Sie die Übermittlung der Details zum automatisierten ML-Auftrag abgeschlossen haben, wird dieser automatisch gestartet.
 
 1. Warten Sie auf den Abschluss des Auftrags. Dies kann einige Zeit in Anspruch nehmen und ist möglicherweise ein guter Zeitpunkt für eine Kaffeepause.
@@ -219,7 +199,6 @@ Sie haben gerade einen Dienst getestet, der mit einer Clientanwendung eine Verbi
 Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden. Sie sollten auch den Computecluster löschen.
 
 1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) auf der Registerkarte **Endpunkte** den Endpunkt **predict-rentals** aus. Klicken Sie dann auf **Löschen**, und bestätigen Sie, dass Sie den Endpunkt löschen möchten.
-2. Wählen Sie auf der Seite **Compute** auf der Registerkarte **Computecluster** Ihren Compute-Instanz aus, und klicken Sie dann auf **Löschen**.
 
 > **Hinweis**: Durch das Löschen Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen. Wenn Sie jedoch andere Labs in dieser Reihe abschließen möchten, müssen Sie ihn neu erstellen.
 >
