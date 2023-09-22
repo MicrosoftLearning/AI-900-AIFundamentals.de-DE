@@ -75,9 +75,12 @@ Sie müssen eine **Cognitive Services**-Ressource bereitstellen, die sich am gle
 
 1. Klicken Sie auf **Überprüfen**, und klicken Sie dann auf **Erstellen**. Warten Sie, bis die Bereitstellung abgeschlossen ist, und wechseln Sie dann zur bereitgestellten Ressource.
 
+1. Wählen Sie im von Ihnen erstellten Azure Storage-Konto im linken Menübereich **Konfiguration** aus (unter **Einstellungen**).
+1. Ändern Sie die Einstellung für *Anonymen Blobzugriff zulassen* in **Aktiviert** und wählen Sie dann **Speichern** aus.
+
 ## Hochladen von Dokumenten in Azure Storage
 
-1. Wählen Sie im von Ihnen erstellten Azure Storage-Konto im linken Menübereich **Container** aus.
+1. Wählen Sie im linken Menübereich **Container** aus.
 
     ![Screenshot: Übersichtsseite des Speicherblobs.](media/create-cognitive-search-solution/storage-blob-1.png)
 
@@ -154,14 +157,12 @@ Sobald die Dokumente im Speicher vorhanden sind, können Sie Azure Cognitive Sea
     > **Hinweis**: Es wird eine Warnung angezeigt, in der nach einer **Verbindungszeichenfolge für das Speicherkonto** gefragt wird.
     >
     > ![Screenshot: Warnung auf dem Bildschirm der Speicherkontoverbindung mit aktivierter Option „Vorhandene Verbindung auswählen“.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
-
+    >
     > 1. Wählen Sie **Vorhandene Verbindung auswählen** aus. Wählen Sie das Speicherkonto aus, das Sie zuvor erstellt haben.
-
-    > 1. Klicken Sie auf **+ Container**, um einen neuen Container namens **knowledge-store** zu erstellen, für den die Datenschutzebene auf privat festgelegt ist, und wählen Sie **Erstellen** aus.
-
+    > 1. Klicken Sie auf **+ Container**, um einen neuen Container namens **knowledge-store** zu erstellen. Legen Sie die Datenschutzebene auf **Privat** fest und wählen Sie **Erstellen** aus.
     > 1. Wählen Sie den Container **knowledge-store** aus, und klicken Sie dann unten auf dem Bildschirm auf **Auswählen**.
 
-1. Wählen Sie **Azure blob projects: Document** (Azure-Blobprojekte: Dokument) aus. Eine Einstellung für *Containername* wird mit dem automatisch ausgefüllten *knowledge-store*-Container angezeigt. Ändern Sie den Containernamen nicht.
+1. Wählen Sie **Azure Blob-Projektionen: Dokument** aus. Eine Einstellung für *Containername* wird mit dem automatisch ausgefüllten *knowledge-store*-Container angezeigt. Ändern Sie den Containernamen nicht.
 
 1. Klicken Sie auf **Weiter: Zielindex anpassen**. Ändern Sie den **Indexnamen** in **coffee-index**.
 
