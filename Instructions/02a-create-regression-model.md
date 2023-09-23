@@ -155,15 +155,15 @@ Um Ihre Datentransformationen anzuwenden, müssen Sie die Pipeline ausführen.
 
 1. Wählen Sie **Weiter** aus, um den Pipelineauftrag zu überprüfen, und wählen Sie dann **Übermitteln** aus, um die Trainingspipeline auszuführen.
 
-1. Warten Sie einige Minuten, bis die Ausführung abgeschlossen ist. Sie können den Status des Auftrags überprüfen, indem Sie unter **Ressourcen** die Option **Aufträge** auswählen. Wählen Sie dort den Auftrag **Auto Price Training** aus.
+1. Warten Sie einige Minuten, bis die Ausführung abgeschlossen ist. Sie können den Status des Auftrags überprüfen, indem Sie unter **Ressourcen** die Option **Aufträge** auswählen. Wählen Sie dort den Auftrag **Auto Price Training** aus. Hier können Sie sehen, wenn der Auftrag abgeschlossen ist. Sobald der Auftrag abgeschlossen ist, wird das Dataset für das Modelltraining vorbereitet.
 
-Das Dataset ist nun für das Modelltraining vorbereitet. Schließen Sie die Registerkarte „Auftragsdetails“, um zur Pipeline zurückzukehren.
+1. Navigieren Sie zum linken Menü. Wählen Sie unter **Dokumenterstellung** die Option **Designer** aus. Wählen Sie dann Ihre Pipeline *Automatisches Preistraining* aus der Liste der **Pipelines** aus.
 
 ## Erstellen einer Trainingspipeline
 
 Nachdem Sie die Daten mithilfe von Datentransformationen vorbereitet haben, können Sie sie zum Trainieren eines Machine Learning-Modells verwenden. Führen Sie die folgenden Schritte aus, um die Pipeline **Auto Price Training** zu erweitern.
 
-1. Kehren Sie zur Pipeline **Auto Price Training** zurück, die Sie in der vorherigen Lerneinheit erstellt haben, sofern sie nicht bereits geöffnet ist.
+1. Stellen Sie sicher, dass im Menü auf der linken Seite **Designer** ausgewählt ist, und dass Sie zur Pipeline **Automatisches Preistraining** zurückgekehrt sind.
 
 1. Suchen Sie im Bereich **Ressourcenbibliothek** auf der linken Seite nach einem Modul vom Typ **Daten teilen**, und platzieren Sie es auf der Canvas unter dem Modul **Daten normalisieren**. Verbinden Sie dann die (linke) Ausgabe *Transformiertes Dataset* des Moduls **Daten normalisieren** mit der Eingabe des Moduls **Daten teilen**.
 
@@ -226,8 +226,6 @@ Eine Möglichkeit, ein Regressionsmodell zu bewerten, besteht darin, die vorherg
 
 1. Dieser Vorgang dauert einige Minuten. Kehren Sie zur Seite **Aufträge** zurück, und wählen Sie die neueste Ausführung des Auftrags **Auto Price Training** aus.
 
-1. Wenn die Experimentausführung abgeschlossen ist, klicken Sie mit der rechten Maustaste auf das Modul **Modell auswerten**, und wählen Sie **Datenvorschau** und dann **Auswertungsergebnisse** aus.
-
 1. Wenn die Experimentausführung abgeschlossen wurde, wählen Sie **Auftragsdetails** aus, wodurch eine weitere Registerkarte geöffnet wird. Suchen Sie nach dem Modul **Evaluate Model**, und klicken Sie mit der rechten Maustaste darauf. Wählen Sie **Datenvorschau anzeigen** und anschließend **Auswertungsergebnisse** aus.
 
     ![Screenshot: Speicherort des Moduls „Evaluate Model“ (Modell auswerten)](media/create-regression-model/evaluate-model-help-1.png)
@@ -288,6 +286,7 @@ Wenn Sie ein Modell mit Bewertungsmetriken ermitteln konnten, dass Ihre Anforder
                         inplace=True)
      return scored_results
     ```
+>**Hinweis**: Durch Kopieren und Einfügen können in das Python-Skript Leerzeichen eingefügt werden, die nicht enthalten sein sollten. Vergewissern Sie sich, dass sich vor *import*, *def* oder *return* keine Leerzeichen befinden. Stellen Sie sicher, dass sich vor *scored_results* und *scored_results.rename()* eine einfache Tabulator-Einrückung befindet.
 
 1. Verbinden Sie die Ausgabe aus dem Modul **Modell auswerten** mit der Eingabe **Dataset1** (ganz links) von **Python-Skript ausführen**.
 
