@@ -13,7 +13,7 @@ Um die Fähigkeiten des Gesichtserkennungsdiensts zu testen, verwenden wir eine 
 
 ## Erstellen einer *Gesichtserkennung-API*-Ressource
 
-Sie können den Gesichtserkennungsdienst verwenden, indem Sie zunächst eine **Gesichtserkennung**-Ressource erstellen. (Die Gesichtserkennung-API ist in Cognitive Services nicht mehr verfügbar)
+Sie können den Gesichtserkennungsdienst verwenden, indem Sie zunächst eine **Gesichtserkennung**-Ressource erstellen.
 
 Falls noch nicht erfolgt, erstellen Sie in Ihrem Azure-Abonnement eine **Gesichtserkennung-API**-Ressource
 
