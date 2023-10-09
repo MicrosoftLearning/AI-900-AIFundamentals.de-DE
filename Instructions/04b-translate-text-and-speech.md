@@ -13,15 +13,15 @@ Künstliche Intelligenz (KI) kann dazu beitragen, die Kommunikation zu vereinfac
 
 Um die Fähigkeiten des Textübersetzungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Azure KI Services*-Ressource
 
-Sie können den Textübersetzungsdienst nutzen, indem Sie entweder eine Ressource für die **Textübersetzung** oder eine **Cognitive Services**-Ressource erstellen.
+Sie können den Textübersetzungsdienst nutzen, indem Sie entweder eine Ressource für die **Textübersetzung** oder eine **Azure KI Services**-Ressource erstellen.
 
-Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ressource in Ihrem Azure-Abonnement.
+Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Ressource in Ihrem Azure-Abonnement.
 
 1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Wählen Sie die Schaltfläche **&#65291;Ressource erstellen**, suchen Sie nach *Cognitive Services*, und erstellen Sie eine **Cognitive Services**-Ressource mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
@@ -31,15 +31,15 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Überprüfen und erstellen Sie die Ressource und warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zur bereitgestellten Ressource.
 
-1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen die Schlüssel und den Standort, um von Clientanwendungen aus eine Verbindung herzustellen.
+1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Azure KI Services-Ressource an. Sie benötigen die Schlüssel und den Standort, um von Clientanwendungen aus eine Verbindung herzustellen.
 
-### Rufen Sie den Schlüssel und den Standort für Ihre Cognitive Services-Ressource ab.
+### Rufen Sie den Schlüssel und den Standort für Ihre Azure KI Services-Ressource ab.
 
-1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Cognitive Services-Ressource, und wählen Sie auf der Seite **Übersicht** den Link zur Verwaltung der Schlüssel für den Dienst aus. Sie benötigen die Schlüssel und den Speicherort, um von Clientanwendungen aus eine Verbindung mit Ihrer Cognitive Services-Ressource herzustellen.
+1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Azure KI Services-Ressource und wählen Sie auf der Seite **Übersicht** den Link zur Verwaltung der Schlüssel für den Dienst aus. Sie benötigen die Schlüssel und den Speicherort, um von Clientanwendungen aus eine Verbindung mit Ihrer Azure KI Services-Ressource herzustellen.
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Ressource an. Sie benötigen **Standort/Region** und **Schlüssel** für die Verbindung von Clientanwendungen.
 
-> **Hinweis**: Um den Textübersetzungsdienst zu nutzen, müssen Sie nicht den Cognitive Services-Endpunkt verwenden. Es wird ein globaler Endpunkt nur für den Textübersetzungsdienst bereitgestellt. 
+> **Hinweis**: Um den Textübersetzungsdienst zu nutzen, müssen Sie nicht den Azure KI Services-Endpunkt verwenden. Es wird ein globaler Endpunkt nur für den Textübersetzungsdienst bereitgestellt. 
 
 ## Ausführen von Cloud Shell
 
@@ -89,7 +89,7 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
     ![Der Editor, der den Code zur Nutzung des Textübersetzungsdiensts enthält.](media/translate-text-and-speech/translate-code.png)
 
-1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes, wichtig ist, dass er die Region/den Standort und einen der Schlüssel für Ihre Cognitive Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein. Ersetzen Sie hierbei die Platzhalterwerte **YOUR_KEY** und **YOUR_LOCATION**.
+1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes. Es ist wichtiger, dass er die Region/den Standort und einen der Schlüssel für Ihre Azure KI Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein. Ersetzen Sie hierbei die Platzhalterwerte **YOUR_KEY** und **YOUR_LOCATION**.
 
     Nach dem Einfügen der Schlüssel- und Standortwerte sollten die ersten Codezeilen etwa wie folgt aussehen:
 

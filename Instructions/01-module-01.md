@@ -1,19 +1,19 @@
 ---
 lab:
-  title: Erkunden von Cognitive Services
+  title: "Entdecken von Azure\_KI Services"
 ---
 
-# Erkunden von Cognitive Services
+# Entdecken von Azure KI Services
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
-Azure Cognitive Services kapselt allgemeine KI-Funktionen, die in vier Hauptpfeiler unterteilt werden können: Sehen, Sprache, Computersprache und Entscheidungsdienste. In dieser Übung werfen Sie einen Blick auf einen der Entscheidungsdienste, um ein allgemeines Verständnis für die Bereitstellung und Verwendung einer Cognitive Services-Ressource in einer Softwareanwendung zu gewinnen.
+Azure KI Services kapselt allgemeine KI-Funktionen, die in vier Hauptpfeiler unterteilt werden können: Sehen, Sprache, Computersprache und Entscheidungsdienste. In dieser Übung werfen Sie einen Blick auf einen der Entscheidungsdienste, um ein allgemeines Verständnis für die Bereitstellung und Verwendung einer Azure KI Services-Ressource in einer Softwareanwendung zu gewinnen.
 
-Die spezifische Cognitive Service-Ressource, die Sie in dieser Übung untersuchen, ist *Anomalieerkennung*. Anomalieerkennung wird verwendet, um Datenwerte im Zeitverlauf zu analysieren und ungewöhnliche Werte zu erkennen, die auf ein Problem oder eine Angelegenheit hindeuten können, die weiter untersucht werden muss. Ein Sensor in einem temperaturgesteuerten Lager kann beispielsweise jede Minute die Temperatur überwachen und die Messwerte protokollieren. Sie können den Anomalieerkennungsdienst verwenden, um die protokollierten Temperaturwerte zu analysieren und alle Werte kennzeichnen, die deutlich außerhalb des normalen Bereichs der erwarteten Temperaturen liegen.
+Der spezifische Azure KI Service, den Sie in dieser Übung untersuchen, ist die *Anomalieerkennung*. Anomalieerkennung wird verwendet, um Datenwerte im Zeitverlauf zu analysieren und ungewöhnliche Werte zu erkennen, die auf ein Problem oder eine Angelegenheit hindeuten können, die weiter untersucht werden muss. Ein Sensor in einem temperaturgesteuerten Lager kann beispielsweise jede Minute die Temperatur überwachen und die Messwerte protokollieren. Sie können den Anomalieerkennungsdienst verwenden, um die protokollierten Temperaturwerte zu analysieren und alle Werte kennzeichnen, die deutlich außerhalb des normalen Bereichs der erwarteten Temperaturen liegen.
 
 Um die Möglichkeiten des Anomalieerkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-> **Hinweis**: Das Ziel dieser Übung besteht darin, ein allgemeines Verständnis dafür zu gewinnen, wie Cognitive Services bereitgestellt und verwendet werden. Anomalieerkennung wird als Beispiel verwendet, aber es wird nicht erwartet, dass Sie in dieser Übung umfassendes Wissen über Anomalieerkennung erwerben!
+> **Hinweis**: Das Ziel dieser Übung besteht darin, ein allgemeines Verständnis dafür zu gewinnen, wie Azure KI Services bereitgestellt und verwendet werden. Anomalieerkennung wird als Beispiel verwendet, aber es wird nicht erwartet, dass Sie in dieser Übung umfassendes Wissen über Anomalieerkennung erwerben!
 
 ## Erstellen einer Ressource vom Typ *Anomalieerkennung*
 
@@ -103,10 +103,6 @@ Nachdem Sie nun über eine Cloud Shell-Umgebung verfügen, können Sie eine ein
     ```
 
 1. Überprüfen Sie die Ergebnisse, und beachten Sie, dass die letzte Spalte in den Ergebnissen **True** oder **False** ist, um anzugeben, ob der zum jeweiligen Zeitpunkt (Datum/Uhrzeit) erfasste Wert als Anomalie betrachtet wird. Überlegen Sie, wie wir diese Informationen in der Praxis verwenden können. Welche Aktion könnte von der Anwendung ausgelöst werden, wenn bei den Werten von Kühlschranktemperatur oder Bluddruck Anomalien erkannt wurden?  
-
-## Weitere Informationen
-
-Diese einfache App zeigt nur einen Teil der Möglichkeiten des Anomalieerkennungsdiensts. Weitere Informationen zu den Möglichkeiten dieses Diensts finden Sie auf der [Seite für die Anomalieerkennung](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
 
 ## Bereinigung
 

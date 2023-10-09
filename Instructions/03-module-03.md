@@ -7,7 +7,7 @@ lab:
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
-Der kognitive Dienst für *maschinelles Sehen* verwendet vorab trainierte Machine Learning-Modelle, um Bilder zu analysieren und Informationen über sie zu extrahieren.
+Der Dienst *Maschinelles Sehen* verwendet vorab trainierte Machine Learning-Modelle, um Bilder zu analysieren und Informationen über sie zu extrahieren.
 
 Nehmen wir beispielsweise an, dass das fiktive Einzelhandelsunternehmen *Northwind Traders* beschlossen hat, einen „intelligenten Laden“ einzurichten, in dem KI-Dienste den Laden überwachen, um Kunden zu identifizieren, die Hilfe benötigen, und die Mitarbeiter anweisen, ihnen zu helfen. Mithilfe des Diensts für maschinelles Sehen können Bilder, die von Kameras im gesamten Geschäft aufgenommen wurden, analysiert werden, um aussagekräftige Beschreibungen der abgebildeten Inhalte zu erstellen.
 
@@ -21,7 +21,7 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Resso
 
 1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Cognitive Services*. Wählen Sie **Erstellen** eines **Cognitive Services**-Plans aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
@@ -81,7 +81,7 @@ Da Sie nun über eine Cloud Shell-Umgebung verfügen, können Sie eine einfache 
 
     ![Der Editor enthält Code zur Analyse von Bildern.](media/analyze-images-computer-vision-service/analyze-image-code.png)
 
-1. Machen Sie sich nicht zu viele Gedanken über den Code, wichtig ist, dass er die Endpunkt-URL und einen der Schlüssel für Ihre Cognitive Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein, wobei Sie die Platzhalterwerte **YOUR_KEY** und **YOUR_ENDPOINT** ersetzen.
+1. Machen Sie sich nicht zu viele Gedanken über den Code. Es ist wichtiger, dass er die Endpunkt-URL und einen der Schlüssel für Ihre Azure KI Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein, wobei Sie die Platzhalterwerte **YOUR_KEY** und **YOUR_ENDPOINT** ersetzen.
 
     > **Tipp**: Möglicherweise müssen Sie die Trennlinie verwenden, um den Bildschirmbereich anzupassen, während Sie mit den Bereichen **Schlüssel und Endpunkt** und **Editor** arbeiten.
 

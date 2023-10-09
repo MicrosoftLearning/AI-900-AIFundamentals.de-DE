@@ -23,9 +23,9 @@ In diesem Lab werden Sie Folgendes tun:
 Die Lösung, die Sie für Fourth Coffee erstellen, erfordert die folgenden Ressourcen in Ihrem Azure-Abonnement:
 
 - Eine **Azure Cognitive Search**-Ressource, die die Indizierung und Abfrage verwaltet
-- Eine **Cognitive Services**-Ressource, die KI-Dienste für Skills bereitstellt, die Ihre Suchlösung verwenden kann, um die Daten in der Datenquelle mit KI-generierten Erkenntnissen anzureichern
+- Eine **Azure KI Services**-Ressource, die KI-Dienste für Skills bereitstellt, die Ihre Suchlösung verwenden kann, um die Daten in der Datenquelle mit KI-generierten Erkenntnissen anzureichern
 
-    > **Hinweis**: Ihre Azure Cognitive Search- und Cognitive Services-Ressourcen müssen sich am selben Speicherort befinden.
+    > **Hinweis**: Ihre Azure Cognitive Search- und Azure KI Services-Ressourcen müssen sich am selben Speicherort befinden.
 
 - Ein **Speicherkonto** mit Blobcontainern, in dem unformatierte Dokumente und andere Sammlungen von Tabellen, Objekten oder Dateien gespeichert werden.
 
@@ -45,11 +45,11 @@ Die Lösung, die Sie für Fourth Coffee erstellen, erfordert die folgenden Resso
 
 1. Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**. Auf der Azure Cognitive Search-Übersichtsseite können Sie Indizes hinzufügen, Daten importieren und erstellte Indizes durchsuchen.
 
-### Erstellen einer Cognitive Services-Ressource
+### Erstellen einer Azure KI Services-Ressource
 
-Sie müssen eine **Cognitive Services**-Ressource bereitstellen, die sich am gleichen Standort wie Ihre Azure Cognitive Search-Ressource befindet. Ihre Suchlösung verwendet diese Ressource, um die Daten im Datenspeicher mit KI-generierten Erkenntnissen anzureichern.
+Sie müssen eine **Azure KI Services**-Ressource bereitstellen, die sich am gleichen Speicherort wie Ihre Azure Cognitive Search-Ressource befindet. Ihre Suchlösung verwendet diese Ressource, um die Daten im Datenspeicher mit KI-generierten Erkenntnissen anzureichern.
 
-1. Kehren Sie zur Startseite des Azure-Portals zurück. Klicken Sie dann auf die Schaltfläche **+ Ressource erstellen**, suchen Sie nach *Cognitive Services*, und erstellen Sie eine **Cognitive Services**-Ressource mit den folgenden Einstellungen: 
+1. Kehren Sie zur Startseite des Azure-Portals zurück. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Die gleiche Ressourcengruppe wie Ihre Azure Cognitive Search-Ressource*.
     - **Region**: *Der gleiche Standort wie Ihre Azure Cognitive Search-Ressource*.
@@ -67,7 +67,7 @@ Sie müssen eine **Cognitive Services**-Ressource bereitstellen, die sich am gle
 
 1. Suchen Sie nach *Speicherkonto*, und erstellen Sie eine **Speicherkontoressource** mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
-    - **Ressourcengruppe**: *Die gleiche Ressourcengruppe wie die Ihrer Azure Cognitive Search- und Cognitive Services-Ressourcen*.
+    - **Ressourcengruppe**: *Die gleiche Ressourcengruppe wie die Ihrer Azure Cognitive Search- und Azure KI Services-Ressourcen*
     - **Speicherkontoname**: *Ein eindeutiger Name*.
     - **Speicherort**: *Wählen Sie einen beliebigen verfügbaren Speicherort aus*.
     - **Leistung**: Standard
@@ -126,7 +126,7 @@ Sobald die Dokumente im Speicher vorhanden sind, können Sie Azure Cognitive Sea
 
 1. Wählen Sie **Weiter: Kognitive Skills hinzufügen (optional)** aus.
 
-1. Wählen Sie im Abschnitt **Cognitive Services-Instanz anfügen** Ihre Cognitive Services-Ressource aus.  
+1. Wählen Sie im Abschnitt **Cognitive Services anfügen** Ihre Azure KI Services-Ressource aus.  
 
 1. Gehen Sie im Abschnitt **Anreicherungen hinzufügen** folgendermaßen vor:
     - Ändern Sie den **Namen des Skillsets** in **coffee-skillset**.

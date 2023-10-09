@@ -11,21 +11,21 @@ Eine häufige Herausforderung beim maschinellen Sehen ist die Erkennung und Inte
 
 Um die Fähigkeiten der Lese-API zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## Verwenden des Diensts „Maschinelles Sehen“ zum Lesen von Text in einem Bild
+## Verwenden des Azure KI Vision-Diensts zum Lesen von Text in einem Bild
 
-Der kognitive Dienst für **maschinelles Sehen** bietet Unterstützung für OCR-Aufgaben, einschließlich:
+Der **Azure KI Vision**-Dienst bietet Unterstützung für OCR-Aufgaben, einschließlich:
 
 - Einer **Lese**-API, die für größere Dokumente optimiert ist. Diese API wird asynchron verwendet und kann sowohl für gedruckten als auch für handschriftlichen Text verwendet werden.
 
-## Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Azure KI Services*-Ressource
 
-Sie können den Dienst für maschinelles Sehen verwenden, indem Sie entweder eine Ressource für **maschinelles Sehen** oder eine **Cognitive Services**-Ressource erstellen.
+Sie können den Azure KI Vision-Dienst verwenden, indem Sie entweder eine Ressource für **maschinelles Sehen** oder eine **Azure KI Services**-Ressource erstellen.
 
-Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ressource in Ihrem Azure-Abonnement.
+Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Ressource in Ihrem Azure-Abonnement.
 
 1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen**, suchen Sie nach *Cognitive Services*, und erstellen Sie eine **Cognitive Services**-Ressource mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
@@ -35,7 +35,7 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Überprüfen und erstellen Sie die Ressource und warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zur bereitgestellten Ressource.
 
-1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
+1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Azure KI Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
 
 ## Ausführen von Cloud Shell
 
@@ -85,7 +85,7 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
     ![Der Editor enthält Code zur Analyse von Text in Bildern.](media/read-text-computer-vision/ocr-code.png)
 
-1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes, wichtig ist, dass er die Endpunkt-URL und einen der Schlüssel für Ihre Cognitive Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein, wobei Sie die Platzhalterwerte **YOUR_KEY** und **YOUR_ENDPOINT** ersetzen.
+1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes. Es ist wichtiger, dass er die Endpunkt-URL und einen der Schlüssel für Ihre Azure KI Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein, wobei Sie die Platzhalterwerte **YOUR_KEY** und **YOUR_ENDPOINT** ersetzen.
 
     > **Tipp**: Möglicherweise müssen Sie die Trennlinie verwenden, um den Bildschirmbereich anzupassen, während Sie mit den Bereichen **Schlüssel und Endpunkt** und **Editor** arbeiten.
 
@@ -96,7 +96,7 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
     $endpoint="https..."
     ```
 
-1. Verwenden Sie oben rechts im Editor-Bereich die Schaltfläche **...**, um das Menü zu öffnen, und wählen Sie **Speichern** aus, um Ihre Änderungen zu speichern. Öffnen Sie dann das Menü erneut, und wählen Sie **Editor schließen** aus. Nachdem Sie nun den Schlüssel und den Endpunkt eingerichtet haben, können Sie Ihre Cognitive Services-Ressource verwenden, um Text aus einem Bild zu extrahieren.
+1. Verwenden Sie oben rechts im Editor-Bereich die Schaltfläche **...**, um das Menü zu öffnen, und wählen Sie **Speichern** aus, um Ihre Änderungen zu speichern. Öffnen Sie dann das Menü erneut, und wählen Sie **Editor schließen** aus. Nachdem Sie nun den Schlüssel und den Endpunkt eingerichtet haben, können Sie Ihre Azure KI Services-Ressource verwenden, um Text aus einem Bild zu extrahieren.
 
     Verwenden wir nun die **Lese**-API. In diesem Fall handelt es sich um ein Werbebild für das fiktive Einzelhandelsunternehmen Northwind Traders, das etwas Text enthält.
 

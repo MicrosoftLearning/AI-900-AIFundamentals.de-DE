@@ -5,9 +5,9 @@ lab:
 
 # Erkunden der Bildklassifizierung
 
-Der Cognitive Service *Maschinelles Sehen* bietet nützliche vorgefertigte Modelle für das Arbeiten mit Bildern, aber oft müssen Sie Ihr eigenes Modell für maschinelles Sehen trainieren. Angenommen, eine Naturschutzorganisation möchte Tiersichtungen mit bewegungsempfindlichen Kameras verfolgen. Die von den Kameras aufgenommenen Bilder könnten dann verwendet werden, um das Vorhandensein bestimmter Arten in einem bestimmten Gebiet zu überprüfen und die Erhaltungsbemühungen für gefährdete Arten zu unterstützen. Um dies zu erreichen, würde die Organisation von einem *Bildklassifizierungsmodell* profitieren, das dafür trainiert wird, verschiedene Tierarten in den aufgenommenen Fotos zu erkennen.
+Der *Azure KI Vision*-Dienst bietet nützliche vorgefertigte Modelle für das Arbeiten mit Bildern. Oft müssen Sie aber Ihr eigenes Modell für maschinelles Sehen trainieren. Angenommen, eine Naturschutzorganisation möchte Tiersichtungen mit bewegungsempfindlichen Kameras verfolgen. Die von den Kameras aufgenommenen Bilder könnten dann verwendet werden, um das Vorhandensein bestimmter Arten in einem bestimmten Gebiet zu überprüfen und die Erhaltungsbemühungen für gefährdete Arten zu unterstützen. Um dies zu erreichen, würde die Organisation von einem *Bildklassifizierungsmodell* profitieren, das dafür trainiert wird, verschiedene Tierarten in den aufgenommenen Fotos zu erkennen.
 
-In Azure können Sie den Cognitive Service ***Custom Vision*** verwenden, um ein Bildklassifizierungsmodell auf Grundlage vorhandener Bilder zu trainieren. Die Erstellung einer Bildklassifizierungslösung besteht aus zwei Elementen. Zunächst müssen Sie ein Modell trainieren, das anhand vorhandener Bilder verschiedene Klassen erkennt. Wenn das Modell dann trainiert ist, müssen Sie es als Dienst veröffentlichen, der von Anwendungen genutzt werden kann.
+In Azure können Sie den ***Custom Vision***-Dienst verwenden, um ein Bildklassifizierungsmodell auf der Grundlage vorhandener Bilder zu trainieren. Die Erstellung einer Bildklassifizierungslösung besteht aus zwei Elementen. Zunächst müssen Sie ein Modell trainieren, das anhand vorhandener Bilder verschiedene Klassen erkennt. Wenn das Modell dann trainiert ist, müssen Sie es als Dienst veröffentlichen, der von Anwendungen genutzt werden kann.
 
 Um die Fähigkeiten von Custom Vision zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder mobile Apps.
 
@@ -15,17 +15,17 @@ Um die Fähigkeiten von Custom Vision zu testen, verwenden wir eine einfache Bef
 
 Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
-## Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Azure KI Services*-Ressource
 
-Sie können den Custom Vision-Dienst verwenden, indem Sie entweder eine **Custom Vision**-Ressource oder eine **Cognitive Services**-Ressource erstellen.
+Sie können den Custom Vision-Dienst verwenden, indem Sie entweder eine **Custom Vision**-Ressource oder eine **Azure KI Services**-Ressource erstellen.
 
->**Hinweis**: Nicht jede Ressource ist in jeder Region verfügbar. Unabhängig davon, ob Sie eine Custom Vision- oder eine Cognitive Services-Ressource erstellen, können nur Ressourcen, die in [bestimmten Regionen](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) erstellt wurden, für den Zugriff auf Custom Vision-Dienste verwendet werden. Der Einfachheit halber wird in den folgenden Konfigurationsanweisungen eine Region für Sie vorausgewählt.
+>**Hinweis**: Nicht jede Ressource ist in jeder Region verfügbar. Unabhängig davon, ob Sie eine Custom Vision- oder eine Azure KI Services-Ressource erstellen, können nur Ressourcen, die in [bestimmten Regionen](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) erstellt wurden, für den Zugriff auf Custom Vision-Dienste verwendet werden. Der Einfachheit halber wird in den folgenden Konfigurationsanweisungen eine Region für Sie vorausgewählt.
 
-Erstellen Sie eine **Cognitive Services**-Ressource in Ihrem Azure-Abonnement.
+Erstellen Sie in Ihrem Azure-Abonnement eine **Azure KI Services**-Ressource.
 
 1. Öffnen Sie das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen**, suchen Sie nach *Cognitive Services*, und erstellen Sie eine **Cognitive Services**-Ressource mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: East US
@@ -35,7 +35,7 @@ Erstellen Sie eine **Cognitive Services**-Ressource in Ihrem Azure-Abonnement.
 
 1. Überprüfen und erstellen Sie die Ressource und warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zur bereitgestellten Ressource.
 
-1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Cognitive Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
+1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Azure KI Services-Ressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
 
 ## Erstellen eines Custom Vision-Projekts
 
@@ -49,7 +49,7 @@ Um ein Objekterkennungsmodell zu trainieren, müssen Sie ein Custom Vision-Proje
 
     - **Name**: Tiererkennung
     - **Beschreibung**: Bildklassifizierung für Tiere
-    - **Ressource**: *Die Cognitive Services- oder Custom Vision-Ressource, die Sie zuvor erstellt haben*
+    - **Ressource**: *Die Azure KI Services- oder Custom Vision-Ressource, die Sie zuvor erstellt haben*
     - **Projekttypen:** Klassifizierung
     - **Klassifizierungstypen**: Multiklassen-Klassifizierung (einzelnes Tag pro Bild)
     - **Domänen**: Allgemein \[A2]
@@ -90,7 +90,7 @@ Jetzt können Sie Ihr trainiertes Modell veröffentlichen und in einer Clientanw
 
 1. Klicken Sie auf **&#128504; Publish** (Veröffentlichen), um das trainierte Modell mit den folgenden Einstellungen zu veröffentlichen:
     - **Modellname**: animals
-    - **Vorhersageressource**: *Die Cognitive Services- oder Custom Vision-Vorhersageressource, die Sie zuvor erstellt haben*
+    - **Vorhersageressource**: *Die Azure KI Services- oder Custom Vision-Vorhersageressource, die Sie zuvor erstellt haben*
 
 1. Nach der Veröffentlichung klicken Sie auf das Symbol für die *Vorhersage-URL* (&#127760;), um die für die Verwendung des veröffentlichten Modells erforderlichen Informationen anzuzeigen.
 
@@ -193,6 +193,4 @@ Jetzt können Sie die Beispielclientanwendung verwenden, um Bilder basierend auf
 
 Hoffentlich hat Ihr Bildklassifizierungsmodell alle drei Bilder richtig klassifiziert.
 
-## Weitere Informationen
 
-Diese Übung veranschaulicht nur einige der Funktionen des Custom Vision-Diensts. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der [Custom Vision-Seite](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/).
