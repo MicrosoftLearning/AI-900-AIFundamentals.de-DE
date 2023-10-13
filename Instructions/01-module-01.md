@@ -3,115 +3,73 @@ lab:
   title: "Entdecken von Azure\_KI Services"
 ---
 
-# Entdecken von Azure KI Services
+> **Wichtig**
+> **Das Anomalieerkennung Lab ist veraltet und wurde durch das folgende Update ersetzt.**
 
-> **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
+Mit Azure KI Services können Benutzer*innen KI-Anwendungen mit sofort einsatzbereiten, vorgefertigten und anpassbaren APIs und Modellen erstellen. In dieser Übung werfen Sie einen Blick auf einen der Dienste, Azure KI Inhaltssicherheit, in Content Safety Studio. 
 
-Azure KI Services kapselt allgemeine KI-Funktionen, die in vier Hauptpfeiler unterteilt werden können: Sehen, Sprache, Computersprache und Entscheidungsdienste. In dieser Übung werfen Sie einen Blick auf einen der Entscheidungsdienste, um ein allgemeines Verständnis für die Bereitstellung und Verwendung einer Azure KI Services-Ressource in einer Softwareanwendung zu gewinnen.
+Mit Content Safety Studio können Sie untersuchen, wie Text- und Bildinhalte moderiert werden können. Sie können Tests für Beispieltext oder -bilder ausführen und für jede Kategorie einen Schweregrad von sicher bis hoch erhalten. In dieser Lab-Übung werden Sie eine Single-Service-Ressource in Content Safety Studio erstellen und ihre Funktionalitäten testen. 
 
-Der spezifische Azure KI Service, den Sie in dieser Übung untersuchen, ist die *Anomalieerkennung*. Anomalieerkennung wird verwendet, um Datenwerte im Zeitverlauf zu analysieren und ungewöhnliche Werte zu erkennen, die auf ein Problem oder eine Angelegenheit hindeuten können, die weiter untersucht werden muss. Ein Sensor in einem temperaturgesteuerten Lager kann beispielsweise jede Minute die Temperatur überwachen und die Messwerte protokollieren. Sie können den Anomalieerkennungsdienst verwenden, um die protokollierten Temperaturwerte zu analysieren und alle Werte kennzeichnen, die deutlich außerhalb des normalen Bereichs der erwarteten Temperaturen liegen.
+> **Hinweis**: Das Ziel dieser Übung besteht darin, ein allgemeines Verständnis dafür zu gewinnen, wie Azure KI Services bereitgestellt und verwendet werden. Content Safety wird als Beispiel verwendet, aber es wird nicht erwartet, dass Sie in dieser Übung ein umfassendes Wissen über Content Safety erwerben!
 
-Um die Möglichkeiten des Anomalieerkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
+## Navigation in Content Safety Studio 
 
-> **Hinweis**: Das Ziel dieser Übung besteht darin, ein allgemeines Verständnis dafür zu gewinnen, wie Azure KI Services bereitgestellt und verwendet werden. Anomalieerkennung wird als Beispiel verwendet, aber es wird nicht erwartet, dass Sie in dieser Übung umfassendes Wissen über Anomalieerkennung erwerben!
+![Screenshot der Startseite von Content Safety Studio.](./media/content-safety/content-safety-getting-started.png)
 
-## Erstellen einer Ressource vom Typ *Anomalieerkennung*
 
-Erstellen Sie zunächst eine Ressource vom Typ **Anomalieerkennung** in Ihrem Azure-Abonnement:
+1. Öffnen Sie [Content Safety Studio](https://contentsafety.cognitive.azure.com?azure-portal=true). Wenn Sie nicht eingeloggt sind, müssen Sie sich anmelden. Wählen Sie oben rechts auf dem Bildschirm **Anmelden** aus. Verwenden Sie die E-Mail-Adresse und das Kennwort, die Ihrem Azure-Abonnement zugeordnet sind, um sich anzumelden. 
 
-1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
+1. Content Safety Studio ist wie viele andere Studios für Azure KI Services eingerichtet. Klicken Sie im Menü oben auf dem Bildschirm auf das Symbol links neben *Azure KI*. Sie sehen eine Dropdownliste mit anderen Studios, die für die Entwicklung mit Azure KI Services entworfen wurden. Wenn Sie erneut auf das Symbol klicken, wird die Liste ausgeblendet.
 
-1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen**, suchen Sie nach *Anomalieerkennung*, und erstellen Sie eine Ressource vom Typ **Anomalieerkennung** mit folgenden Einstellungen:
+![Ein Screenshot des Content Safety Studio-Menüs mit geöffneter Umschaltfläche, um zu anderen Studios zu wechseln.](./media/content-safety/studio-toggle-icon.png)  
+
+## Dem Studio eine Ressource zuordnen 
+
+Bevor Sie das Studio verwenden, müssen Sie dem Studio eine Azure KI Services-Ressource zuordnen. Je nach Studio benötigen Sie vielleicht eine spezielle Single-Service-Ressource oder können eine allgemeine Multi-Service-Ressource verwenden. Im Falle von Content Safety Studio können Sie den Dienst nutzen, indem Sie eine Single-Service *Content Safety*-Ressource oder eine allgemeine Multi-Service Ressource für *Azure KI Services* erstellen. In den folgenden Schritten erstellen wir eine Single-Service Content Safety-Ressource. 
+
+1. Klicken Sie oben rechts auf dem Bildschirm auf das Symbol **Einstellungen**. 
+
+![Ein Screenshot des Symbols „Einstellungen“ oben rechts auf dem Bildschirm, neben den Symbolen Glocke, Fragezeichen und Smiley.](./media/content-safety/settings-toggle.png)
+
+1. Auf der Seite **Einstellungen** werden die Registerkarten *Verzeichnis* und *Ressource* angezeigt. Wählen Sie auf der Registerkarte *Ressource* die Option **Neue Ressource erstellen** aus. Dadurch gelangen Sie zur Seite, um eine Ressource im Azure-Portal zu erstellen.
+
+> **Hinweis**: Auf der Registerkarte *Verzeichnis* können Benutzer verschiedene Verzeichnisse auswählen, aus denen Ressourcen erstellt werden sollen. Sie müssen die Einstellungen nicht ändern, es sei denn, Sie möchten ein anderes Verzeichnis verwenden. 
+
+![Screenshot der Stelle auf der Einstellungsseite von Content Safety Studio, an der Sie „Neue Ressource erstellen“ auswählen können.](./media/content-safety/create-new-resource-from-studio.png)
+
+1. Auf der Seite *Content Safety erstellen* im [Azure-Portal](https://portal.azure.com?auzre-portal=true) müssen Sie mehrere Details konfigurieren, um Ihre Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
-    - **Ressourcengruppe**: *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue.*
-    - **Region**: *Wählen Sie eine beliebige verfügbare Region aus*.
+    - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
+    - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
     - **Name**: *Geben Sie einen eindeutigen Namen ein*.
     - **Tarif**: Free F0
 
-1. Überprüfen und erstellen Sie die Ressource. Warten Sie, bis die Bereitstellung abgeschlossen ist, und wechseln Sie dann zur bereitgestellten Ressource.
+1. Wählen Sie **Überprüfen + Erstellen** aus und überprüfen Sie die Konfiguration. Klicken Sie anschließend auf **Erstellen**. Auf dem Bildschirm wird angezeigt, wann die Bereitstellung abgeschlossen ist. 
 
-1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Anomalieerkennungsressource an. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung herzustellen.
+*Glückwunsch! Sie haben gerade eine Azure KI Services-Ressource erstellt oder bereitgestellt. Die von Ihnen bereitgestellte Ressource ist eine Single-Service Content Safety Service-Ressource.*
 
-## Ausführen von Cloud Shell
+1. Öffnen Sie nach Abschluss der Bereitstellung eine neue Registerkarte und kehren Sie zu [Content Safety Studio](https://contentsafety.cognitive.azure.com?azure-portal=true) zurück. 
 
-Um die Möglichkeiten des Anomalieerkennungsdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in Azure Cloud Shell ausgeführt wird.
+1. Wählen Sie erneut das Symbol **Einstellungen** in der rechten oberen Ecke des Bildschirms aus. Dieses Mal sollten Sie sehen, dass Ihre neu erstellte Ressource der Liste hinzugefügt wurde.  
 
-1. Wählen Sie im Azure-Portal die Schaltfläche **[>_]** (*Cloud Shell*) oben auf der Seite rechts neben dem Suchfeld aus. Dadurch wird am unteren Rand des Portals ein Cloud Shell-Bereich geöffnet.
+1. Wählen Sie auf der Seite Einstellungen von Content Safety Studio die soeben erstellte Azure KI Service-Ressource aus und klicken Sie unten auf dem Bildschirm auf **Ressource verwenden**. Sie werden zur Studio-Startseite zurückgeleitet. Jetzt können Sie mit der Verwendung von Studio mit Ihrer neu erstellten Ressource beginnen.
 
-    ![Starten Sie Cloud Shell, indem Sie auf das Symbol rechts neben dem oberen Suchfeld klicken.](media/anomaly-detector/powershell-portal-guide-1.png)
+## Testen der Textmoderation im Content Safety Studio
 
-1. Wenn Sie die Cloud Shell zum ersten Mal öffnen, werden Sie möglicherweise aufgefordert, die Art der Shell zu wählen, die Sie verwenden möchten (*Bash* oder *PowerShell*). Wählen Sie **PowerShell** aus. Wenn Sie diese Option nicht sehen, überspringen Sie den Schritt.  
+1. Navigieren Sie auf der Startseite von Content Safety Studio unter *Moderationstests ausführen* zum Feld **Moderater Textinhalt** und klicken Sie auf **Ausprobieren**.
+1. Klicken Sie unter Ausführen eines einfachen Tests auf **Sichere Inhalte**. Beachten Sie, dass im Feld darunter Text angezeigt wird. 
+1. Klicken Sie auf **Run test**. Wenn Sie einen Test ausführen, wird das Deep Learning-Modell des Content Safety-Diensts aufgerufen. Das Deep Learning-Modell wurde bereits darauf trainiert, unsichere Inhalte zu erkennen.
+1. Überprüfen Sie im Bereich *Ergebnisse* die Ergebnisse. Es gibt vier Schweregrade von sicher bis hoch und vier Arten von schädlichen Inhalten. Stuft der Content Safety KI-Dienst dieses Beispiel als akzeptabel ein oder nicht? Wichtig ist, dass die Ergebnisse innerhalb eines Konfidenzintervalls liegen. Ein gut trainiertes Modell, wie eines der vordefinierten Modelle von Azure KI, kann Ergebnisse zurückgeben, die mit hoher Wahrscheinlichkeit dem entsprechen, wie ein Mensch das Ergebnis bezeichnen würde. Jedes Mal, wenn Sie einen Test ausführen, rufen Sie das Modell erneut auf. 
+1. Versuchen Sie es mit einem anderen Beispiel. Wählen Sie den Text unter Gewalttätiger Inhalt mit Schreibfehlern aus. Überprüfen Sie, ob der Inhalt im Feld darunter angezeigt wird.
+1. Klicken Sie auf **Test ausführen** und überprüfen Sie die Ergebnisse im Ergebnisbereich erneut. 
 
-1. Wenn Sie aufgefordert werden, Speicher für Ihre Cloud Shell zu erstellen, stellen Sie sicher, dass Ihr Abonnement angegeben ist, und wählen Sie **Speicher erstellen** aus. Warten Sie dann etwa eine Minute, bis der Speicher erstellt ist.
+Sie können Tests für alle bereitgestellten Beispiele ausführen und dann die Ergebnisse überprüfen.
 
-    ![Erstellen Sie einen Speicher, indem Sie auf „Bestätigen“ klicken.](media/anomaly-detector/powershell-portal-guide-2.png)
+## Überprüfen der Schlüssel und des Endpunkts
 
-1. Vergewissern Sie sich, dass der oben links im Cloud Shell-Bereich angezeigte Shelltyp zu *PowerShell* gewechselt ist. Wenn *Bash* angezeigt wird, wechseln Sie über das Dropdownmenü zu *PowerShell*.
+Diese von Ihnen getesteten Funktionen können in alle Arten von Anwendungen programmiert werden. Die Schlüssel und der Endpunkt, die für die Anwendungsentwicklung verwendet werden, finden Sie sowohl in Content Safety Studio als auch im Azure-Portal. 
 
-    ![So finden Sie das Dropdownmenü auf der linken Seite, um zu PowerShell zu wechseln](media/anomaly-detector/powershell-portal-guide-3.png)
+1. Navigieren Sie in Content Safety Studio zurück zur Seite **Einstellungen** und wählen Sie die Registerkarte *Ressourcen* aus. Suchen Sie nach der Ressource, die Sie verwendet haben. Scrollen Sie, um den Endpunkt und Schlüssel für Ihre Ressource anzuzeigen. 
+1. Im Azure-Portal sehen Sie, dass es sich um *denselben* Endpunkt und *verschiedene* Schlüssel für Ihre Ressource handelt. Wechseln Sie zum [Azure-Portal](https://portal.azure.com?auzre-portal=true), um es auszuprobieren. Suchen Sie in der oberen Suchleiste nach *Content Safety*. Suchen Sie nach Ihrer Ressource und klicken Sie darauf. Suchen Sie im Menü auf der linken Seite unter *Ressourcenverwaltung* nach *Schlüssel und Endpunkte*. Wählen Sie **Schlüssel und Endpunkte** aus, um den Endpunkt und die Schlüssel für Ihre Ressource anzuzeigen. 
 
-1. Warten Sie, bis PowerShell gestartet wurde. Im Azure-Portal sollte der folgende Bildschirm angezeigt werden:  
-
-    ![Warten Sie, bis PowerShell gestartet wurde.](media/anomaly-detector/powershell-prompt.png)
-
-## Konfigurieren und Ausführen einer Clientanwendung
-
-Nachdem Sie nun über eine Cloud Shell-Umgebung verfügen, können Sie eine einfache Anwendung ausführen, die den Dienst Anomalieerkennung verwendet, um Daten zu analysieren.
-
-1. Geben Sie in der Befehlsshell den folgenden Befehl ein, um die Beispielanwendung herunterzuladen und in einem Ordner namens „ai-900“ zu speichern.
-
-    ```PowerShell
-    git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
-    ```
-
-    >**Tipp**: Wenn Sie diesen Befehl bereits in einem anderen Lab zum Klonen des Repositorys *ai-900* verwendet haben, können Sie diesen Schritt überspringen.
-
-1. Die Dateien werden in einen Ordner namens **ai-900** heruntergeladen. Jetzt möchten wir alle Dateien in Ihrem Cloud Shell-Speicher anzeigen und mit ihnen arbeiten. Geben Sie den folgenden Befehl in die Shell ein:
-
-     ```PowerShell
-    code .
-    ```
-
-    Beachten Sie, dass sich dadurch ein Editor wie in der Abbildung unten öffnet: 
-
-    ![Der Code-Editor.](media/anomaly-detector/powershell-portal-guide-4.png)
-
-1. Erweitern Sie auf der linken Seite im Bereich **Dateien** die Option **ai-900**, und wählen Sie **detect-anomalies.ps1** aus. Diese Datei enthält Code, der den Anomalieerkennungsdienst verwendet, wie hier zu sehen:
-
-    ![Editor mit Code für die Anomalieerkennung](media/anomaly-detector/detect-anomalies-code.png)
-
-1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes. Wichtig ist, dass er die Endpunkt-URL und einen der Schlüssel für Ihre Anomalieerkennungsressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource (sollte sich noch im oberen Bereich des Browsers befinden), und fügen Sie sie in den Code-Editor ein, indem Sie den Platzhalterwert **YOUR_KEY** bzw. **YOUR_ENDPOINT** ersetzen.
-
-    > **Tipp**: Möglicherweise müssen Sie die Trennlinie verwenden, um den Bildschirmbereich anzupassen, während Sie mit den Bereichen **Schlüssel und Endpunkt** und **Editor** arbeiten.
-
-    Nach dem Einfügen der Schlüssel- und Endpunktwerte sollten die ersten beiden Codezeilen etwa wie folgt aussehen:
-
-    ```PowerShell
-    $key="1a2b3c4d5e6f7g8h9i0j...."    
-    $endpoint="https..."
-    ```
-
-1. Verwenden Sie oben rechts im Editor-Bereich die Schaltfläche **...**, um das Menü zu öffnen, und wählen Sie **Speichern** aus, um Ihre Änderungen zu speichern. Öffnen Sie dann das Menü erneut, und wählen Sie **Editor schließen** aus.
-
-    Sie erinnern sich: Anomalieerkennung ist ein KI-Verfahren (Künstliche Intelligenz), mit dem bestimmt wird, ob Werte in einer Reihe innerhalb der erwarteten Parameter liegen. Die Beispielclientanwendung verwendet den Anomalieerkennungsdienst, um eine Datei zu analysieren, die eine Reihe von Datums-/Uhrzeitwerten und numerischen Werten enthält. Die Anwendung sollte Ergebnisse zurückgeben, die zu jedem Zeitpunkt angeben, ob der numerische Wert innerhalb der erwarteten Parameter liegt.
-
-1. Geben Sie im PowerShell-Bereich die folgenden Befehle ein, um den Code auszuführen:
-
-    ```PowerShell
-    cd ai-900
-    .\detect-anomalies.ps1
-    ```
-
-1. Überprüfen Sie die Ergebnisse, und beachten Sie, dass die letzte Spalte in den Ergebnissen **True** oder **False** ist, um anzugeben, ob der zum jeweiligen Zeitpunkt (Datum/Uhrzeit) erfasste Wert als Anomalie betrachtet wird. Überlegen Sie, wie wir diese Informationen in der Praxis verwenden können. Welche Aktion könnte von der Anwendung ausgelöst werden, wenn bei den Werten von Kühlschranktemperatur oder Bluddruck Anomalien erkannt wurden?  
-
-## Bereinigung
-
-Sie sollten am Ende eines Projekts prüfen, ob Sie die Ressourcen, die Sie erstellt haben, noch benötigen. Ressourcen, die weiterhin ausgeführt werden, können Sie Geld kosten. 
-
-Wenn Sie mit anderen Modulen zu KI-Grundlagen fortfahren, können Sie Ihre Ressource in anderen Labs wiederverwenden.
-
-Wenn Sie den Lernpfad abgeschlossen haben, können Sie die Ressourcengruppe oder die einzelnen Ressourcen aus Ihrem Azure-Abonnement löschen.
-
-1. Öffnen Sie im [Azure-Portal](https://portal.azure.com/) auf der Seite **Ressourcengruppen** die Ressourcengruppe, die Sie beim Erstellen Ihrer Ressource angegeben haben.
-
-2. Klicken Sie auf **Ressourcengruppe löschen**, geben Sie den Ressourcengruppennamen ein, um zu bestätigen, dass Sie ihn löschen möchten, und klicken Sie dann auf **Löschen**. Sie können ebenso einzelne Ressourcen löschen, indem Sie die betroffene Ressource bzw. die Ressourcen löschen. Klicken Sie dazu auf die drei Punkte klicken, um weitere Optionen anzuzeigen, und klicken Sie anschließend auf **Löschen**.
+Wenn Sie fertig sind, können Sie die Content Safety-Ressource aus dem Azure-Portal löschen. Das Löschen der Ressource ist eine Möglichkeit, die Kosten zu senken, die anfallen, wenn die Ressource im Abonnement vorhanden ist. Navigieren Sie hierzu in Ihrer Content Safety-Ressource zur Seite **Übersicht**. Wählen Sie oben auf dem Bildschirm **Löschen** aus. 
