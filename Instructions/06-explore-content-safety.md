@@ -1,10 +1,7 @@
 ---
 lab:
-  title: "Entdecken von Azure\_KI Services"
+  title: Erkunden von Content Safety Studio
 ---
-
-> **Wichtig**
-> **Das Anomalieerkennung Lab ist veraltet und wurde durch das folgende Update ersetzt.**
 
 Mit Azure KI Services können Benutzer*innen KI-Anwendungen mit sofort einsatzbereiten, vorgefertigten und anpassbaren APIs und Modellen erstellen. In dieser Übung werfen Sie einen Blick auf einen der Dienste, Azure KI Inhaltssicherheit, in Content Safety Studio. 
 

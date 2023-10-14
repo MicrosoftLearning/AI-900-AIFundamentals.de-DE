@@ -9,21 +9,21 @@ lab:
 
 Die Verarbeitung natürlicher Sprache (Natural Language Processing, NLP) ist ein Teilgebiet der künstlichen Intelligenz (KI), das sich mit geschriebener und gesprochener Sprache beschäftigt. Sie können NLP verwenden, um Lösungen zu entwickeln, die semantische Bedeutung aus Text oder Sprache extrahieren oder sinnvolle Antworten in natürlicher Sprache formulieren.
 
-Microsoft Azure *Cognitive Services* umfasst die Textanalysefunktionen im *Sprachdienst*, der einige sofort einsatzbereite NLP-Funktionen bietet, darunter die Identifizierung von Schlüsselbegriffen in Texten und die Klassifizierung von Texten auf der Grundlage der Stimmung.
+Microsoft *Azure KI Services* umfasst die Textanalysefunktionen im *Sprachdienst*, der einige sofort einsatzbereite NLP-Funktionen bietet, darunter die Identifizierung von Schlüsselbegriffen in Texten und die Klassifizierung von Texten auf der Grundlage der Stimmung.
 
 Nehmen wir z. B. an, das fiktive Unternehmen *Margie's Travel* ermutigt Kunden, Bewertungen für Hotelaufenthalte abzugeben. Sie können den Sprachdienst nutzen, um die Bewertungen durch Extraktion von Schlüsselbegriffen zusammenzufassen, um festzustellen, welche Bewertungen positiv und welche negativ sind, oder um den Bewertungstext auf die Erwähnung bekannter Entitäten wie Orte oder Personen zu analysieren.
 
 Um die Fähigkeiten des Sprachdiensts zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder Smartphone-Apps.
 
-## Erstellen einer *Cognitive Services*-Ressource
+## Erstellen einer *Azure KI Services*-Ressource
 
-Sie können den Sprachdienst nutzen, indem Sie entweder eine Ressource für die **Sprache** oder eine **Cognitive Services**-Ressource erstellen.
+Sie können den Sprachdienst nutzen, indem Sie entweder eine **Language**- oder eine **Azure KI Services**-Ressource erstellen.
 
-Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ressource in Ihrem Azure-Abonnement.
+Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Ressource in Ihrem Azure-Abonnement.
 
 1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Wählen Sie die Schaltfläche **&#65291;Ressource erstellen**, suchen Sie nach *Cognitive Services*, und erstellen Sie eine **Cognitive Services**-Ressource mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
@@ -33,9 +33,9 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Cognitive Services**-Ress
 
 1. Überprüfen und erstellen Sie die Ressource.
 
-### Abrufen von Schlüssel und Endpunkt für Ihre Cognitive Services-Ressource
+### Abrufen von Schlüssel und Endpunkt für Ihre Azure KI Services-Ressource
 
-1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Cognitive Services-Ressource, und wählen Sie auf der Seite **Übersicht** den Link zur Verwaltung der Schlüssel für den Dienst aus. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung mit Ihrer Cognitive Services-Ressource herzustellen.
+1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Azure KI Services-Ressource und wählen Sie auf der Seite **Übersicht** den Link zur Verwaltung der Schlüssel für den Dienst aus. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung mit Ihrer Azure KI Services-Ressource herzustellen.
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Ressource an. Sie benötigen den **Schlüssel** und den **Endpunkt**, um von Clientanwendungen aus eine Verbindung herzustellen.
 
@@ -87,11 +87,11 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
     ![Editor, der den Code zur Nutzung des Sprachdiensts enthält](media/analyze-text-language-service/analyze-text-code.png)
 
-1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes. Navigieren Sie im Azure-Portal zu Ihrer Cognitive Services-Ressource. Wählen Sie dann im linken Bereich die Seite **Schlüssel und Endpunkte** aus. Kopieren Sie den Schlüssel und den Endpunkt von der Seite, und fügen Sie sie in den Code-Editor ein, indem Sie die Platzhalterwerte **YOUR_KEY** und **YOUR_ENDPOINT** ersetzen.
+1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes. Navigieren Sie im Azure-Portal zu Ihrer Azure KI Services-Ressource. Wählen Sie dann im linken Bereich die Seite **Schlüssel und Endpunkte** aus. Kopieren Sie den Schlüssel und den Endpunkt von der Seite, und fügen Sie sie in den Code-Editor ein, indem Sie die Platzhalterwerte **YOUR_KEY** und **YOUR_ENDPOINT** ersetzen.
 
     > **Tipp**: Möglicherweise müssen Sie die Trennlinie verwenden, um den Bildschirmbereich anzupassen, während Sie mit den Bereichen **Schlüssel und Endpunkt** und **Editor** arbeiten.
 
-    ![Suchen Sie die Registerkarte „Schlüssel und Endpunkt“ im linken Bereich Ihrer Cognitive Services-Ressource.](media/analyze-text-language-service/key-endpoint-support.png)
+    ![Suchen Sie die Registerkarte „Schlüssel und Endpunkt“ im linken Bereich Ihrer Azure KI Services-Ressource.](media/analyze-text-language-service/key-endpoint-support.png)
 
     Nachdem Sie die Schlüssel- und Endpunktwerte ersetzt haben, sollten die ersten Codezeilen etwa wie folgt aussehen:
 
@@ -102,7 +102,7 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
 1. Verwenden Sie oben rechts im Editor-Bereich die Schaltfläche **...**, um das Menü zu öffnen, und wählen Sie **Speichern** aus, um Ihre Änderungen zu speichern. Öffnen Sie dann das Menü erneut, und wählen Sie **Editor schließen** aus.
 
-    Die Beispielclientanwendung verwendet den Sprachdienst von Cognitive Services, um Sprache zu erkennen, Schlüsselbegriffe zu extrahieren, die Stimmung zu bestimmen und bekannte Entitäten für Bewertungen zu extrahieren.
+    Die Beispielclientanwendung verwendet den Sprachdienst von Azure KI Services, um Sprache zu erkennen, Schlüsselbegriffe zu extrahieren, die Stimmung zu bestimmen und bekannte Entitäten für Bewertungen zu extrahieren.
 
 1. Geben Sie in der Cloud Shell den folgenden Befehl ein, um den Code auszuführen:
 
