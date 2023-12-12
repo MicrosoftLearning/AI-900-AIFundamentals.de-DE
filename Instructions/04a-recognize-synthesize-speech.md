@@ -7,7 +7,7 @@ lab:
 
 > **Hinweis**: Um dieses Lab abzuschließen, benötigen Sie ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-portal=true), in dem Sie über Administratorzugriff verfügen.
 
-Um Software zu entwickeln, die gesprochene Sprache interpretieren und entsprechend reagieren kann, können Sie den **Azure KI Speech**-Dienst nutzen, der eine einfache Möglichkeit bietet, gesprochene Sprache in Text zu transkribieren und umgekehrt.
+Um Software zu entwickeln, die gesprochene Sprache interpretieren und entsprechend reagieren kann, können Sie den Dienst **Azure KI Speech** nutzen, der eine einfache Möglichkeit bietet, gesprochene Sprache in Text zu transkribieren und umgekehrt.
 
 Angenommen, Sie möchten ein intelligentes Gerät entwickeln, das auf gesprochene Fragen wie „Wie spät ist es?“ antwortet. Als Antwort sollte die Ortszeit bereitgestellt werden.
 
@@ -15,13 +15,13 @@ Um die Fähigkeiten des Speech-Diensts zu testen, verwenden wir eine einfache Be
 
 ## Erstellen einer *Azure KI Services*-Ressource
 
-Sie können den Speech-Dienst nutzen, indem Sie entweder eine **Speech**Ressource oder eine **Azure KI Services**-Ressource erstellen.
+Sie können den Speech-Dienst nutzen, indem Sie entweder eine Ressource **Speech** oder eine Ressource für **Azure KI Services** erstellen.
 
 Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Ressource in Ihrem Azure-Abonnement.
 
 1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **＋Ressource erstellen** und suchen Sie nach *Azure KI Services*. Wählen Sie **Erstellen** eines **Azure KI Services**-Plans aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
@@ -31,9 +31,9 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Resso
 
 1. Überprüfen und erstellen Sie die Ressource.
 
-### Rufen Sie den Schlüssel und den Standort für Ihre Azure KI Services-Ressource ab.
+### Rufen Sie den Schlüssel und den Standort für Ihre Azure KI Services-Ressource ab
 
-1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Azure KI Services-Ressource, und klicken Sie auf der Seite **Übersicht** auf den Link zur Verwaltung der Schlüssel für den Dienst. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung mit Ihrer Azure KI Services-Ressource herzustellen.
+1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Azure KI Services-Ressource, und klicken Sie auf der Seite **Übersicht** auf den Link zur Verwaltung der Schlüssel für den Dienst. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung zu Ihrer Azure KI Services-Ressource herzustellen.
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Ressource an. Sie benötigen **Standort/Region** und **Schlüssel** für die Verbindung von Clientanwendungen.
 
@@ -85,7 +85,7 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
     ![Editor, der den Code zur Nutzung des Speech-Diensts enthält](media/recognize-synthesize-speech/speaking-clock-code.png)
 
-1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes. Es ist wichtiger, dass er die Region/den Standort und einen der Schlüssel für Ihre Azure KI Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein. Ersetzen Sie hierbei die Platzhalterwerte **YOUR_KEY** und **YOUR_LOCATION**.
+1. Machen Sie sich nicht zu viele Gedanken über die Details des Codes, wichtig ist, dass er die Region/den Standort und einen der Schlüssel für Ihre Azure KI Services-Ressource benötigt. Kopieren Sie diese von der Seite **Schlüssel und Endpunkte** für Ihre Ressource aus dem Azure-Portal, und fügen Sie sie in den Code-Editor ein. Ersetzen Sie hierbei die Platzhalterwerte **YOUR_KEY** und **YOUR_LOCATION**.
 
     > **Tipp**: Möglicherweise müssen Sie die Trennlinie verwenden, um den Bildschirmbereich anzupassen, während Sie mit den Bereichen **Schlüssel und Endpunkt** und **Editor** arbeiten.
 

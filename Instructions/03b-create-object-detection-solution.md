@@ -11,21 +11,21 @@ lab:
 
 Beispielsweise könnte eine Initiative zur Straßenverkehrssicherheit feststellen, dass Fußgänger*innen und Radfahrer*innen die am stärksten gefährdeten Verkehrsteilnehmer*innen an Verkehrskreuzungen sind. Mithilfe von Kameras zur Überwachung von Kreuzungen könnten Bilder von Verkehrsteilnehmer*innen analysiert werden, um Fußgänger*innen und Radfahrer*innen zu erkennen und deren Anzahl zu überwachen oder sogar das Verhalten von Verkehrssignalen zu ändern.
 
-Der **Custom Vision**-Dienst in Microsoft Azure bietet eine cloudbasierte Lösung zum Erstellen und Veröffentlichung von benutzerdefinierten Objekterkennungsmodellen. In Azure können Sie den Custom Vision-Dienst verwenden, um ein Objekterkennungsmodell auf der Grundlage vorhandener Bilder zu trainieren. Die Erstellung einer Objekterkennungslösung erfolgt in zwei Schritten. Zunächst müssen Sie ein Modell trainieren, um die Position und Klasse der Objekte mithilfe von beschrifteten Bildern zu erkennen. Wenn das Modell dann trainiert ist, müssen Sie es als Dienst veröffentlichen, der von Anwendungen genutzt werden kann.
+Der Dienst **Custom Vision** in Microsoft Azure bietet eine cloudbasierte Lösung zur Erstellung und Veröffentlichung von benutzerdefinierten Objekterkennungsmodellen. In Azure können Sie den Custom Vision-Dienst verwenden, um ein Objekterkennungsmodell auf der Grundlage vorhandener Bilder zu trainieren. Die Erstellung einer Objekterkennungslösung erfolgt in zwei Schritten. Zunächst müssen Sie ein Modell trainieren, um die Position und Klasse der Objekte mithilfe von beschrifteten Bildern zu erkennen. Wenn das Modell dann trainiert ist, müssen Sie es als Dienst veröffentlichen, der von Anwendungen genutzt werden kann.
 
 Um die Fähigkeiten des Custom Vision-Diensts zur Erkennung von Objekten in Bildern zu testen, verwenden wir eine einfache Befehlszeilenanwendung, die in der Cloud Shell ausgeführt wird. Die gleichen Prinzipien und Funktionen gelten auch für reale Lösungen, wie Websites oder mobile Apps.
 
 ## Erstellen einer *Azure KI Services*-Ressource
 
-Sie können den Custom Vision-Dienst verwenden, indem Sie entweder eine **Custom Vision**-Ressource oder eine **Azure KI Services**-Ressource erstellen.
+Sie können den Custom Vision-Dienst verwenden, indem Sie entweder eine Ressource für **Custom Vision** oder eine für **Azure KI Services** erstellen.
 
 > **Hinweis**: Nicht jede Ressource ist in jeder Region verfügbar. Unabhängig davon, ob Sie eine Custom Vision- oder eine Azure KI Services-Ressource erstellen, können nur Ressourcen, die in [bestimmten Regionen](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) erstellt wurden, für den Zugriff auf Custom Vision-Dienste verwendet werden. Der Einfachheit halber wird in den folgenden Konfigurationsanweisungen eine Region für Sie vorausgewählt.
 
-Erstellen Sie in Ihrem Azure-Abonnement eine **Azure KI Services**-Ressource.
+Erstellen Sie eine Ressource für **Azure KI Services** in Ihrem Azure-Abonnement.
 
 1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **＋Ressource erstellen** und suchen Sie nach *Azure KI Services*. Wählen Sie **Erstellen** eines **Azure KI Services**-Plans aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: East US

@@ -17,13 +17,13 @@ Um die Fähigkeiten des Sprachdiensts zu testen, verwenden wir eine einfache Bef
 
 ## Erstellen einer *Azure KI Services*-Ressource
 
-Sie können den Sprachdienst nutzen, indem Sie entweder eine **Language**- oder eine **Azure KI Services**-Ressource erstellen.
+Sie können den Sprachdienst nutzen, indem Sie entweder eine Ressource für die **Sprache** oder eine Ressource für **Azure KI Services** erstellen.
 
 Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Ressource in Ihrem Azure-Abonnement.
 
 1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto an.
 
-1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Azure KI-Dienste*. Wählen Sie **Erstellen** und dann **Azure KI Services**-Plan aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
+1. Klicken Sie auf die Schaltfläche **＋Ressource erstellen** und suchen Sie nach *Azure KI Services*. Wählen Sie **Erstellen** eines **Azure KI Services**-Plans aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
@@ -33,9 +33,9 @@ Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Resso
 
 1. Überprüfen und erstellen Sie die Ressource.
 
-### Abrufen von Schlüssel und Endpunkt für Ihre Azure KI Services-Ressource
+### Rufen Sie den Schlüssel und den Endpunkt für Ihre Azure KI Services-Ressource ab
 
-1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Azure KI Services-Ressource und wählen Sie auf der Seite **Übersicht** den Link zur Verwaltung der Schlüssel für den Dienst aus. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung mit Ihrer Azure KI Services-Ressource herzustellen.
+1. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zu Ihrer Azure KI Services-Ressource, und wählen Sie auf der Seite **Übersicht** den Link zur Verwaltung der Schlüssel für den Dienst aus. Sie benötigen den Endpunkt und die Schlüssel, um von Clientanwendungen aus eine Verbindung zu Ihrer Azure KI Services-Ressource herzustellen.
 
 1. Zeigen Sie die Seite **Schlüssel und Endpunkt** für Ihre Ressource an. Sie benötigen den **Schlüssel** und den **Endpunkt**, um von Clientanwendungen aus eine Verbindung herzustellen.
 
@@ -102,7 +102,7 @@ Nachdem Sie nun über ein benutzerdefiniertes Modell verfügen, können Sie eine
 
 1. Verwenden Sie oben rechts im Editor-Bereich die Schaltfläche **...**, um das Menü zu öffnen, und wählen Sie **Speichern** aus, um Ihre Änderungen zu speichern. Öffnen Sie dann das Menü erneut, und wählen Sie **Editor schließen** aus.
 
-    Die Beispielclientanwendung verwendet den Sprachdienst von Azure KI Services, um Sprache zu erkennen, Schlüsselbegriffe zu extrahieren, die Stimmung zu bestimmen und bekannte Entitäten für Bewertungen zu extrahieren.
+    Die Beispiel-Clientanwendung nutzt den Sprachdienst von Azure KI Services, um Sprache zu erkennen, Schlüsselbegriffe zu extrahieren, die Stimmung zu bestimmen und bekannte Entitäten für Bewertungen zu extrahieren.
 
 1. Geben Sie in der Cloud Shell den folgenden Befehl ein, um den Code auszuführen:
 

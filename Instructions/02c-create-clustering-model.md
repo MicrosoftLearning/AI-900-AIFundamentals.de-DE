@@ -52,49 +52,39 @@ lab:
 
 Die Erstellung des Computeclusters nimmt einige Zeit in Anspruch. Sie können mit dem nächsten Schritt fortfahren, während Sie warten.
 
-## Erstellen einer Pipeline im Designer
+## Erstellen einer Pipeline und Hinzufügen eines Datasets
 
 Sie müssen zunächst eine Pipeline erstellen, um mit Azure Machine Learning Designer arbeiten zu können.
 
-1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Designer** (unter **Autor**) an, und wählen Sie das Pluszeichen aus, um eine neue Pipeline zu erstellen.
+1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Designer** (unter **Erstellung**) an, und wählen Sie **+** aus, um eine neue Pipeline zu erstellen.
 
-1. Wählen Sie oben rechts auf dem Bildschirm **Einstellungen** aus. Wenn der Bereich **Einstellungen** nicht sichtbar ist, wählen Sie das Radsymbol neben dem Pipelinenamen oben.
+1. Ändern Sie den Entwurfsnamen (**Pipeline-Created-on-* Datum***) in **Train Penguin Clustering**.
 
-1. Unter **Einstellungen** müssen Sie ein Computeziel angeben, auf dem die Pipeline ausgeführt werden soll. Wählen Sie unter **Computetyp auswählen** die Option **Computecluster** aus. Wählen Sie dann unter **Azure ML-Computecluster auswählen** den zuvor erstellten Computecluster aus.
+    In Azure Machine Learning werden Daten für das Trainieren von Modellen und andere Vorgänge normalerweise in einem Objekt gekapselt, das als *Dataset* bezeichnet wird. In diesem Modul verwenden Sie ein Dataset, das Beobachtungen von drei Pinguinarten enthält.
 
-1. Ändern Sie in **Einstellungen** unter **Entwurfsdetails** den Entwurfsnamen (**Pipeline-Created-on-* Date***) in **Train Penguin Clustering**.
+1. Zeigen Sie die Seite **Daten** an (unter **Ressourcen**). Die Seite „Daten“ enthält bestimmte Datendateien oder Tabellen, mit denen Sie in Azure Machine Learning arbeiten möchten.
 
-1. Wählen Sie oben rechts im Bereich **Einstellungen** das *Symbol zum Schließen* aus, um den Bereich zu schließen. Wählen Sie dann **Speichern** aus.
-
-    ![Screenshot des Einstellungsbereichs in Machine Learning Studio](media/create-clustering-model/create-pipeline-help.png)
-
-## Erstellen eines Datasets
-
-In Azure Machine Learning werden Daten für das Trainieren von Modellen und andere Vorgänge normalerweise in einem Objekt gekapselt, das als *Dataset* bezeichnet wird. In diesem Modul verwenden Sie ein Dataset, das Beobachtungen von drei Pinguinarten enthält.
-
-1. Erweitern Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Zeigen Sie die Seite **Daten** an (unter **Ressourcen**). Die Seite „Daten“ enthält bestimmte Datendateien oder Tabellen, mit denen Sie in Azure Machine Learning arbeiten möchten. Sie können auch auf dieser Seite Datasets erstellen.
-
-1. Wählen Sie auf der Seite **Daten** auf der Registerkarte **Datenressourcen** die Option **Erstellen** aus. Konfigurieren Sie dann eine Datenressource mit den folgenden Einstellungen:
-    * **Datentyp**:
-        * **Name:** penguin-data
-        * **Beschreibung:** Daten zu Pinguinen
-        * **Datasettyp:** Tabellarisch
-    * **Datenquelle**: Aus Webdateien
-    * **Web-URL:** 
-        * **Web-URL:** https://aka.ms/penguin-data
-        * **Skip data validation** (Datenüberprüfung überspringen): *Nicht auswählen*
-    * **Einstellungen**:
-        * **Dateiformat:** Zeichengetrennt
-        * **Trennzeichen:** Komma
-        * **Codierung:** UTF-8
-        * **Spaltenüberschriften**: Nur erste Datei enthält Header
-        * **Zeilen überspringen:** Keine
-        * **Dataset contains multi-line data** (Dataset enthält mehrzeilige Daten): *Nicht auswählen*
-    * **Schema:**
-        * Alle Spalten einschließen außer **Pfad**
-        * Überprüfen der automatisch erkannten Typen
-    * **Überprüfung**
-        * Klicken Sie auf **Erstellen**.
+1. Wählen Sie auf der Seite **Daten** auf der Registerkarte **Datenressourcen** die Option **+Erstellen** aus. Konfigurieren Sie dann eine Datenressource mit den folgenden Einstellungen:
+    - **Datentyp**:
+        - **Name:** penguin-data
+        - **Beschreibung:** Daten zu Pinguinen
+        - **Datasettyp:** Tabellarisch
+    - **Datenquelle**: Aus Webdateien
+    - **Web-URL:**
+        - **Web-URL:** https://aka.ms/penguin-data
+        - **Skip data validation** (Datenüberprüfung überspringen): *Nicht auswählen*
+    - **Einstellungen**:
+        - **Dateiformat:** Zeichengetrennt
+        - **Trennzeichen:** Komma
+        - **Codierung:** UTF-8
+        - **Spaltenüberschriften**: Nur erste Datei enthält Header
+        - **Zeilen überspringen:** Keine
+        - **Dataset contains multi-line data** (Dataset enthält mehrzeilige Daten): *Nicht auswählen*
+    - **Schema:**
+        - Alle Spalten einschließen außer **Pfad**
+        - Überprüfen der automatisch erkannten Typen
+    - **Überprüfung**
+        - Klicken Sie auf **Erstellen**.
 
 1. Nachdem das Dataset erstellt wurde, öffnen Sie es, und zeigen Sie die Seite **Erkunden** an, um eine Stichprobe der Daten anzuzeigen. Diese Daten stellen Messungen der Schnabelrückenlänge und -tiefe, Flossenlänge und Körpermasse für mehrere Beobachtungen von Pinguinen dar. Dieses Dataset enthält Daten zu drei Pinguinarten: *Adelie* (Adeliepinguin), *Gentoo* (Eselspinguin) und *Chinstrap* (Zügelpinguin).
 
@@ -102,19 +92,17 @@ In Azure Machine Learning werden Daten für das Trainieren von Modellen und ande
 
 ### Laden Sie Daten im Canvas-Panel,
 
-1. Navigieren Sie zurück zu Ihrer Pipeline, indem Sie im Menü auf der linken Seite auf **Designer** klicken. Wählen Sie auf der Seite **Designer** die Option **Train Penguin Clustering** aus.
+1. Navigieren Sie zurück zu Ihrer Pipeline, indem Sie im Menü auf der linken Seite auf **Designer** klicken. Wählen Sie auf der Seite **Designer** den Pipelineentwurf **Train Penguin Clustering** aus.
 
 1. Wählen Sie neben dem Pipelinenamen auf der linken Seite das Pfeilsymbol, um das Panel zu erweitern, wenn es nicht bereits erweitert ist. Der Bereich sollte standardmäßig im Bereich **Ressourcenbibliothek** geöffnet werden. Dies wird durch das Büchersymbol am oberen Rand des Bereichs gekennzeichnet. Beachten Sie, dass eine Suchleiste für die Suche nach Objekten vorhanden ist. Beachten Sie die beiden Schaltflächen **Daten** und **Komponente**.
 
     ![Screenshot der Position der Ressourcenbibliothek für den Designer, die Suchleiste und das Datensymbol](media/create-clustering-model/designer-asset-library-data.png)
 
-1. Klicken Sie auf **Daten**. Suchen Sie nach dem Datensatz **penguin-data**, und platzieren Sie ihn auf der Canvas.
+1. Suchen Sie nach **Daten**, suchen Sie nach dem Dataset **penguin-data**, und platzieren Sie ihn im Canvas-Panel.
 
 1. Klicken Sie mit der rechten Maustaste (auf einem Mac drücken Sie die CTRL-Taste und klicken) auf das Dataset **penguin-data** auf der Canvas, und klicken Sie dann auf **Datenvorschau anzeigen**.
 
-1. Überprüfen Sie das Schema *Profil* der Daten. Beachten Sie, dass die Verteilungen der verschiedenen Spalten als Histogramme angezeigt werden. Wählen Sie dann die Spalte **CulmenLength** (Schnabelrückenlänge) aus. Das Dataset sollte in etwa wie folgt aussehen:
-
-    ![Visualisierung des Datasets penguin-data mit den zugehörigen Spalten und einigen Beispieldaten](media/create-clustering-model/penguin-visualization.png)
+1. Wählen Sie die Registerkarte *Profil* aus. Beachten Sie, dass die Verteilungen der verschiedenen Spalten als Histogramme angezeigt werden.
 
 1. Beachten Sie die folgenden Merkmale des Datasets:
 
@@ -127,11 +115,11 @@ In Azure Machine Learning werden Daten für das Trainieren von Modellen und ande
     - Es fehlen zwei Werte in der Spalte **CulmenLength** (die Spalten **CulmenDepth**, **FlipperLength** und **BodyMass** weisen ebenfalls zwei fehlende Werte auf).
     - Die Messwerte liegen in verschiedenen Skalen vor (von zehn Millimetern bis mehrere Tausend Gramm).
 
-1. Schließen Sie die Datasetvisualisierung, damit Sie das Dataset im Pipelinecanvas betrachten können.
+1. Schließen Sie die Seite **DataOutput**, damit Sie das Dataset im Canvas-Panel der Pipeline betrachten können.
 
 ## Anwenden von Transformationen
 
-1. Klicken Sie links im Bereich **Ressourcenbibliothek** auf **Komponenten**. Diese enthalten verschiedenste Module, die Sie für Datentransformationen und Modelltrainings verwenden können. Für die schnelle Suche nach Modulen können Sie auch die Suchleiste verwenden.
+1. Wählen Sie links im Bereich **Ressourcenbibliothek** die Option **Komponente** aus. Diese enthält verschiedenste Module, die Sie für Datentransformationen und Modelltrainings verwenden können. Für die schnelle Suche nach Modulen können Sie auch die Suchleiste verwenden.
 
     ![Screenshot der Position der Ressourcenbibliothek für den Designer, die Suchleiste und das Komponentensymbol](media/create-clustering-model/designer-asset-library-components.png)
 
@@ -143,9 +131,9 @@ In Azure Machine Learning werden Daten für das Trainieren von Modellen und ande
 
     ![Screenshot: Einbeziehen der Spaltennamen „CulmenLength“, „CulmenDepth“, „FlipperLength“ und „BodyMass“](media/create-clustering-model/select-columns.png)
 
-1. Speichern Sie die Einstellungen des Moduls **Spalten im Dataset auswählen**, um zur Canvas des Designers zurückzukehren.
+1. Wählen Sie **Speichern** aus, und schließen Sie dann das Menü **Spalten im Dataset auswählen**, um zum Canvas-Panel des Designers zurückzukehren.
 
-1. Suchen Sie in der **Ressourcenbibliothek** nach dem Modul **Fehlende Daten bereinigen**, platzieren Sie es auf der Canvas unter dem Modul **Spalten im Dataset auswählen**, und verbinden Sie sie wie folgt:
+1. Suchen Sie in der **Ressourcenbibliothek** nach dem Modul **Fehlende Daten bereinigen**, platzieren Sie es im Canvas-Panel unter dem Modul **Spalten im Dataset auswählen**, und verbinden Sie sie wie folgt:
 
     ![Screenshot: Verbinden von „Spalten auswählen“ im Modul „Dataset“ mit dem Modul „Fehlende Daten bereinigen“](media/create-clustering-model/clean-missing-data.png)
 
@@ -153,7 +141,7 @@ In Azure Machine Learning werden Daten für das Trainieren von Modellen und ande
 
     ![Screenshot: Verwenden der Option „Mit Regeln“, um alle Spalten auszuwählen](media/create-clustering-model/normalize-columns.png)
 
-1. Belassen Sie das **Fehlende Daten bereinigen**-Modul ausgewählt, und legen Sie im Bereich „Einstellungen“ die folgenden Konfigurationseinstellungen fest:
+1. Wählen Sie **Speichern** aus, und legen Sie dann im Einstellungsbereich die folgenden Konfigurationseinstellungen fest:
     - **Mindestanzahl fehlender Werte:** 0,0
     - **Maximale Anzahl fehlender Werte:** 1,0
     - **Bereinigungsmodus:** Gesamte Zeile entfernen
@@ -166,31 +154,36 @@ In Azure Machine Learning werden Daten für das Trainieren von Modellen und ande
 
     ![Screenshot: Auswählen aller Spalten](media/create-clustering-model/normalize-columns.png)
 
-1. Schließen Sie die Einstellungen des Moduls **Daten normalisieren**, um zur Canvas des Designers zurückzukehren.
+1. Wählen Sie **Speichern** aus, und schließen Sie die Einstellungen des Moduls **Daten normalisieren**, um zum Canvas-Panel des Designers zurückzukehren.
 
 ## Führen Sie die Pipeline aus.
 
 Zum Anwenden der Datentransformationen müssen Sie die Pipeline als Experiment ausführen.
 
-1. Wählen Sie **Übermitteln** aus, und führen Sie die Pipeline als **neues Experiment** mit dem Namen **mslearn-penguin-training** in Ihrem Computecluster aus.
+1. Wählen Sie oben auf der Seite **Konfigurieren und Übermitteln** aus, um das Dialogfeld **Pipelineauftrag einrichten** zu öffnen.
 
-1. Warten Sie, bis die Ausführung beendet ist. Dies kann 5 Minuten oder länger dauern.
+1. Wählen Sie auf der Seite **Grundlagen** die Option **Neu erstellen** aus, und legen Sie den Namen des Experiments auf **mslearn-penguin-training** fest. Wählen Sie dann **Weiter** aus.
 
-    ![Screenshot der Ressourcenbibliothek des Designers mit dem abgeschlossenen Auftrag sowie der Schaltfläche für die Auftragsdetails darunter](media/create-clustering-model/completed-job.png)
+1. Wählen Sie auf der Seite **Eingaben und Ausgaben** die Option **Weiter** aus, ohne Änderungen vorzunehmen.
 
-    Beachten Sie, dass sich der linke Bereich jetzt im Bereich **Übermittelte Aufträge** befindet. Sie werden wissen, wann die Ausführung abgeschlossen ist, da sich der Status des Auftrags zu **Abgeschlossen** ändert.
+1. Auf der Seite **Laufzeiteinstellungen** wird ein Fehler angezeigt, da Sie nicht über eine Standardcomputeressource für die Ausführung der Pipeline verfügen. Wählen Sie in der Dropdownliste **Computetyp auswählen** die Option *Computecluster* und in der Dropdownliste **Azure ML Computecluster auswählen** Ihren kürzlich erstellten Computecluster aus.
+
+1. Wählen Sie **Weiter** aus, um den Pipelineauftrag zu überprüfen, und wählen Sie dann **Übermitteln** aus, um die Trainingspipeline auszuführen.
+
+1. Warten Sie, bis die Ausführung beendet ist. Dies kann 5 Minuten oder länger dauern. Sie können den Status des Auftrags überprüfen, indem Sie unter **Ressourcen** die Option **Aufträge** auswählen. Wählen Sie dort den Auftrag **Train Penguin Clustering** aus.
+
 
 ## Anzeigen der transformierten Daten
 
-1. Wenn die Ausführung abgeschlossen ist, wird das Dataset nun für das Modelltraining vorbereitet. Klicken Sie auf **Auftragsdetails**. Sie werden zu einer anderen Registerkarte weitergeleitet, auf der die Module wie folgt angezeigt werden:
+1. Wenn die Ausführung abgeschlossen ist, sehen die Module folgendermaßen aus:
 
     ![Screenshot: Module in einem abgeschlossenen Zustand mit grünem Balken auf der linken Seite der einzelnen Module](media/create-clustering-model/normalize-complete.png)
 
-1. Klicken Sie auf der neuen Registerkarte mit der rechten Maustaste auf das Modul **Daten normalisieren**, und wählen Sie **Datenvorschau anzeigen** und dann **Transformiertes Dataset** aus, um die Ergebnisse anzuzeigen.
+1. Klicken Sie mit der rechten Maustaste auf das Modul **Daten normalisieren**, und wählen Sie **Datenvorschau anzeigen** und dann **Transformiertes Dataset** aus, um die Ergebnisse anzuzeigen.
 
 1. Sehen Sie sich die Daten an. Beachten Sie, dass die Spalte **Species** entfernt wurde, dass keine Werte fehlen und dass die Werte für alle vier Merkmale mit einer gemeinsamen Skala normalisiert wurden.
 
-1. Schließen Sie die Visualisierung der Ergebnisse der Datennormalisierung. Kehren Sie zur vorherigen Registerkarte zurück.
+1. Schließen Sie die Seite **Transformed_dataset**, um zur Pipelineausführung zurückzukehren.
 
 Da Sie nun die Merkmale ausgewählt und vorbereitet haben, die Sie aus dem Dataset verwenden möchten, können Sie sie zum Trainieren eines Clustermodells verwenden.
 
@@ -204,18 +197,18 @@ Führen Sie die folgenden Schritte aus, um die Pipeline **Train Pinguin Clusteri
 
 Führen Sie die folgenden Schritte aus, und verwenden Sie die obige Abbildung als Referenz zum Hinzufügen und Konfigurieren der erforderlichen Module.
 
-1. Öffnen Sie die Pipeline **Train Penguin Clustering**, falls diese noch nicht geöffnet ist.
+1. Kehren Sie zur Seite **Designer** zurück, und öffnen Sie den Pipelineentwurf **Train Penguin Clustering**.
 
 1. Suchen Sie im Bereich **Ressourcenbibliothek** auf der linken Seite nach einem Modul vom Typ **Daten teilen**, und platzieren Sie es auf der Canvas unter dem Modul **Daten normalisieren**. Verbinden Sie dann die linke Ausgabe des Moduls **Daten normalisieren** mit der Eingabe des Moduls **Daten teilen**.
 
-    >**Tipp**: Für die schnelle Suche nach Modulen verwenden Sie die Suchleiste. 
+    >**Tipp**: Für die schnelle Suche nach Modulen verwenden Sie die Suchleiste.
 
 1. Wählen Sie das Modul **Daten teilen** aus, und konfigurieren Sie dessen Einstellungen wie folgt:
-    * **Aufteilungsmodus:** Zeilen aufteilen
-    * **Bruchteil von Zeilen im ersten Ausgabedataset:** 0,7
-    * **Zufällige Aufteilung**: True
-    * **Zufälliger Ausgangswert:** 123
-    * **Geschichtete Aufteilung:** FALSE
+    - **Aufteilungsmodus:** Zeilen aufteilen
+    - **Bruchteil von Zeilen im ersten Ausgabedataset:** 0,7
+    - **Zufällige Aufteilung**: True
+    - **Zufälliger Ausgangswert:** 123
+    - **Geschichtete Aufteilung:** FALSE
 
 1. Suchen Sie in der **Objektibliothek** nach dem **Clustering-Modell-Modul** trainieren und platzieren Sie es auf dem Canvas unter dem Modul **Daten aufteilen**. Verbinden Sie dann die linke Ausgabe *Results dataset1* (Ergebnisse von Dataset1) des Moduls **Daten teilen** mit der rechten Eingabe *Dataset* des Moduls **Clustermodell trainieren**.
 
@@ -223,7 +216,7 @@ Führen Sie die folgenden Schritte aus, und verwenden Sie die obige Abbildung al
 
     ![Screenshot: Einbeziehen aller Spalten in den Spaltensatz](media/create-clustering-model/cluster-features.png)
 
-1. Das zu trainierende Modell nutzt die Merkmale, um die Daten in Cluster zu gruppieren. Daher müssen Sie das Modell mit einem *Clusteringalgorithmus* trainieren. Suchen Sie in der **Objektbibliothek** nach dem Modul **K-Means Clustering** und platzieren Sie es im Canvas links neben dem **Pinguin-Datensatz** und über dem Modul **Clustering-Modell trainieren**. Verbinden Sie dann die zugehörige Ausgabe mit der Eingabe von **Untrained model** (nicht trainiertes Modell) links neben dem Modul **Clustermodell trainieren**.
+1. Das zu trainierende Modell nutzt die Merkmale, um die Daten in Cluster zu gruppieren. Daher müssen Sie das Modell mit einem *Clusteringalgorithmus* trainieren. Suchen Sie in der **Ressourcenbibliothek** nach einem Modul vom Typ **K-Means Clustering**, und platzieren Sie es im Canvas-Panel links neben dem Modul **Daten teilen** und über dem Modul **Clustermodell trainieren**. Verbinden Sie dann die zugehörige Ausgabe mit der Eingabe von **Untrained model** (nicht trainiertes Modell) links neben dem Modul **Clustermodell trainieren**.
 
 1. Der *K-Means*-Algorithmus gruppiert Objekte in die von Ihnen angegebene Anzahl von Clustern. Dieser Wert wird als ***K*** bezeichnet. Wählen Sie das Modul **K-Means Clustering** und setzen Sie im rechten Fenster den Parameter **Number of centroids (Anzahl der Schwerpunkte)** auf **3**.
 
@@ -232,7 +225,7 @@ Führen Sie die folgenden Schritte aus, und verwenden Sie die obige Abbildung al
     > 2. Die Merkmalsvektoren werden in Form von Punkten in denselben Bereich eingezeichnet, und jedem Punkt wird dem nächstgelegenen Schwerpunkt zugeordnet.
     > 3. Die Schwerpunkte werden in die Mitte der ihnen zugeordneten Punkte verschoben (basierend auf der *durchschnittlichen* Entfernung).
     > 4. Nach der Verschiebung werden die Punkte erneut den nächstgelegenen Schwerpunkten zugeordnet.
-    > 5. Die Schritte 3 und 4 werden wiederholt, bis die Clusterzuweisungen stabilisiert werden oder die angegebene Anzahl von Iterationen durchlaufen wurde.
+    > 5. Die Schritte c und d werden wiederholt, bis die Clusterzuweisungen stabilisiert werden oder die angegebene Anzahl von Iterationen durchlaufen wurde.
 
    Nachdem 70 % der Daten zum Trainieren des Clustermodells verwendet wurden, können Sie die restlichen 30 % zum Testen des Modells verwenden, indem Sie es nutzen, um Daten Clustern zuzuweisen.
 
@@ -246,15 +239,15 @@ Nun können Sie die Trainingspipeline ausführen und das Modell trainieren.
 
     ![Screenshot: Komplette Trainingspipeline, beginnend mit den Daten zu Pinguinen und endend mit der Komponente „Daten zu Clustern zuweisen“](media/create-clustering-model/k-means.png)
 
-1. Wählen Sie **Übermitteln** aus, und führen Sie die Pipeline mithilfe des vorhandenen Experiments **mslearn-penguin-training** auf Ihrem Computecluster aus.
+1. Wählen Sie **Konfigurieren und Übermitteln** aus, und führen Sie die Pipeline mithilfe des vorhandenen Experiments **mslearn-penguin-training** auf Ihrem Computecluster aus.
 
-1. Warten Sie, bis die Experimentausführung abgeschlossen ist. Dies kann 5 Minuten oder länger dauern.
+1. Warten Sie, bis die Ausführung beendet ist. Dies kann 5 Minuten oder länger dauern. Sie können den Status des Auftrags überprüfen, indem Sie unter **Ressourcen** die Option **Aufträge** auswählen. Wählen Sie dort den aktuellen **Train Penguin Clustering**-Auftrag aus.
 
-1. Wenn die Ausführung des Experiments beendet ist, wählen Sie **Auftragsdetails** aus. Klicken Sie auf der neuen Registerkarte mit der rechten Maustaste auf das Modul **Daten Clustern zuweisen**, und wählen Sie **Datenvorschau** und dann **Ergebnisdatensatz** aus, um die Ergebnisse anzuzeigen.
+1. Wenn der Experimentdurchlauf abgeschlossen wurde, klicken Sie mit der rechten Maustaste auf das Modul **Daten Clustern zuweisen**, und wählen Sie **Datenvorschau** und dann **Ergebnisdatensatz** aus, um die Ergebnisse anzuzeigen.
 
 1. Scrollen Sie nach unten, und beachten Sie die Spalte **Zuweisungen**, die den Cluster (0, 1 oder 2) enthält, der jede Zeile zugeordnet ist. Außerdem gibt es nun zwei neue Spalten, die die Entfernung zwischen den Punkten, die die Zeile darstellen, und den Mittelpunkten der einzelnen Cluster (der Cluster, der dem Punkt am nächsten liegt, wird zugeordnet).
 
-1. Schließen Sie die Visualisierung **Daten Clustern zuweisen**. Kehren Sie zum Pipelineregisterkarte zurück.
+1. Schließen Sie die Visualisierung **Results_dataset**, um zur Pipelineausführung zurückzukehren.
 
 Das Modell prognostiziert Cluster für die Pinguinbeobachtungen, doch wie zuverlässig sind die Vorhersagen? Sie müssen das Modell auswerten, um dies zu beurteilen.
 
@@ -262,7 +255,7 @@ Die Auswertung von Clustermodellen wird dadurch erschwert, dass keine zuvor beka
 
 ## Hinzufügen eines Moduls „Modell bewerten“
 
-1. Öffnen Sie die Pipeline **Train Penguin Clustering**, die Sie in der vorherigen Lerneinheit erstellt haben, wenn sie nicht bereits geöffnet ist.
+1. Öffnen Sie auf der Seite **Designer** den Pipelineentwurf **Train Penguin Clustering**.
 
 1. Suchen Sie in der **Objektibliothek** nach dem Modul **Auswertungsmodell** und platzieren Sie es auf der Arbeitsfläche unter dem Modul **Daten zu Clustern zuweisen**. Verbinden Sie die Ausgabe des Moduls **Daten zu Clustern zuweisen** mit dem Eingang **Bewerteter Datensatz** (links) des Moduls **Modell auswerten**.
 
@@ -270,17 +263,17 @@ Die Auswertung von Clustermodellen wird dadurch erschwert, dass keine zuvor beka
 
     ![Screenshot: Hinzufügen des Moduls „Modul auswerten“ zum Modul „Daten zu Clustern zuweisen“](media/create-clustering-model/evaluate-cluster.png)
 
-1. Wählen Sie **Übermitteln** aus, und führen Sie die Pipeline mithilfe des vorhandenen Experiments **mslearn-penguin-training** aus.
+1. Wählen Sie **Konfigurieren und Übermitteln** aus, und führen Sie die Pipeline mithilfe des vorhandenen Experiments **mslearn-penguin-training** auf Ihrem Computecluster aus.
 
-1. Warten Sie, bis die Experimentausführung abgeschlossen ist.
+1. Warten Sie, bis die Experimentausführung abgeschlossen ist. Um den Status zu überprüfen, wechseln Sie zur Seite **Aufträge**, und wählen Sie den neuesten **Train Penguin Clustering**-Auftrag aus.
 
-1. Wenn die Ausführung des Experiments beendet ist, wählen Sie **Auftragsdetails** aus. Klicken Sie mit der rechten Maustaste auf das Modul **Modell auswerten** und wählen Sie **Datenvorschau** und dann **Auswertungsergebnisse** aus. Überprüfen Sie die Metriken in jeder Zeile:
+1. Klicken Sie mit der rechten Maustaste auf das Modul **Modell auswerten**, und wählen Sie **Datenvorschau** und dann **Auswertungsergebnisse** aus. Überprüfen Sie die Metriken in jeder Zeile:
     - **Average Distance to Other Center** (Durchschnittliche Entfernung zu anderen Mittelpunkten):
     - **Average Distance to Cluster Center** (Durchschnittliche Entfernung zum Mittelpunkt des Clusters):
     - **Number of Points** (Anzahl der Punkte)
     - **Maximal Distance to Cluster Center** (Maximale Entfernung zum Mittelpunkt des Clusters)
 
-1. Schließen Sie die Registerkarte **Visualisierung der Modellauswertungsergebnisse**.
+1. Schließen Sie die Registerkarte **Evaluation_results**.
 
 Da Sie nun über ein funktionierendes Clustermodell verfügen, können Sie dieses verwenden, um Clustern neue Daten in einer *Rückschlusspipeline* zuzuweisen.
 
@@ -288,15 +281,13 @@ Nachdem Sie eine Pipeline zum Trainieren des Clustermodells erstellt und ausgef�
 
 ## Erstellen einer Rückschlusspipeline
 
-1. Erweitern Sie im Azure Machine Learning Studio den linken Bereich, indem Sie das Menüsymbol oben links auf dem Bildschirm auswählen. Klicken Sie unter **Ressourcen** auf **Aufträge**, um alle von Ihnen ausgeführten Aufträge anzuzeigen. Wählen Sie das Experiment **mslearn-penguin-training** und anschließend die Pipeline **Train Penguin Clustering** aus. 
+1. Wählen Sie im Menü oberhalb des Canvas-Panels **Rückschlusspipeline erstellen** aus. Möglicherweise müssen Sie hierfür in den Vollbildmodus wechseln und rechts oben auf das Symbol **...** klicken, damit die Option **Rückschlusspipeline erstellen** im Menü angezeigt wird.  
 
-1. Klicken Sie im Menü oberhalb der Canvas auf **Rückschlusspipeline erstellen**. Möglicherweise müssen Sie hierfür in den Vollbildmodus wechseln und rechts oben auf das Symbol **...** klicken, damit die Option **Rückschlusspipeline erstellen** im Menü angezeigt wird.  
+    ![Screenshot: Position der Option „Rückschlusspipeline erstellen“](media/create-clustering-model/create-inference-pipeline.png)
 
-    ![Screenshot: Position der Option „Rückschlusspipeline erstellen“](media/create-clustering-model/create-inference-pipeline.png) 
+1. Klicken Sie in der Dropdownliste **Rückschlusspipeline erstellen** auf **Echtzeit-Rückschlusspipeline**. Nach einigen Sekunden wird eine neue Version Ihrer Pipeline mit dem Namen **Train Penguin Clustering-real time inference** geöffnet.
 
-1. Klicken Sie in der Dropdownliste **Create inference pipeline** (Rückschlusspipeline erstellen) auf **Real-time inference pipeline** (Echtzeitrückschlusspipeline). Nach einigen Sekunden wird eine neue Version Ihrer Pipeline mit dem Namen **Train Penguin Clustering-real time inference** geöffnet.
-
-1. Navigieren Sie im oberen rechten Menü zu **Einstellungen**. Benennen Sie die neue Pipeline unter **Draft details** (Entwurfsdetails) in **Predict Penguin Clusters** (Pinguincluster vorhersagen) um, und überprüfen Sie dann die neue Pipeline. Die Transformationen und das Clustermodell aus Ihrer Trainingspipeline sind in dieser Pipeline enthalten. Das trainierte Modell wird zur Bewertung der neuen Daten verwendet. Die Pipeline enthält auch eine Webdienstausgabe zum Zurückgeben von Ergebnissen. 
+1. Benennen Sie die neue Pipeline in **Predict Penguin Clusters** um, und überprüfen Sie dann die neue Pipeline. Die Transformationen und das Clustermodell aus Ihrer Trainingspipeline sind in dieser Pipeline enthalten. Das trainierte Modell wird zur Bewertung der neuen Daten verwendet. Die Pipeline enthält auch eine Webdienstausgabe zum Zurückgeben von Ergebnissen.
 
     Nehmen Sie an der Rückschlusspipeline die folgenden Änderungen vor:
 
@@ -309,9 +300,11 @@ Nachdem Sie eine Pipeline zum Trainieren des Clustermodells erstellt und ausgef�
 
     Führen Sie die restlichen Schritte unten aus, und verwenden Sie dabei die Abbildung und die Informationen von oben als Referenz für das Ändern der Pipeline.
 
-1. Die Pipeline enthält nicht automatisch eine **Webdiensteingabekomponente** für Modelle, die aus benutzerdefinierten Datasets erstellt werden. Suchen Sie in der Ressourcenbibliothek nach einer **Webdiensteingabekomponente**, und platzieren Sie diese oben in der Pipeline.  Verbinden Sie die Ausgabe der **Webdiensteingabekomponente** mit der Eingabe der Komponente **Transformation anwenden**, die sich bereits auf der Canvas befindet.  
+1. Die Pipeline enthält nicht automatisch eine **Webdiensteingabekomponente** für Modelle, die aus benutzerdefinierten Datasets erstellt werden. Suchen Sie in der Ressourcenbibliothek nach einer **Webdiensteingabekomponente**, und platzieren Sie diese oben in der Pipeline.  Verbinden Sie die Ausgabe der Komponente **Webdiensteingabe** mit der Eingabe *Dataset* (rechts) der Komponente **Transformation anwenden**, die sich bereits im Canvas-Panel befindet.  
 
-1. Die Rückschlusspipeline geht davon aus, dass neue Daten dem Schema der ursprünglichen Trainingsdaten entsprechen, sodass das Dataset **penguin-data** aus der Trainingspipeline eingeschlossen wird. Allerdings enthalten diese Eingabedaten eine Spalte für die Pinguinspezies, die das Modell nicht verwendet. Löschen Sie sowohl das Dataset **penguin-data** und die Module unter **Spalten im Dataset auswählen**, und ersetzen Sie diese durch ein **Enter Data Manually**-Modul (Daten manuell eingeben) aus der **Objektbibliothek**. Ändern Sie dann die Einstellungen des Moduls **Daten manuell eingeben**, sodass die folgende CSV-Eingabe verwendet wird, die Merkmalwerte für drei neue Pinguinbeobachtungen (einschließlich Spaltenüberschriften) enthält:
+1. Die Rückschlusspipeline geht davon aus, dass neue Daten dem Schema der ursprünglichen Trainingsdaten entsprechen, sodass das Dataset **penguin-data** aus der Trainingspipeline eingeschlossen wird. Allerdings enthalten diese Eingabedaten eine Spalte für die Pinguinspezies, die das Modell nicht verwendet. Löschen Sie sowohl das Dataset **penguin-data** und die Module unter **Spalten im Dataset auswählen**, und ersetzen Sie diese durch ein **Enter Data Manually**-Modul (Daten manuell eingeben) aus der **Objektbibliothek**.
+
+1. Ändern Sie dann die Einstellungen des Moduls **Daten manuell eingeben**, sodass die folgende CSV-Eingabe verwendet wird, die Merkmalwerte für drei neue Pinguinbeobachtungen (einschließlich Spaltenüberschriften) enthält:
 
     ```CSV
     CulmenLength,CulmenDepth,FlipperLength,BodyMass
@@ -320,7 +313,7 @@ Nachdem Sie eine Pipeline zum Trainieren des Clustermodells erstellt und ausgef�
     46.6,17.8,193,3800
     ```
 
-1. Verbinden Sie die Ausgaben der Module **Webdiensteingabe** und **Daten manuell eingeben** mit der Dataseteingabe (rechts) des ersten Moduls **Apply Transformation** (Transformation anwenden).
+1. Verbinden Sie die Ausgaben des Moduls **Manuelle Eingabe von Daten** mit der Eingabe *Dataset* (rechts) des ersten Moduls **Apply Transformation** (Transformation anwenden).
 
 1. Löschen Sie das Modul **Modell auswerten**.
 
@@ -330,27 +323,23 @@ Nachdem Sie eine Pipeline zum Trainieren des Clustermodells erstellt und ausgef�
 
 1. Übermitteln Sie die Pipeline als neues Experiment mit dem Namen **mslearn-penguin-inference** an Ihren Computecluster. Die Ausführung des Experiments kann einige Minuten dauern.
 
-1. Wenn die Pipeline abgeschlossen ist, wählen Sie **Auftragsdetails** aus. Klicken Sie auf der neuen Registerkarte mit der rechten Maustaste auf das Modul **Assign Data to Clusters** (Daten zu Clustern zuweisen), und wählen Sie **Datenvorschau** und **Ergebnisdataset** aus, um die vorhergesagten Clusterzuweisungen und Metriken für die drei Pinguinbeobachtungen in den Eingabedaten anzuzeigen.
+1. Wechseln Sie zu **Aufträge**, und wählen Sie den neuesten **Predict Penguin Clusters**-Auftrag mit dem Experimentnamen **mslearn-penguin-inference** aus.
+
+1. Wenn die Pipeline abgeschlossen wurde, klicken Sie mit der rechten Maustaste auf das Modul **Daten Clustern zuweisen**, und wählen Sie **Datenvorschau** und **Ergebnisdataset** aus, um die vorhergesagten Clusterzuweisungen und Metriken für die drei Pinguinbeobachtungen in den Eingabedaten anzuzeigen.
 
 Ihre Rückschlusspipeline weist Pinguinbeobachtungen anhand ihrer Merkmale zu Clustern zu. Sie können die Pipeline nun so veröffentlichen, dass sie von Clientanwendungen verwendet werden kann.
 
->**Hinweis**: In dieser Übung stellen Sie den Webdienst in Azure Container Instances (ACI) bereit. Solche Computeressourcen werden dynamisch erstellt und sind für Entwicklungs- und Testzwecke nützlich. Für Produktionszwecke sollten Sie einen *Rückschlusscluster* erstellen, der einen AKS-Cluster (Azure Kubernetes Service) mit verbesserter Skalierbarkeit und Sicherheit bereitstellt.
-
 ## Bereitstellen eines Diensts
 
-1. Zeigen Sie die Rückschlusspipeline **Predict Penguin Clusters** an, die Sie in der vorherigen Einheit erstellt haben.
+In dieser Übung stellen Sie den Webdienst in Azure Container Instances (ACI) bereit. Solche Computeressourcen werden dynamisch erstellt und sind für Entwicklungs- und Testzwecke nützlich. Für Produktionszwecke sollten Sie einen *Rückschlusscluster* erstellen, der einen AKS-Cluster (Azure Kubernetes Service) mit verbesserter Skalierbarkeit und Sicherheit bereitstellt.
 
-1. Wählen Sie im linken Bereich die Option **Auftragsdetails** aus. Dadurch wird eine weitere Registerkarte geöffnet.
-
-    ![Screenshot: Auftragsdetails neben dem abgeschlossenen Auftrag ](media/create-clustering-model/completed-job-inference.png)
-
-1. Wählen Sie auf der neuen Registerkarte die Option **Bereitstellen** aus.
+1. Wählen Sie auf der Seite der Rückschlussausführung für **Predict Penguin Clusters** die Option **Bereitstellen** in der oberen Menüleiste aus.
 
     ![Screenshot: Schaltfläche „Bereitstellen“ für die Rückschlusspipeline „Predict Auto Price“](media/create-clustering-model/deploy-screenshot.png)
 
-1. Stellen Sie einen neuen Echtzeitendpunkt mithilfe der folgenden Einstellungen bereit:
-    -  **Name:** predict-penguin-clusters
-    -  **Beschreibung:** Clusterpinguine
+1. Wählen Sie **Deploy a new real-time endpoint** (Neuen Echtzeitendpunkt bereitstellen) aus, und verwenden Sie die folgenden Einstellungen:
+    - **Name:** predict-penguin-clusters
+    - **Beschreibung:** Clusterpinguine
     - **Computetyp:** Azure Container Instances
 
 1. Warten Sie, bis der Webdienst bereitgestellt wurde. Dieser Vorgang kann einige Minuten in Anspruch nehmen. 
@@ -363,7 +352,7 @@ Ihre Rückschlusspipeline weist Pinguinbeobachtungen anhand ihrer Merkmale zu Cl
 
     ![Screenshot: Position der Option „Endpunkte“ im linken Bereich](media/create-clustering-model/endpoints-screenshot.png)
 
-1. Wir verwenden sie, um unser Modell mit neuen Daten zu testen. Löschen Sie die vorhandenen Daten unter **Eingabedaten zum Testen des Echtzeitendpunkts**. Kopieren Sie die folgenden Daten, und fügen Sie sie in den Abschnitt „Daten“ ein: 
+1. Wir verwenden sie, um unser Modell mit neuen Daten zu testen. Löschen Sie die vorhandenen Daten unter **Eingabedaten zum Testen des Echtzeitendpunkts**. Kopieren Sie die folgenden Daten, und fügen Sie sie in den Abschnitt „Daten“ ein:
 
     ```JSON
     {
