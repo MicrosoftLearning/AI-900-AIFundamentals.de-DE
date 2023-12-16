@@ -78,7 +78,7 @@ Ihre Wissensdatenbank basiert auf den Angaben im FAQ-Dokument und einigen vordef
 
 1. Klicken Sie auf **+ Alternativen Ausdruck hinzufügen**, und geben Sie ein `Hi`. Klicken Sie dann auf **Änderungen übermitteln**.
 
-1. Geben Sie im Feld **Answer and prompts** (Antworten und Äußerungen) **** ein. Behalten Sie diese **Quelle** bei: Editorial.
+1. Geben Sie im Feld **Answer and prompts** (Antworten und Äußerungen) `Hello` ein. Behalten Sie diese **Quelle** bei: Editorial.
 
 1. Klicken Sie auf **Submit**(Senden). Klicken Sie dann oben auf der Seite auf **Änderungen speichern**. Möglicherweise müssen Sie die Größe Ihres Fensters ändern, um die Schaltfläche zu sehen.
 

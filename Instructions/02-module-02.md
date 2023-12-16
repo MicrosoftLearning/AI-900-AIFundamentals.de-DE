@@ -75,7 +75,7 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
             - **Typ**: Tabellarisch
         - **Datenquelle**:
             - Wählen Sie **Aus Webdateien** aus
-        - **Web-URL:** 
+        - **Web-URL:**
             - **Web-URL:** `https://aka.ms/bike-rentals`
             - **Skip data validation** (Datenüberprüfung überspringen): *Nicht auswählen*
         - **Einstellungen**:
@@ -114,7 +114,7 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
         - **Prozentsatz der Validierungsdaten**: 10
         - **Testdataset**: Keins
 
-    **Compute**:
+    **Compute:**
 
     - **Computetyp auswählen**: Serverlos
     - **VM-Typ:** CPU
